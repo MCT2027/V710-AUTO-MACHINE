@@ -880,18 +880,20 @@ if(typeof CompressionStream=='undefined'){clSay(T('Trình duyệt không hỗ tr
 if(CLK.busy){CLK.dirty=1;return}CLK.busy=1;
 try{const LP=CLK.sig(),by=clByDay(),todo=Object.keys(by).sort().filter(d=>clSigOf(by[d])!==LP[d]);
 if(!todo.length){clSay(T('Cloud đã mới nhất, không có dữ liệu mới để đẩy · ','Cloud 최신 — 보낼 새 데이터 없음 · ')+clTm());CLK.busy=0;return}
-const done={};let n=0;
-for(const d of todo){n++;clSay(T('Đang đẩy cloud ','Cloud 전송 중 ')+d+' ('+n+'/'+todo.length+')…');let ok=0;
+const pend={};let n=0,tot=0,cnt=0;
+const flush=async()=>{if(!Object.keys(pend).length)return;for(let t=0;t<3;t++){const rem=await ghGet(RP,tk,'index.json');let J={ver:1,days:{}};if(rem.buf){try{J=JSON.parse(new TextDecoder().decode(rem.buf))}catch(e){}if(!J.days)J.days={};J.ver=1}
+Object.assign(J.days,pend);J.at=Date.now();const r=await ghPut(RP,tk,'index.json',clU8(JSON.stringify(J)),rem.sha,'index '+new Date().toISOString());
+if(r.status==409||r.status==422)continue;if(!r.ok)throw new Error('GitHub '+r.status);Object.keys(pend).forEach(k=>delete pend[k]);CLK.saveSig(LP);return}
+throw new Error(T('xung đột index, thử lại sau','index 충돌'))};
+for(const d of todo.slice().reverse()){n++;clSay(T('Đang đẩy cloud ','Cloud 전송 중 ')+d+' ('+n+'/'+todo.length+')…');let ok=0;
 for(let t=0;t<3&&!ok;t++){const rem=await ghGet(RP,tk,'data/'+d+'.json.gz');let X=by[d];const mine=clSigOf(X);let same=false;
 if(rem.buf){const rx=clDecode(await clUnz(rem.buf)),seen=new Map(X.map(x=>[dk(x),x]));rx.forEach(x=>{const q=dk(x);if(!seen.has(q))seen.set(q,x)});X=[...seen.values()];same=clSigOf(rx)===clSigOf(X)}
-const sig=clSigOf(X);let sha=rem.sha;
-if(!same){const r=await ghPut(RP,tk,'data/'+d+'.json.gz',await clPack(X),sha,'sync '+d+' '+new Date().toISOString());if(r.status==409||r.status==422)continue;if(!r.ok)throw new Error('GitHub '+r.status+(r.status==401||r.status==403?' (token sai/thiếu quyền)':''))}
-done[d]={n:X.length,sig};if(sig===mine)LP[d]=sig;ok=1}
-if(!ok)throw new Error(T('xung đột, thử lại sau','충돌, 나중에 재시도'))}
-for(let t=0;t<3;t++){const rem=await ghGet(RP,tk,'index.json');let J={ver:1,days:{}};if(rem.buf){try{J=JSON.parse(new TextDecoder().decode(rem.buf))}catch(e){}if(!J.days)J.days={};J.ver=1}
-Object.assign(J.days,done);J.at=Date.now();const r=await ghPut(RP,tk,'index.json',clU8(JSON.stringify(J)),rem.sha,'index '+new Date().toISOString());
-if(r.status==409||r.status==422)continue;if(!r.ok)throw new Error('GitHub '+r.status);CLK.saveSig(LP);clSay(T('Đã đẩy lên cloud ','Cloud 전송 완료 ')+clTm()+' · '+todo.length+T(' ngày',' 일')+' · '+Object.values(done).reduce((a,o)=>a+o.n,0)+T(' mẫu',' 건'));CLK.busy=0;return}
-throw new Error(T('xung đột index, thử lại sau','index 충돌'))}
+const sig=clSigOf(X);
+if(!same){const r=await ghPut(RP,tk,'data/'+d+'.json.gz',await clPack(X),rem.sha,'sync '+d+' '+new Date().toISOString());if(r.status==409||r.status==422)continue;if(!r.ok)throw new Error('GitHub '+r.status+(r.status==401||r.status==403?' (token sai/thiếu quyền)':''))}
+pend[d]={n:X.length,sig};tot+=X.length;cnt++;if(sig===mine)LP[d]=sig;ok=1}
+if(!ok)throw new Error(T('xung đột, thử lại sau','충돌, 나중에 재시도'));
+if(Object.keys(pend).length>=3)await flush()}
+await flush();clSay(T('Đã đẩy lên cloud ','Cloud 전송 완료 ')+clTm()+' · '+cnt+T(' ngày',' 일')+' · '+tot+T(' mẫu',' 건'));CLK.busy=0;return}
 catch(e){clSay(T('Đẩy cloud lỗi: ','Cloud 전송 오류: ')+e.message)}CLK.busy=0;if(CLK.dirty){CLK.dirty=0;setTimeout(clPush,2000)}}
 function clDirty(){if(!CLK.tok()||!CLK.repo())return;try{if(localStorage.getItem('v710a_cl_auto')==='0')return}catch(e){}clearTimeout(CLK.tm);CLK.tm=setTimeout(clPush,3000)}
 function clUi(){let d=$('clw');if(!d){d=document.createElement('details');d.id='clw';d.style.marginTop='8px';$('upb').appendChild(d)}const o=d.open;

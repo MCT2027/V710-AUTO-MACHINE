@@ -832,7 +832,7 @@ function noteC(c){$('note').style.display=c?'none':'';$('ncc').textContent=c?'�
 {let c=1;try{const q=localStorage.getItem('v710nc');if(q!=null)c=+q}catch(e){}$('note').style.display=c?'none':'';$('ncc').textContent=c?'▸':'▾';$('ncc').onclick=()=>noteC($('note').style.display!='none')}
 /* ===== Đồng bộ cloud (GitHub): PC xưởng quét thư mục rồi đẩy theo từng ngày; máy khác chỉ xem ===== */
 const CLK={br:'main',st:'',busy:0,pbusy:0,dirty:0,tm:0,
-tok:()=>{try{return localStorage.getItem('v710a_cl_tok')||localStorage.getItem('v710_cl_tok')||''}catch(e){return''}},
+tok:()=>{try{return localStorage.getItem('v710a_cl_tok')||''}catch(e){return''}},
 repo:()=>{try{const o=localStorage.getItem('v710a_cl_repo');if(o)return o}catch(e){}if(/\.github\.io$/.test(location.hostname)){const r=location.pathname.split('/')[1];return location.hostname.split('.')[0]+'/'+(r||location.hostname)}return''},
 win:()=>{let v=14;try{const q=localStorage.getItem('v710a_cl_win');if(q!=null&&!isNaN(+q))v=+q}catch(e){}return v},
 sig:()=>{try{return JSON.parse(localStorage.getItem('v710a_cl_sig')||'{}')}catch(e){return{}}},

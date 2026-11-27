@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Báo cáo chất lượng V710 · 품질 리포트</title>
+<style>
+:root{--bg:#f3f5f8;--card:#fff;--tx:#17202b;--mu:#667085;--bd:#dfe4ea;--ok:#168a52;--ng:#d03b34;--wn:#c98a14;--ac:#2a63c9;--hd:#14233b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1318;--card:#182029;--tx:#e6e9ee;--mu:#97a2b1;--bd:#2a3340;--ok:#3ec17f;--ng:#f06b63;--wn:#e8b34a;--ac:#6ea0ff;--hd:#0b1119}}
+:root[data-theme="dark"]{--bg:#0f1318;--card:#182029;--tx:#e6e9ee;--mu:#97a2b1;--bd:#2a3340;--ok:#3ec17f;--ng:#f06b63;--wn:#e8b34a;--ac:#6ea0ff;--hd:#0b1119}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.45 system-ui,-apple-system,"Segoe UI","Malgun Gothic",Roboto,Arial,sans-serif}
+main{max-width:1680px;margin:0 auto;padding:14px 20px 40px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+h1{font-size:22px;margin:0;letter-spacing:-.2px}
+.sub{color:var(--mu);font-size:12px}
+.kp{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.kp2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:12px}.kp2 .k{padding:8px 14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}.kp2 .k b{font-size:22px;margin:0;letter-spacing:0}.kp2 .k .l{width:100%}
+.mr{flex-basis:100%;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;border-top:1px solid var(--bd);padding-top:8px}.mr>.sub{font-weight:600}.mg{display:flex;gap:4px;align-items:center;flex-wrap:wrap}.mg>span{font-size:12px;color:var(--mu);margin-right:4px;min-width:34px}.nd{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ng);margin-left:5px;vertical-align:middle}
+.ur{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}.ur input[type=text]{flex:1;min-width:260px;padding:5px 8px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--tx);font:inherit}
+.k{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;min-width:0}
+.k.big{background:var(--hd);color:#fff;border-color:var(--hd)}.k.big .l,.k.big .ko{color:#b8c4d6}
+.k .l{font-size:12.5px;color:var(--mu)}
+.k b{display:block;font-size:38px;line-height:1.1;margin:4px 0 2px;font-variant-numeric:tabular-nums;letter-spacing:-1px;white-space:nowrap}
+.k b small{font-size:18px;font-weight:600;letter-spacing:0}
+.k .s{font-size:12px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.k.big .s{color:#b8c4d6}.k.big b.ok{color:#5be39b}.k.big b.ng{color:#ff8a82}
+.ok{color:var(--ok)}.ng{color:var(--ng)}.wnc{color:var(--wn)}
+.fb{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:10px 14px;background:var(--card);border:1px solid var(--bd);border-radius:10px;margin-bottom:12px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.bt{display:flex;gap:4px;flex-wrap:wrap}.vs{width:1px;height:26px;background:var(--bd)}
+.seg{display:flex;border:1px solid var(--bd);border-radius:7px;overflow:hidden}.seg button{border:0;border-radius:0}.seg select{border:0;border-left:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit;font-size:13px;padding:0 4px;max-width:110px}
+.seg.on{border-color:var(--ac)}.seg.on button{background:var(--ac);color:#fff}.seg.on select{background:color-mix(in srgb,var(--ac) 14%,var(--bg))}
+.dd{position:relative}.pn{max-height:340px;overflow:auto;display:none;position:absolute;top:36px;left:0;min-width:170px;background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:8px 10px;box-shadow:0 6px 20px rgba(0,0,0,.18);z-index:10}.pn.o{display:block}
+.pn label{display:flex;align-items:center;gap:8px;padding:3px 0;cursor:pointer;white-space:nowrap}.pn .ac{display:flex;gap:6px;margin-bottom:6px}.pn .ac button{min-height:24px;padding:0 8px;font-size:12px}
+.lg{display:flex;border:1px solid var(--bd);border-radius:7px;overflow:hidden}.lg button{border:0;border-radius:0}.lg button.on{background:var(--hd);color:#fff}
+button{background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:6px;padding:4px 11px;min-height:30px;font:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
+button:hover{border-color:var(--ac)}button.on{background:var(--ac);border-color:var(--ac);color:#fff}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;min-width:0}
+h2{font-size:15px;margin:0 0 2px}.cv{position:relative;height:300px;margin-top:8px}.cv.t{height:320px}
+.sc{overflow:auto;max-height:420px;margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{padding:6px 10px;border-bottom:1px solid var(--bd);text-align:right;white-space:nowrap}
+th{position:sticky;top:0;background:var(--card);color:var(--mu);font-weight:600;font-size:12px;z-index:1;line-height:1.2}
+th:first-child,td:first-child,.l{text-align:left}
+tr.lo td{opacity:.5}
+.rb{display:inline-block;width:110px;height:8px;background:var(--bd);border-radius:4px;vertical-align:middle;margin-left:8px;overflow:hidden}.rb i{display:block;height:100%}
+.tag{display:inline-block;border-radius:10px;padding:0 8px;font-size:11.5px;border:1px solid var(--bd)}
+.tag.new{color:var(--ac);border-color:var(--ac)}
+.cf input{width:80px;padding:3px 6px;border:1px solid var(--bd);border-radius:5px;background:var(--bg);color:var(--tx);font:inherit}.cf input.n{width:200px}
+details{margin-top:4px}summary{cursor:pointer;color:var(--mu);font-size:13px;padding:6px 0}
+.tp{margin-bottom:12px}.th{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}.th h2{margin:0;font-size:16px}.rk{background:var(--ng);color:#fff;border-radius:6px;padding:0 8px;font-weight:700}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:8px}.cv.s{height:260px;margin-top:4px}
+.tb{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.top{align-items:center}
+.uph{display:flex;align-items:center;gap:6px 16px;flex-wrap:wrap}.uph h2{margin:0}.uph .cl{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:13px;color:var(--mu);cursor:pointer;user-select:none}.uph .cl input{width:16px;height:16px;cursor:pointer}
+#upc{padding:10px 16px}#upb{margin-top:6px}.ur select{padding:4px 6px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--tx);font:inherit;font-size:13px}
+#bscan{background:var(--ac);border-color:var(--ac);color:#fff}#bscan.bz{opacity:.6;pointer-events:none}
+@media(max-width:600px){.tb button{padding:3px 8px;font-size:12px;min-height:28px}h1{font-size:19px}.top{align-items:flex-start}}
+@media(max-width:1100px){.kp{grid-template-columns:repeat(3,minmax(0,1fr))}.g2{grid-template-columns:1fr}}
+@media(max-width:600px){.kp2{grid-template-columns:1fr}main{padding:8px}.kp{grid-template-columns:repeat(2,minmax(0,1fr))}.k b{font-size:28px}.fb{position:static}}
+.hr{display:grid;grid-template-columns:92px 1fr 118px;align-items:center;gap:10px;cursor:pointer;font-size:13px}.hr:hover .hn{color:var(--ac)}.hr.lo{opacity:.55}
+.hn{font-weight:700;white-space:nowrap}.ht{height:18px;background:color-mix(in srgb,var(--bd) 55%,transparent);border-radius:5px;overflow:hidden}.ht i{display:block;height:100%;border-radius:5px}.hv{white-space:nowrap;font-variant-numeric:tabular-nums}
+#tk td:first-child,#tk th:first-child{font-weight:700}
+.mph{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.mph h2{margin:0;font-size:18px}
+.mpg{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px;margin-bottom:12px}.mc{padding:10px 12px}.mc.bd{border-color:var(--ng)}
+.mct{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font-size:13px}.cv.m{height:150px;margin-top:4px}
+.dts{margin:6px 0 8px;font-weight:700;display:flex;gap:10px;align-items:center}
+.mpg.w{grid-template-columns:repeat(auto-fill,minmax(520px,1fr))}.mc.fw{grid-column:1/-1}.g3m{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}.cv.gm{height:270px;margin-top:4px}
+@media (max-width:600px){.mpg.w{grid-template-columns:minmax(0,1fr)}}
+.ib{min-height:26px;padding:0 9px;line-height:1;font-size:14px}button:disabled{opacity:.4;cursor:default;pointer-events:none}
+.cv.t{height:300px}.k b{font-size:32px}
+/* ===== Tổng quan V17: thẻ tự giãn theo nội dung — không thanh cuộn ngang/dọc trong thẻ ===== */
+.lay{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:12px;margin-bottom:12px;align-items:start}
+.lc{display:flex;flex-direction:column;gap:12px;min-width:0}.lc .g2{margin:0;align-items:stretch}
+.g2.w2{grid-template-columns:repeat(2,minmax(0,1fr))}.g2.m1{grid-template-columns:minmax(210px,.8fr) minmax(0,1.25fr)}.g2.m2{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.lc .card{display:flex;flex-direction:column;min-width:0}
+.lc .sc{max-height:none;overflow:visible}.lc .sc,.lc #mb{margin-top:8px}
+.lc table{font-size:12.5px}.lc th,.lc td{padding:5px 7px}.lc th{position:static}
+.lc .cv.t{flex:1;height:auto;min-height:260px;overflow:hidden}
+#mb{display:flex;flex-direction:column;gap:7px}.hr{grid-template-columns:78px 1fr 108px}
+.dtb{display:flex;flex-wrap:wrap;gap:0 14px;align-items:flex-start}.dtb table{width:auto;flex:1 1 220px;min-width:0}.dtb th,.dtb td{padding:4px 6px}
+.rc{padding:0}.rc>.in{padding:14px 16px;display:flex;flex-direction:column;min-width:0}
+.rc #dk{max-height:none;overflow:visible;margin-top:8px}.rc #dk th{position:static}
+.rc #dk.long{max-height:80vh;overflow:auto}.rc #dk.long th{position:sticky}
+#dk .rb{width:40px;margin-left:4px}@media(max-width:1500px){#dk .rb{display:none}}
+#dk table{width:100%;font-size:12px}#dk th,#dk td{padding:4px 6px;white-space:nowrap}#dk th{white-space:normal}#dk td.l{white-space:normal;overflow-wrap:anywhere}#dk td.sp{white-space:nowrap}
+
+@media(max-width:1500px){.lay{grid-template-columns:1fr}}
+@media(max-width:1100px){.lay,.g2.w2,.g2.m1,.g2.m2{grid-template-columns:1fr}.rc #dk.long{max-height:420px}}
+#kp2{display:none!important}
+.g2.m3{grid-template-columns:minmax(0,.9fr) minmax(0,1fr) minmax(0,1.1fr)}
+@media(max-width:1100px){.g2.m3{grid-template-columns:1fr}}
+.lc #tk{overflow-x:auto}
+.rc #dk.cl{overflow:hidden}
+details.nt{margin:0}details.nt>summary{font-size:12px;padding:2px 0}details.nt[open]>summary{color:var(--tx)}
+.lay{grid-template-columns:minmax(0,1fr)}
+.lc .g2.ra{align-items:start;grid-template-columns:repeat(2,minmax(0,1fr))}
+.g2.m3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lc #tm{overflow-x:auto}#tm td.bc{width:30%;min-width:80px}#tm .ht{display:block}#tm tbody tr:hover td{background:color-mix(in srgb,var(--ac) 8%,transparent)}
+@media(max-width:1300px){.lc .g2.ra{grid-template-columns:1fr}}
+@media(max-width:1100px){.g2.m3{grid-template-columns:1fr}}
+@media(max-width:700px){#tm .hs{display:none}}
+/* 2 thẻ chính: cùng cỡ chữ, cùng đệm, nổi bật */
+.lc .g2.ra>.card{border-top:3px solid var(--ac);box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.ra h2{font-size:17px;margin:0 0 4px}
+.rc>.in{flex:1}.rc #dk{margin-bottom:10px}#dkx{margin-top:auto!important}
+.ra #tm table,.ra #dk table{font-size:14px}
+.ra #tm th,.ra #dk th{font-size:12.5px;padding:8px 10px;line-height:1.25}
+.ra #tm td,.ra #dk td{padding:8px 10px;line-height:1.3}
+.ra #tm tr,.ra #dk tr{height:38px}
+.ra #tm .ht{height:12px;border-radius:6px}.ra #tm .ht i{border-radius:6px}
+.ra #dk .rb{height:10px}
+/* V22: vừa 1 màn hình */
+.lc{gap:10px}.lc .g2{gap:10px}.lc .g2.m3{align-items:start}
+.lc .g2.ra>.card,.lc .g2.m3>.card{padding:10px 14px}
+.lc .rc>.in{padding:0}
+.lc .cv.t{min-height:140px}
+.xb,#dkx,#tdx{margin-top:auto!important;align-self:center;min-height:26px;padding:2px 12px}
+.lc .sc{margin-bottom:6px}
+.ra #tm th,.ra #dk th{padding:6px 10px}
+.ra #tm td,.ra #dk td{padding:5px 10px}
+.ra #tm tr,.ra #dk tr{height:32px}
+.lc #tk th,.lc #tk td,.lc #td th,.lc #td td{padding:4px 7px}
+.lc .g2.m3 h2,.ra h2{margin-bottom:2px}
+/* V23: thu gọn phần đầu trang để dành chỗ cho bảng */
+main{padding-top:8px}.top{margin-bottom:8px}h1{font-size:20px}
+.kp{gap:10px;margin-bottom:10px}.k{padding:8px 14px}.k b{font-size:26px;margin:2px 0 0}.k b small{font-size:15px}.k .l,.k .s{font-size:12px}
+.fb{padding:6px 12px;margin-bottom:10px;gap:6px 14px}
+/* V25: ghi chú nhỏ ở góc phải tiêu đề */
+.ch{display:flex;align-items:center;gap:8px;margin-bottom:2px;min-height:24px}.ch h2{margin:0!important;flex:1;min-width:0}
+details.nt{position:relative;margin:0 0 0 auto}
+details.nt>summary{list-style:none;cursor:pointer;width:22px;height:22px;padding:0;border:1px solid var(--bd);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;line-height:1;color:var(--mu);background:var(--bg)}
+details.nt>summary::-webkit-details-marker{display:none}
+details.nt[open]>summary{background:var(--ac);border-color:var(--ac);color:#fff}
+details.nt>.pp{position:absolute;right:0;top:28px;z-index:20;width:min(400px,78vw);white-space:normal;background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:8px 10px;box-shadow:0 6px 20px rgba(0,0,0,.2);color:var(--tx)}
+/* V26: Front/Rear - tự thu nhỏ mật độ dòng để vừa đủ 5 thẻ */
+.g2.ra.dn1 #tm tr,.g2.ra.dn1 #dk tr{height:28px}
+.g2.ra.dn1 #tm td,.g2.ra.dn1 #dk td{padding:3px 8px}.g2.ra.dn1 #tm th,.g2.ra.dn1 #dk th{padding:4px 8px}
+.g2.ra.dn1 #tm table,.g2.ra.dn1 #dk table{font-size:13px}
+.g2.ra.dn2 #tm tr,.g2.ra.dn2 #dk tr{height:24px}
+.g2.ra.dn2 #tm td,.g2.ra.dn2 #dk td{padding:1px 6px}.g2.ra.dn2 #tm th,.g2.ra.dn2 #dk th{padding:3px 6px}
+.g2.ra.dn2 #tm table,.g2.ra.dn2 #dk table{font-size:12px}
+.g2.ra.dn2 #tm .ht{height:8px}
+.g2.ra.dn3 #tm tr,.g2.ra.dn3 #dk tr{height:20px}
+.g2.ra.dn3 #tm td,.g2.ra.dn3 #dk td{padding:0 5px}
+.g2.ra.dn3 #tm th,.g2.ra.dn3 #dk th{padding:2px 5px}
+.g2.ra.dn3 #tm table,.g2.ra.dn3 #dk table{font-size:11px}
+.g2.ra.dn3 #tm .ht{height:6px}.g2.ra.dn2 #tm .tag{font-size:10.5px;padding:0 6px}
+#tm.cl,#tk.cl,#td.cl,#dk.cl{overflow:hidden!important}
+.sb{display:flex;align-items:center;gap:6px 14px;flex-wrap:wrap;padding:8px 12px 8px 14px;border:1px solid var(--bd);border-left:4px solid var(--ac);border-radius:8px;background:var(--card);margin-bottom:12px;font-size:13px}
+.sb[hidden]{display:none}.sb.ok{border-left-color:var(--ok)}.sb.wn{border-left-color:var(--wn)}.sb .x{margin-left:auto}
+.sb .pg{flex:1 1 140px;max-width:320px;height:6px;border-radius:3px;background:var(--bd);overflow:hidden}.sb .pg i{display:block;height:100%;background:var(--ac)}
+.lst.ok{color:var(--ok)}.lst.wn{color:var(--wn)}#lsu button{min-height:22px;padding:0 8px;font-size:12px;margin-left:6px}
+.tb .ibn{min-width:38px;height:36px;padding:0 10px;font-size:17px;line-height:1;display:inline-flex;align-items:center;justify-content:center}
+/* V33: thống kê cây NG sổ sang phải, trang mở full ngang */
+.ngb{margin-left:auto}
+body.ngw main{max-width:none}
+.mpx{display:grid;grid-template-columns:minmax(380px,30%) minmax(0,1fr);gap:12px;align-items:start}
+.mpx .mpg,.mpx .g3m{grid-template-columns:1fr}
+.ngm{min-width:0}
+.ngs{overflow:auto;max-height:calc(100vh - 230px);border:1px solid var(--bd);border-radius:8px;margin-top:6px}
+.ngs table{border-collapse:separate;border-spacing:0;font-size:12.5px;white-space:nowrap}
+.ngs th,.ngs td{padding:3px 8px;text-align:right;border-bottom:1px solid var(--bd);border-right:1px solid var(--bd);background:var(--card)}
+.ngs thead th{position:sticky;z-index:3;text-align:center}
+.ngs tr.h1 th{top:0;height:26px}.ngs tr.h2 th{top:26px;height:26px}
+.ngs th.ngh,.ngs td.ngc{background:#f8c9cf;color:#b3261e;font-weight:700}
+.ngs th.tc{font-weight:500;font-size:11.5px}
+.ngs td.nm{text-align:left;font-weight:600}
+.ngs tr.zb td{cursor:pointer;user-select:none}.ngs tr.zb td.zbt{min-width:402px;max-width:402px;text-align:left;font-weight:600;color:var(--ac);background:var(--card)}.ngs tr.zb td.zbf{position:static;min-width:0;max-width:none;background:var(--card)}.ngs tr.zb:hover td{filter:brightness(.97)}
+.dar{display:inline-block;width:14px;cursor:pointer;color:var(--ac);user-select:none;font-size:11px}.dar0{display:inline-block;width:14px}.dsr td{font-size:12px;color:var(--mu);background:var(--bg)}.dsr td:first-child{padding-left:20px}.dsr td.ok{color:var(--ok)}.dsr td.ng{color:var(--ng)}
+.cdb{position:absolute;top:2px;right:4px;z-index:3;font:inherit;font-size:10px;padding:1px 6px;border:1px solid var(--bd);background:var(--card);color:var(--ac);border-radius:6px;cursor:pointer;opacity:.92}.cdb.on{background:var(--ac);color:#fff}
+.cdp{max-height:260px;overflow:auto;margin:6px 0 2px;border:1px solid var(--bd);border-radius:6px;min-width:0;width:fit-content;max-width:100%}.stp>.sub,.cdp>.sub{width:0;min-width:100%}.cdp table{border-collapse:collapse;width:auto;font-size:11.5px;font-variant-numeric:tabular-nums}.cdp th,.cdp td{padding:2px 7px;border-bottom:1px solid var(--bd);text-align:right;white-space:nowrap}.cdp th{position:sticky;top:0;background:var(--card);color:var(--mu);font-weight:600;z-index:1}.cdp td:first-child,.cdp th:first-child{text-align:left}.cdp td.ng{color:var(--ng);font-weight:600}.cdp .sub{padding:3px 7px}
+.cdp table.tg th,.cdp table.tg td,.stt.tg th,.stt.tg td{padding:2px 4px}
+.lotb{margin-left:6px;padding:0 6px;border:1px solid var(--bd);background:var(--card);color:var(--ac);border-radius:6px;cursor:pointer;font-size:11px;line-height:16px;font-family:inherit}.lotb:hover{background:var(--ac);color:#fff}
+.lotpop{position:fixed;z-index:60;background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:6px;box-shadow:0 6px 24px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:4px;min-width:210px}.lotpop button{font:inherit;text-align:left;padding:4px 8px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:inherit;cursor:pointer}.lotpop button:hover{border-color:var(--ac)}
+.lotbt{font:inherit;font-size:12px;padding:3px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--ac);cursor:pointer}.lotbt.on,.lotbt:hover{background:var(--ac);color:#fff}.lotg{background:var(--ac)!important;color:#fff!important}
+.tkg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}.tkc{display:flex;flex-direction:column;min-width:0}.tjt{margin-top:8px;font-weight:600}#tj{max-height:none;overflow:visible}
+.stb{font:inherit;font-size:11px;padding:2px 8px;border:1px solid var(--bd);background:var(--card);color:var(--ac);border-radius:6px;cursor:pointer;white-space:nowrap}.stb.on{background:var(--ac);color:#fff}.th .stb{margin-left:auto}
+.stp{margin-top:8px;overflow-x:auto;width:fit-content;max-width:100%}.stt{border-collapse:collapse;width:auto;font-size:12px;font-variant-numeric:tabular-nums}.stt th,.stt td{padding:3px 8px;border-bottom:1px solid var(--bd);text-align:right;white-space:nowrap}.stt th{cursor:pointer;color:var(--mu);font-weight:600;user-select:none}.stt th:hover{color:var(--ac)}.stt td:first-child,.stt th:first-child{text-align:left}.stt tr.ngr td{color:var(--ng);font-weight:600}.stt tr.wr td.cp{color:var(--wn);font-weight:600}
+.ngs td:nth-child(-n+4),.ngs tr.h2 th:nth-child(-n+4){position:sticky;z-index:2;overflow:hidden;text-overflow:ellipsis}
+.ngs tr.h2 th:nth-child(-n+4),.ngs tr.h1 th:first-child{z-index:5}
+.ngs tr.h1 th:first-child{left:0}
+.ngs td:nth-child(1),.ngs tr.h2 th:nth-child(1){left:0;min-width:210px;max-width:210px}
+.ngs td:nth-child(2),.ngs tr.h2 th:nth-child(2){left:210px;min-width:60px;max-width:60px}
+.ngs td:nth-child(3),.ngs tr.h2 th:nth-child(3){left:270px;min-width:60px;max-width:60px}
+.ngs td:nth-child(4),.ngs tr.h2 th:nth-child(4){left:330px;min-width:72px;max-width:72px;text-align:center;font-weight:700}
+.ngs td:nth-child(4){box-shadow:2px 0 0 var(--bd)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .ngs th.ngh,:root:not([data-theme="light"]) .ngs td.ngc{background:#5a2a2e;color:#ffb4ab}}
+@media(max-width:1100px){.mpx{grid-template-columns:1fr}.ngm{order:-1}.ngs{max-height:70vh}}
+.dtb .pdc{color:var(--mu);white-space:nowrap}
+.bt button .sub{margin-left:3px}.bt button.ck:disabled{opacity:.45;cursor:default}
+.bt button.on .sub{color:inherit;opacity:.85}
+/* V4_5: hàng nút lọc gọn, nằm trên 1 dòng */
+#fb{gap:4px 6px;padding:6px 10px}
+#fb button{padding:3px 6px;font-size:12px;line-height:1.35}
+#fb .seg select{font-size:12px;max-width:none;appearance:none;-webkit-appearance:none;padding:0 6px;text-align:center;cursor:pointer}
+#fb .vs{height:22px;margin:0 -1px}
+#fb .bt,#fb .lg,#fb .seg{flex-wrap:nowrap}
+@media(min-width:1366px){#fb{justify-content:space-between}}
+</style></head><body>
+<main>
+<div class="top"><div><h1 data-t="Báo cáo chất lượng V710|V710 품질 리포트"></h1><div class="sub" id="rng"></div><div class="sub" id="lsu"></div></div><div class="tb"><button id="bscan" class="ibn" title="Quét dữ liệu / 데이터 스캔" aria-label="Quét dữ liệu" data-t="⟳|⟳"></button><button id="bup" class="ibn" title="Lưu: tải xuống bản dữ liệu hiện tại để gửi máy khác / 현재 데이터 저장(다운로드)" aria-label="Lưu dữ liệu" data-t="💾|💾"></button><button id="gup" data-t="⚙ Cập nhật|⚙ 업데이트"></button><div class="lg" id="lg"><button data-l="vi">Tiếng Việt</button><button data-l="ko">한국어</button></div></div></div>
+<div class="kp" id="kp"></div>
+<div class="kp2" id="kp2"></div>
+<div class="fb" id="fb"></div>
+<div id="ov">
+<div class="lay">
+<div class="lc">
+<div class="g2 w2 ra">
+<div class="card"><div class="ch"><h2 data-t="Bảng theo máy · tỷ lệ lỗi|설비별 표 · 불량률"></h2><details class="nt"><summary data-t="ⓘ|ⓘ" title="Ghi chú / 메모"></summary><div class="pp"><div class="sub" data-t="Thanh đỏ: máy lỗi cao nhất · số trong ngoặc: số mẫu · bấm vào dòng của máy để xem xu hướng chi tiết|빨강: 최고 불량 설비 · 괄호: 샘플 수 · 설비 행을 누르면 상세 추이"></div></div></details></div><div class="sc" id="tm"></div><button id="tmx" class="xb" hidden></button></div>
+<div class="card rc"><div class="in"><div class="ch"><h2 data-t="Tổng hợp NG theo hạng mục|항목별 NG 요약"></h2><details class="nt" id="dkh" hidden><summary data-t="ⓘ|ⓘ" title="Ghi chú · cách tính / 메모 · 계산 방법"></summary><div class="pp"><div class="sub" id="dks"></div><div class="sub" id="dkc" style="line-height:1.6;margin-top:4px"></div></div></details></div><div class="sc" id="dk"></div><button id="dkx" hidden style="margin-top:8px;align-self:center"></button></div></div>
+</div>
+<div class="g2 m3">
+<div class="card"><div class="ch"><h2 data-t="Tỷ lệ lỗi theo ngày|일자별 불량률"></h2><details class="nt"><summary data-t="ⓘ|ⓘ" title="Ghi chú / 메모"></summary><div class="pp"><div class="sub" id="c3s"></div></div></details></div><div class="cv t"><canvas id="c3"></canvas><button class="cdb" data-cd="c3" type="button" data-t="📊 Dữ liệu|📊 데이터" title="Xem dữ liệu tạo nên biểu đồ"></button></div></div>
+<div class="card"><h2 data-t="Bảng theo ngày|일자별 표"></h2><div class="sc" id="td"></div><button id="tdx" hidden style="margin-top:8px;align-self:center"></button></div>
+<div class="card"><div class="ch"><h2 data-t="NG theo số khuôn|금형별 NG"></h2><details class="nt"><summary data-t="ⓘ|ⓘ" title="Ghi chú / 메모"></summary><div class="pp"><div class="sub" id="mks"></div></div></details></div><div class="tkg"><div class="tkc"><div class="sc" id="tk"></div><button id="tkx" class="xb" hidden></button></div><div class="tkc"><div class="sub tjt" data-t="Tỷ lệ NG theo JIG cũ / JIG mới|JIG 구/신 불량률"></div><div class="sc" id="tj"></div></div></div></div>
+</div>
+</div>
+</div>
+<div id="top3"></div>
+</div>
+<div id="mp" style="display:none"></div>
+<div class="card" id="upc" style="margin-bottom:12px"><div class="uph"><h2 data-t="Cập nhật dữ liệu|데이터 업데이트"></h2><button id="upcc" class="ib">▾</button><div class="sub" id="fdt"></div><div class="sub" id="fst"></div></div>
+<div id="upb">
+<div class="sub" data-t="Chọn thư mục chung chứa file Excel (có sheet “ Auto Data”) hoặc file CSV (dữ liệu dùng làm sheet “Auto Data”). Trang tự quét tối đa 4 cấp thư mục con (file sửa trong 30 ngày), tự quét lại khi mở trang và mỗi 5 phút (Chrome/Edge).|“ Auto Data” 시트가 있는 엑셀 파일 또는 CSV 파일(Auto Data 시트용 데이터)이 들어 있는 공유 폴더를 선택하세요. 하위 폴더 최대 4단계(최근 30일 수정 파일)를 자동으로 스캔하며, 페이지를 열 때와 5분마다 다시 스캔합니다(Chrome/Edge)."></div>
+<div class="ur"><span class="sub" data-t="Link / đường dẫn thư mục chung|공유 폴더 링크/경로"></span><input type="text" id="lk"><button id="lko" data-t="Mở link|링크 열기"></button><button id="lkc" data-t="Sao chép|복사"></button></div>
+<div class="ur"><button id="fpick" class="on" data-t="Chọn thư mục (4 cấp)|폴더 선택(4단계)"></button><button id="fscan" data-t="Quét file mới / Kết nối lại|새 파일 스캔 / 다시 연결"></button><button id="fall" data-t="Quét lại toàn bộ|전체 다시 스캔"></button><button id="fdrop" data-t="Bỏ kết nối|연결 해제"></button><button id="ffile" data-t="Chọn file|파일 선택"></button><button id="fclr" data-t="Xóa dữ liệu đã nạp|업로드 데이터 삭제"></button>
+<input type="file" id="ff" multiple accept=".xlsx,.xlsm,.xls,.csv" hidden><input type="file" id="fd" webkitdirectory multiple hidden></div>
+<div class="ur"><span class="sub" data-t="Tự động quét (khi mở trang và theo chu kỳ)|자동 스캔(열 때 및 주기적으로)"></span><select id="fiv"><option value="1">1 phút</option><option value="5">5 phút</option><option value="15">15 phút</option><option value="0">Tắt / 끔</option></select><span class="sub" id="fnote"></span></div>
+<div class="sub" id="flog" style="margin-top:4px;line-height:1.7"></div></div></div>
+<div class="card"><details><summary data-t="Cấu hình máy: khuôn, ghi chú JIG|설비 설정: 금형, JIG 메모"></summary>
+<div class="sub" data-t="Khuôn lấy từ tên file (vd …Night-V08-1-2T_28-10… hoặc 2026-10-30_Measuring-Data(DAY-V08-1-2t-29-10-huong_Front---User1): DAY/Night = ca, V08 = khuôn, 1-2T = máy, chữ T = JIG mới, 29-10 = ngày sản xuất; ngày ở đầu tên file = ngày đo); không có thì ghi “Chưa ghi”. Máy có chữ T ở cuối hoặc ghi chú có chữ JIG → JIG NEW, còn lại JIG OLD. Lưu trên trình duyệt này.|금형은 파일명에서 읽음(예: …Night-V08-1-2T_28-10… 또는 2026-10-30_Measuring-Data(DAY-V08-1-2t-29-10-huong_Front---User1): DAY/Night = 근무조, V08 = 금형, 1-2T = 설비, T = 신규 JIG, 29-10 = 생산일; 파일명 앞의 날짜 = 측정일). 없으면 “미기재”. 설비명이 T로 끝나거나 메모에 JIG가 있으면 JIG NEW, 나머지는 JIG OLD. 이 브라우저에 저장됩니다."></div>
+<div class="sc cf" id="cf"></div><button id="rs" style="margin-top:8px" data-t="Về mặc định|초기화"></button></details></div>
+<div class="card" style="margin-top:8px;padding:8px 16px"><div class="uph"><h2 data-t="Ghi chú|메모"></h2><button id="ncc" class="ib">▾</button></div><div class="sub" id="note" style="margin-top:6px"></div></div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+<script>
+const RAW=[],DIMS=[[["Độ phẳng  D","KT17-2",0,0.1,0],["Z-Circle4","KT 6-1.2",-1.05,-0.95,-1],["ØCircle4","KT 7-1",10.13,10.23,10.2],["Z-Circle7","KT 6-2.2",-1.05,-0.95,-1],["ØCircle7","KT7-2",10.13,10.23,10.2],["ØDATUM -C-","KT8-1",10.95,11.05,11],["X-P13","KT13.1",80.9,81.1,81],["X-P14","KT13.2",80.9,81.1,81],["X-P15","KT13.3",80.9,81.1,81],["X-P16","KT13.4",80.9,81.1,81],["X-P8","KT 11.1",-37.77,-37.53,-37.65],["X-P9","KT 11.2",-37.77,-37.53,-37.65],["X-P10","KT 11.3",-37.77,-37.53,-37.65],["X-P20","KT19.1",78.83,79.07,78.95],["X-P19","KT19.2",78.83,79.07,78.95],["X-P18","KT19.3",78.83,79.07,78.95],["X-P17","KT19.4",78.83,79.07,78.95],["X-P27","KT 18.1",-35.56,-35.44,-35.5],["X-P28","KT 18.2",-35.56,-35.44,-35.5],["X-P29","KT 18.3",-35.56,-35.44,-35.5],["X-P30","KT 18.4",-35.56,-35.44,-35.5],["X-K1","KT12.1",-6.06,-5.94,-6],["X-K2","KT12.2",-6.06,-5.94,-6],["X-K3","KT12.3",-6.06,-5.94,-6],["X-K4","KT12.4",-6.06,-5.94,-6],["X-K5","KT12.5",-6.06,-5.94,-6],["Z-G3","KT5.3",-9.12,-8.88,-9],["Y-W1","KT3.1",-90.06,-89.94,-90],["Y-W3","KT3.2",-90.06,-89.94,-90],["Y-W5","KT3.3",-90.06,-89.94,-90],["Y-W7","KT3.4",-90.06,-89.94,-90],["Y-W2","KT4.1",270.94,271.06,271],["Y-P32","KT 23.2",267.84,267.96,267.9],["Y-P33","KT 24.1",267.74,267.86,267.8],["Y-P34","KT 24.2",267.74,267.86,267.8],["Y-P25","KT 21.1",-86.96,-86.84,-86.9],["Y-P24","KT 21.2",-86.96,-86.84,-86.9],["Y-P23","KT 22.1",-86.86,-86.74,-86.8],["Y-P22","KT 22.2",-86.86,-86.74,-86.8],["Z-D1","KT 17-1.1",-19.61,-19.39,-19.5],["Z-D2","KT 17-1.2",-19.61,-19.39,-19.5],["Z-D3","KT 17-1.3",-19.61,-19.39,-19.5],["Z-D4","KT 17-1.4",-19.61,-19.39,-19.5],["Z-D5","KT 17-1.5",-19.61,-19.39,-19.5],["Z-D6","KT 17-1.6",-19.61,-19.39,-19.5],["Z-D7","KT 17-1.7",-19.61,-19.39,-19.5],["Z-D8","KT 17-1.8",-19.61,-19.39,-19.5],["Z--H1_Z","KT14.1",2.45,2.75,2.6],["Z--H2_Z","KT14.2",2.45,2.75,2.6],["Z--H3_Z","KT14.3",2.45,2.75,2.6],["Z--H4_Z","KT14.4",2.45,2.75,2.6],["Z--H5_Z","KT14.5",2.45,2.75,2.6],["Z--H6_Z","KT14.6",2.45,2.75,2.6],["Z--H7_Z","KT14.7",2.45,2.75,2.6],["Z--H8_Z","KT14.8",2.45,2.75,2.6],["Z--H9_Z","KT14.9",2.45,2.75,2.6],["Z--H10_Z","KT14.10",2.45,2.75,2.6],["Z--E1_Z","KT16.1",3.84,3.96,3.9],["Z--E2_Z","KT16.2",3.84,3.96,3.9],["Z--E3_Z","KT16.3",3.84,3.96,3.9],["Z--E4_Z","KT16.4",3.84,3.96,3.9],["Z--E5_Z","KT16.5",3.84,3.96,3.9],["Z--F1_Z","KT20.1",4.34,4.46,4.4],["Z--F2_Z","KT20.2",4.34,4.46,4.4],["Z--F3_Z","KT20.3",4.34,4.46,4.4],["Z--F4_Z","KT20.4",4.34,4.46,4.4],["Z--F5_Z","KT20.5",4.34,4.46,4.4],["H-A","",0,0.5,0],["Flatness-H","",0,0.5,0],["3","",0,0.2,0],["11","",0,0.3,0],["12","",0,0.2,0],["13","",0,0.3,0],["14","",0,0.4,0],["Z E-1","",3.8,4,3.9],["17-1","",0,0.3,0],["17-2","",0,0.15,0],["18","",0,0.2,0],["19","",0,0.3,0],["Z F-3","",-4.5,-4.3,-4.4],["26-1_Z","",5.2,5.6,5.4],["26-2_Z","",5.2,5.6,5.4],["26-4_Z","",5.2,5.6,5.4],["28-1_Y","",55.9,56.1,56],["28-2_Y","",55.9,56.1,56],["29-1_X","",28.9,29.1,29],["29-2_X","",28.9,29.1,29],["30-1","Z1",0,0.25,0],["30-2","Z2",0,0.25,0],["30-3","Z3",0,0.25,0],["30-4","Z4",0,0.25,0],["30-1","Z1",-13.07,-12.83,-12.95],["30-2","Z2",-13.07,-12.83,-12.95],["30-3","Z3",-13.07,-12.83,-12.95],["30-4","Z4",-13.07,-12.83,-12.95]],[["Dài DATUM -C-","",9.54,9.66,9.6],["Rộng DATUM -C-","KT10-1",6.51,6.55,6.52],["Độ phẳng  D","KT18-2",0,0.12,0],["Z-CirCle 4","KT7-1",-0.05,0.05,0],["ØCirCle 4","KT6-1",10.13,10.23,10.2],["Z-Circle 6","KT7-2",-0.05,0.05,0],["ØCircle 6","KT6-2",10.13,10.23,10.2],["X-P13","KT14.1",80.9,81.1,81],["X-P14","KT14.2",80.9,81.1,81],["X-P15","KT14.3",80.9,81.1,81],["X-P16","KT14.4",80.9,81.1,81],["X-P11","KT12.4",-37.77,-37.53,-37.65],["X-P20","KT20.1",78.83,79.07,78.95],["X-P19","KT20.2",78.83,79.07,78.95],["X-P18","KT20.3",78.83,79.07,78.95],["X-P17","KT20.4",78.83,79.07,78.95],["X-P27","KT19.1",-35.56,-35.44,-35.5],["X-P28","KT19.2",-35.56,-35.44,-35.5],["X-P29","KT19.3",-35.56,-35.44,-35.5],["X-P30","KT19.4",-35.56,-35.44,-35.5],["X-K1","KT13.1",-6.06,-5.94,-6],["X-K2","KT13.2",-6.06,-5.94,-6],["X-K3","KT13.3",-6.06,-5.94,-6],["X-K4","KT13.4",-6.06,-5.94,-6],["X-K5","KT13.5",-6.06,-5.94,-6],["Y-W1","KT3.1",-247.06,-246.94,-247],["Y-W3","KT3.2",-247.06,-246.94,-247],["Y-W5","KT3.3",-247.06,-246.94,-247],["Y-W7","KT3.4",-247.06,-246.94,-247],["Y-P25","KT22.1",-243.96,-243.84,-243.9],["Y-P24","KT22.2",-243.96,-243.84,-243.9],["Y-P23","KT23.1",-243.86,-243.74,-243.8],["Y-P22","KT23.2",-243.86,-243.74,-243.8],["Y-P31","KT24.1",110.84,110.96,110.9],["Y-P32","KT24.2",110.84,110.96,110.9],["Y-P33","KT25.1",110.74,110.86,110.8],["Y-P34","KT25.2",110.74,110.86,110.8],["Z-J1","KT1.1",9.88,10.12,10],["Z-J5","KT1.5",9.88,10.12,10],["Z-G1","KT5.1",-8.12,-7.88,-8],["Z-D1","KT18-1.1",-18.61,-18.39,-18.5],["Z-D2","KT18-1.2",-18.61,-18.39,-18.5],["Z-D3","KT18-1.3",-18.61,-18.39,-18.5],["Z-D4","KT18-1.4",-18.61,-18.39,-18.5],["Z-D5","KT18-1.5",-18.61,-18.39,-18.5],["Z-D6","KT18-1.6",-18.61,-18.39,-18.5],["Z-D7","KT18-1.7",-18.61,-18.39,-18.5],["Z-D8","KT18-1.8",-18.61,-18.39,-18.5],["Z--H1_Z","KT15.1",2.45,2.75,2.6],["Z--H2_Z","KT15.2",2.45,2.75,2.6],["Z--H3_Z","KT15.3",2.45,2.75,2.6],["Z--H4_Z","KT15.4",2.45,2.75,2.6],["Z--H5_Z","KT15.5",2.45,2.75,2.6],["Z--H6_Z","KT15.6",2.45,2.75,2.6],["Z--H7_Z","KT15.7",2.45,2.75,2.6],["Z--H8_Z","KT15.8",2.45,2.75,2.6],["Z--H9_Z","KT15.9",2.45,2.75,2.6],["Z--H10_Z","KT15.10",2.45,2.75,2.6],["Z--E1_Z","KT17.1",3.84,3.96,3.9],["Z--E2_Z","KT17.2",3.84,3.96,3.9],["Z--E3_Z","KT17.3",3.84,3.96,3.9],["Z--E4_Z","KT17.4",3.84,3.96,3.9],["Z--E5_Z","KT17.5",3.84,3.96,3.9],["Z--F1_Z","KT21.1",4.34,4.46,4.4],["Z--F2_Z","KT21.2",4.34,4.46,4.4],["Z--F3_Z","KT21.3",4.34,4.46,4.4],["Z--F4_Z","KT21.4",4.34,4.46,4.4],["Z--F5_Z","KT21.5",4.34,4.46,4.4],["Perpendicularity-H-A","KT11.95",-0.12,0.12,0],["Flatness-H","KT11.95",-0.12,0.12,0],["1","KT11.95",-0.12,0.12,0],["5","KT0.3",0,0.3,0],["11-2","",0,0.07,0],["14","",0,0.3,0],["Z E-2","",3.8,4,3.9],["Z E-3","",3.8,4,3.9],["Z E-4","",3.8,4,3.9],["18-1","",0,0.3,0],["18-2","",0,0.15,0],["19","",0,0.2,0],["Z F-1","",-4.5,-4.3,-4.4],["Z F-2","",-4.5,-4.3,-4.4],["Z F-3","",-4.5,-4.3,-4.4],["Z F-4","",-4.5,-4.3,-4.4],["Z F-5","",-4.5,-4.3,-4.4],["29-1","",0,0.25,0],["29-4","",0,0.25,0],["29-1","KT11.95",-12.07,-11.83,-11.95],["29-4","KT11.95",-12.07,-11.83,-11.95]],[["Profile J1~J5 [9] 0.3","",0,0.27,0.135],["Profile L1~L2 [7] 0.3","",0,0.265,0.1325],["Profile W1_W3_W5_W7 [90] 0.2","",0,0.18,0.09],["Profile W2_W4_W6_W8 [271] 0.2","",0,0.165,0.0825],["Profile G1~G3 [9] 0.3","",0,0.27,0.135],["D10.2 [CIR-5]","",10.115,10.285,10.2],["D10.2 True Position [CIR-5]","",0,0.175,0.0875],["D10.2 [CIR-6]","",10.115,10.285,10.2],["D10.2 True Position [CIR-6]","",0,0.18,0.09],["Datum-C- D11","",10.91,11.1,11.005],["Datum-C- True Position","",0,0.185,0.0925],["D11 Hole [CIR-4]","",10.915,11.085,11.0],["D11 Hole True Position [CIR-4]","",0,0.18,0.09],["Datum-B- D8.5","",8.4,8.585,8.4925],["Profile P8~P11 [37.5] 0.3 U 0.3","",0,0.275,0.1375],["Profile K1~K6 [6] 0.2","",0,0.185,0.0925],["Profile P12~P15 [81] 0.3","",0,0.27,0.135],["Profile H1~H10 [2.5] 0.4 U 0.3","",0,0.37,0.185],["Datum-A- Flatness","",0,0.09,0.045],["Profile E1~E5 [3.9] 0.2","",0,0.17,0.085],["Profile D1~D8 [19.5] 0.3","",0,0.245,0.1225],["Datum-D- Flatness","",0,0.125,0.0625],["Profile P31~P34 [35.4] 0.2 U 0.2","",0,0.175,0.0875],["Profile P17~P20 [79] 0.3 U 0.1","",0,0.275,0.1375],["Profile F1~F5 [4.4] 0.2","",0,0.17,0.085],["Profile P27~P28 [86.9] 0.2","",0,0.165,0.0825],["Profile P29~P30 [86.8] 0.2","",0,0.165,0.0825],["Profile P22~P23 [267.9] 0.2","",0,0.15,0.075],["Profile P24~P25 [267.8] 0.2","",0,0.15,0.075],["Distance 4X 361 [W1-W2]","",360.72,361.28,361.0],["Distance 4X 361 [W3-W4]","",360.715,361.285,361.0],["Distance 4X 361 [W5-W6]","",360.72,361.28,361.0],["Distance 4X 361 [W7-W8]","",360.715,361.285,361.0],["Distance 5.4 [M1-M5]","",5.21,5.59,5.4],["Distance 5.4 [M2-M5]","",5.21,5.59,5.4],["Distance 5.4 [M4-M6]","",5.21,5.59,5.4]]];
+const $=id=>document.getElementById(id),css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const dm=d=>d.slice(8)+'/'+d.slice(5,7),pc=v=>v==null?'–':v.toFixed(1)+'%',uniq=a=>[...new Set(a)];
+let DT='m';try{if(!localStorage.getItem('v710dt2')){localStorage.setItem('v710dt2','1');localStorage.setItem('v710dt','m')}DT=localStorage.getItem('v710dt')=='p'?'p':'m'}catch(e){}
+let LANG='vi';try{LANG=localStorage.getItem('v710lang')||'vi'}catch(e){}
+const T=(vi,ko)=>LANG=='ko'?ko:vi;
+const mcNm=v=>String(v==null?'':v).toUpperCase().replace(/^([1-8])(?:-[1-8])?(T?)$/,'$1$2');
+let CKM=0;
+const mkR=r=>{const cn=r[12]?String(r[12]).replace(/\D/g,''):'',pf=r[0]?'R ':'F ',mc0=mcNm(r[3]),mcc=cn?mcNm(cn):'';const o={p:r[0]?'Rear':'Front',pd:r[1],md:r[10]||r[1],ca:r[2]?'Đêm':'Ngày',ok:r[4],s:r[5],v:r[6],t:r[7]||'',mold:r[8]||'',pt:r[9]||null,hp:r[11]!=null?!!r[11]:(!!r[10]&&r[10]!==r[1]),ck:r[12]||''};Object.defineProperty(o,'d',{get:()=>DT=='m'?o.md:o.pd,enumerable:true});Object.defineProperty(o,'mc',{get:()=>CKM&&mcc?mcc:mc0,enumerable:true});Object.defineProperty(o,'k',{get:()=>pf+(CKM&&mcc?mcc:mc0),enumerable:true});Object.defineProperty(o,'kh',{get:()=>(CFG[o.k]&&CFG[o.k].kh)||o.mold||''});Object.defineProperty(o,'jg',{get:()=>jigOf(o.k)});Object.defineProperty(o,'dk0',{value:pf+mc0+'|'+o.t});return o},R=RAW.map(mkR),SRC=['Front','Rear','Front · Auto'],BASE=DIMS.length;
+const srt=()=>R.sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:a.t<b.t?-1:a.t>b.t?1:0);
+const wkC={};const wkOf=d=>wkC[d]||(wkC[d]=wkRaw(d));const wkRaw=d=>{const t=new Date(d+'T00:00:00Z');t.setUTCDate(t.getUTCDate()-((t.getUTCDay()+6)%7)+3);const y=t.getUTCFullYear(),j=new Date(Date.UTC(y,0,4));return y*100+(1+Math.round(((t-j)/864e5-3+((j.getUTCDay()+6)%7))/7))+''};
+let CFG={};try{CFG=JSON.parse(localStorage.getItem('v710cfg')||'{}')}catch(e){}/*CFG_END*/
+const saveCfg=()=>{try{localStorage.setItem('v710cfg',JSON.stringify(CFG))}catch(e){}};
+const khOf=k=>(CFG[k]&&CFG[k].kh)||'',khl=x=>x||T('Chưa ghi','미기재'),noteOf=k=>(CFG[k]&&CFG[k].nt)||'';
+let JC={};const jigOf=k=>JC[k]||(JC[k]=/t$/i.test(k)||/jig/i.test(noteOf(k))?'NEW':'OLD');
+let DL,WL,ML,YL;const LAT={d:'',w:'',m:'',y:''};
+function idx(){const o={...LAT},td=new Date().toISOString().slice(0,10);DL=uniq(R.map(r=>r.d)).sort().reverse();WL=uniq(R.map(r=>wkOf(r.d))).sort().reverse();ML=uniq(R.map(r=>r.d.slice(0,7))).sort().reverse();YL=uniq(R.map(r=>r.d.slice(0,4))).sort().reverse();if(!DL.length){DL=[td];WL=[wkOf(td)];ML=[td.slice(0,7)];YL=[td.slice(0,4)]}LAT.d=DL[0];LAT.w=WL[0];LAT.m=ML[0];LAT.y=YL[0];return o}
+idx();
+const st={pm:'m',pv:{...LAT},p:'',md:'',ca:'',kh:[],mc:[],jg:'',det:0,lot:null,ck:0},ch={};let ddOpen='';
+const inP=r=>st.pm=='d'?r.d===st.pv.d:st.pm=='w'?wkOf(r.d)===st.pv.w:st.pm=='y'?r.d.slice(0,4)===st.pv.y:r.d.slice(0,7)===st.pv.m;
+const fil=r=>inP(r)&&(!st.p||r.p===st.p)&&(!st.ca||r.ca===st.ca)&&(!st.kh.length||st.kh.includes(r.kh))&&(!st.mc.length||st.mc.includes(r.k))&&(!st.jg||r.jg===st.jg)&&(!st.ck||!!r.ck)&&(!st.lot||(r.pd===st.lot.k&&(!st.lot.md||r.md===st.lot.md)));
+const num=(a,b)=>a.localeCompare(b,0,{numeric:true});
+const optL={y:v=>T(v,v+'년'),d:v=>dm(v),w:v=>'W'+ +v.slice(4),m:v=>T('T'+ +v.slice(5)+'/'+v.slice(0,4),v.slice(0,4)+'년 '+ +v.slice(5)+'월')};
+const mcN=k=>(st.p?'':(k[0]=='F'?'Front ':'Rear '))+k.slice(2),idN=x=>x;
+const LST=id=>id=='kh'?uniq(R.map(r=>r.kh)).sort(num):uniq(R.filter(r=>(!st.p||r.p===st.p)&&(!st.ck||!!r.ck)).map(r=>r.k)).sort((a,b)=>a[0]==b[0]?num(a,b):a[0]<b[0]?-1:1);
+function dd(id,lab,unit,nm){const list=LST(id),sel=st[id],cn={};R.forEach(r=>{const k=id=='kh'?r.kh:r.k;cn[k]=(cn[k]||0)+1});
+const l=sel.length?(sel.length<3?sel.map(nm).join(', '):sel.length+unit):T('Tất cả','전체');
+return `<div class="dd"><button data-dd="${id}" class="${sel.length?'on':''}">${lab}: ${l} ▾</button><div class="pn ${ddOpen==id?'o':''}"><div class="ac"><button data-a="all" data-id="${id}">${T('Chọn hết','전체 선택')}</button><button data-a="none" data-id="${id}">${T('Bỏ chọn','선택 해제')}</button></div>${list.map(x=>`<label><input type="checkbox" data-id="${id}" data-v="${x}"${sel.includes(x)?' checked':''}>${nm(x)} <span class="sub">(${cn[x]})</span></label>`).join('')}</div></div>`}
+const num2=(a,b)=>num(a.slice(2),b.slice(2));
+function mrow(){if(!st.p&&!st.mc.length&&!st.ck)return'';const mm=R.filter(r=>inP(r)&&(!st.p||r.p===st.p)&&(!st.ck||!!r.ck)),bd={},ct={};mm.forEach(r=>{if(r.ck)(ct[r.k]=ct[r.k]||new Set()).add(r.ck)});mm.forEach(r=>{if(!r.ok)bd[r.k]=1});
+const gp=pt=>{if(st.p&&st.p!=pt)return'';const ks=uniq(mm.filter(r=>r.p==pt).map(r=>r.k)).sort(num2);return ks.length?`<div class="mg"><span>${pt}</span>${ks.map(k=>`<button data-mk="${k}"${ct[k]?` title="${[...ct[k]].join(', ')}"`:''} class="${st.mc.length==1&&st.mc[0]==k?'on':''}">${k.slice(2)}${bd[k]?'<i class="nd"></i>':''}</button>`).join('')}</div>`:''};
+return `<div class="mr"><span class="sub">${T('Máy','설비')}</span><button data-mk="" class="${st.mc.length?'':'on'}">${T('Tất cả máy','전체 설비')}</button>${gp('Front')}${gp('Rear')}<button data-det="1" class="ib${st.det?' on':''}" title="${T('Xem chi tiết máy đang chọn','선택한 설비 상세 보기')}"${st.mc.length==1?'':' disabled'}>→</button></div>`}
+function bar(){
+const seg=(k,lab,L)=>`<div class="seg ${st.pm==k?'on':''}"><button data-pm="${k}">${lab}</button><select data-pv="${k}">${L.map(v=>`<option value="${v}"${st.pv[k]==v?' selected':''}>${optL[k](v)}${v==LAT[k]?' ★':''}</option>`).join('')}</select></div>`;
+const tg=(k,o)=>`<div class="bt">${[['',T('Tất cả','전체')]].concat(o).map(([v,t])=>`<button data-k="${k}" data-v="${v}" class="${st[k]==v?'on':''}">${t}</button>`).join('')}</div>`;
+const dtb=`<div class="lg">${[['m',T('Ngày đo','측정일')],['p',T('Ngày SX','생산일')]].map(([v,t])=>`<button data-dt="${v}" class="${DT==v?'on':''}">${t}</button>`).join('')}</div><i class="vs"></i>`;
+const NCK=R.filter(r=>r.ck&&inP(r)).length,tgp=()=>`<div class="bt">${[['',T('Tất cả','전체')],['Front','Front'],['Rear','Rear']].map(([v,t])=>`<button data-k="p" data-v="${v}" class="${st.p==v?'on':''}">${t}</button>`).join('')}<button data-ck="1" class="ck${st.ck?' on':''}"${NCK||st.ck?'':' disabled'} title="${T('Xem dữ liệu kiểm tra (file có M7C, M5C… trong tên)','검사 데이터 보기(파일명에 M7C 등 포함)')}">Check${NCK?` <span class="sub">${NCK}</span>`:''}</button></div>`;
+$('fb').innerHTML=dtb+seg('d',T('Ngày','일'),DL)+seg('w',T('Tuần','주'),WL)+seg('m',T('Tháng','월'),ML)+seg('y',T('Năm','년'),YL)+'<i class="vs"></i>'+
+tgp()+tg('ca',[['Ngày',T('☀ Ngày','☀ 주간')],['Đêm',T('☾ Đêm','☾ 야간')]])+tg('jg',[['NEW','NEW'],['OLD','OLD']]).replace('class="bt"','class="bt" title="JIG"')+
+dd('kh',T('Khuôn','금형'),T(' khuôn',' 금형'),khl)+mrow()}
+$('fb').onclick=e=>{const b=e.target.closest('button');if(!b)return;
+if(b.dataset.ck){st.ck=st.ck?0:1;CKM=st.ck;st.mc=[];st.det=0;render();return}
+if(b.dataset.dt){if(DT!=b.dataset.dt){DT=b.dataset.dt;try{localStorage.setItem('v710dt',DT)}catch(x){}srt();idx();st.pv={...LAT};render()}return}
+if(b.dataset.det){if(st.mc.length==1){st.det=st.det?0:1;render();scrollTo(0,0)}return}
+if(b.dataset.dd){ddOpen=ddOpen==b.dataset.dd?'':b.dataset.dd;bar();return}
+if(b.dataset.a){st[b.dataset.id]=b.dataset.a=='all'?LST(b.dataset.id):[];render();return}
+if(b.dataset.pm){st.pm=b.dataset.pm;st.pv[st.pm]=LAT[st.pm];render();return}
+if('mk' in b.dataset){const k=b.dataset.mk,was=st.mc.length==1&&st.mc[0]==k;st.mc=k&&!was?[k]:[];if(!st.mc.length)st.det=0;render();return}
+const k=b.dataset.k;if(k){st[k]=b.dataset.v;if(k=='p'){st.mc=st.p?st.mc.filter(x=>(x[0]=='F')==(st.p=='Front')):[];if(!st.mc.length)st.det=0}render()}};
+$('fb').onchange=e=>{const t=e.target;if(t.dataset.pv){st.pm=t.dataset.pv;st.pv[st.pm]=t.value;render();return}
+if(t.dataset.id){const id=t.dataset.id,v=t.dataset.v;st[id]=t.checked?st[id].concat(v):st[id].filter(x=>x!=v);render()}};
+document.addEventListener('click',e=>{if(ddOpen&&!e.target.closest('.dd')){ddOpen='';bar()}});
+function applyLang(){document.documentElement.lang=LANG;document.querySelectorAll('[data-t]').forEach(e=>{e.textContent=e.dataset.t.split('|')[LANG=='ko'?1:0]});
+document.querySelectorAll('#lg button').forEach(b=>b.classList.toggle('on',b.dataset.l==LANG));document.title=T('Báo cáo chất lượng V710','V710 품질 리포트');
+$('lk').placeholder=T('https://… hoặc \\\\máy-chủ\\thư-mục\\4. V710','https://… 또는 \\\\서버\\폴더\\4. V710');updUi();tt();
+$('note').textContent=T('Nguồn: các file Excel nạp từ thư mục (chưa có dữ liệu mẫu sẵn). Dữ liệu đo mới nằm ở sheet “Data” (mỗi hàng 1 mẫu) và được nạp để tính toán; sheet “Auto Data” giữ nguyên làm nền (spec Max/Min). Máy đo có số 1–8 lấy theo ký tự trong tên file; file máy tự động đặt tên dạng …Rear_MÁY_TỰ_ĐỘNG_Máy_39_30_09_ lấy số máy (39) và ngày sản xuất (30/09) từ tên file, khuôn (V11) lấy từ tiêu đề sheet “Auto Data” (“Khuôn V11”). Mẫu NG = có ít nhất 1 kích thước ngoài spec. Máy/ngày dưới 5 mẫu hiển thị mờ, không tính vào “cao nhất”. Ca ngày 07:00–19:00. “Hiện tại” = ngày dữ liệu mới nhất. File nạp thêm cần có sheet “ Auto Data”. Tên file dạng …Night-V08-1-2T_28-10… hoặc 2026-10-30_Measuring-Data(DAY-V08-1-2t-29-10-huong_Front---User1) cho biết ca đo (Day/Night), khuôn (V08), máy (1-2), JIG mới (chữ T) và ngày sản xuất (28/10 hoặc 29-10). Ngày đo = ngày ghi ở đầu tên file (vd 2026-10-30_…); file không có ngày đo thì ngày đo = ngày sản xuất. Nút “Ngày đo / Ngày sản xuất” trên thanh lọc chọn cách xem theo ngày. Ngày đo lấy theo tên thư mục chứa file (dd.mm, vd 26.11) — ca đêm sang sáng hôm sau vẫn thuộc thư mục ngày bắt đầu ca; ca Day/Night lấy theo tên file. Nếu file không nằm trong thư mục ngày thì dự phòng: file Night lưu trước 19:00 tính lùi 1 ngày. Ngày sản xuất do người dùng ghi trong tên (vd 25-11) giữ nguyên. Dữ liệu check: tên file có “C” sau số máy (vd 7C, M7C) hoặc chữ “check” → vẫn tính vào dữ liệu thường (theo số máy marking) và có thêm nút Check để xem riêng theo số máy cạnh chữ C (nếu không có số thì theo số máy marking trong tên file).','출처: 폴더에서 불러온 엑셀 파일(내장 샘플 데이터 없음). 새 측정 데이터는 “Data” 시트(1행=1샘플)에서 읽어 계산하며, “Auto Data” 시트는 기준(스펙 Max/Min)으로 그대로 유지합니다. 측정 설비 번호는 1~8이며 파일명에서 읽고, 자동기 파일(…Rear_MÁY_TỰ_ĐỘNG_Máy_39_30_09_)은 파일명에서 설비 번호(39)와 생산일(30/09)을, “Auto Data” 시트 제목(“Khuôn V11”)에서 금형(V11)을 읽습니다. NG = 규격을 벗어난 치수가 1개 이상인 샘플. 5개 미만 설비/일자는 흐리게 표시하며 “최고” 집계에서 제외. 주간 07:00–19:00. “현재” = 최신 데이터 일자. 추가 파일에는 “ Auto Data” 시트가 필요합니다. 파일명 …Night-V08-1-2T_28-10… 또는 2026-10-30_Measuring-Data(DAY-V08-1-2t-29-10-huong_Front---User1) 은 측정 근무조(Day/Night), 금형(V08), 설비(1-2), 신규 JIG(T), 생산일(28/10, 29-10)을 나타냅니다. 측정일 = 파일명 앞의 날짜(예: 2026-10-30_…)이며, 측정일이 없으면 측정일 = 생산일입니다. 필터 바의 “측정일 / 생산일” 버튼으로 일자 기준을 선택합니다. 측정일은 파일이 들어 있는 폴더명(dd.mm, 예: 26.11) 기준이며, 근무조(Day/Night)는 파일명 기준입니다. 날짜 폴더가 없으면 예비 규칙: 19:00 이전에 저장된 Night 파일은 하루 앞당깁니다. 파일명에 적은 생산일(예: 25-11)은 그대로 유지합니다. 검사(Check) 데이터: 설비 번호 뒤에 C(예: 7C, M7C) 또는 “check”가 있으면 일반 데이터에도 포함(마킹 설비 기준)되며 Check 버튼에서 따로 C 옆 번호(없으면 파일명의 마킹 설비 번호) 기준입니다.')}
+$('lg').onclick=e=>{const b=e.target.closest('button');if(!b)return;LANG=b.dataset.l;try{localStorage.setItem('v710lang',LANG)}catch(x){}applyLang();render();cfgTab();if(typeof clUi=='function'&&$('clw'))clUi()};
+function mk(id,cfg){ch[id]&&ch[id].destroy();Chart.defaults.animation=false;Chart.defaults.font.size=12;Chart.defaults.color=css('--mu');Chart.defaults.borderColor=css('--bd');ch[id]=new Chart($(id),cfg)}
+const agg=(rows,f)=>{const m={};rows.forEach(r=>{const k=f(r),o=m[k]=m[k]||{k,n:0,ok:0};o.n++;o.ok+=r.ok});return Object.values(m).map(o=>({...o,ng:o.n-o.ok,y:100*o.ok/o.n,e:100*(o.n-o.ok)/o.n}))};
+const MIN=5;const fC=x=>x.toLocaleString('en-US');function clrCh(p){Object.keys(ch).filter(k=>k.indexOf(p)==0).forEach(k=>{try{ch[k].destroy()}catch(e){}delete ch[k]})}
+let RQ=0,RT=0;const later=f=>{const t=RT;setTimeout(()=>{if(t===RT)try{f()}catch(e){console.error(e)}},0)};
+function render(){if(RQ)return;RQ=1;const q=()=>{if(RQ){RQ=0;doRender()}};requestAnimationFrame(q);setTimeout(q,120)}
+function doRender(){RT++;JC={};
+if(st.mc.length!=1)st.det=0;if(!st.det)st.lot=null;
+bar();const V=R.filter(r=>fil(r)),n=V.length,ok=V.filter(r=>r.ok).length,ng=n-ok,avg=n?100*ng/n:0;
+const M=agg(V,r=>r.k).map(o=>({...o,mc:o.k.slice(2),pt:o.k[0]=='F'?'Front':'Rear'})).sort((a,b)=>(a.n<MIN)-(b.n<MIN)||b.e-a.e||b.n-a.n);
+const Dd=agg(V,r=>r.d).sort((a,b)=>a.k<b.k?-1:1);
+const wm=M.filter(m=>m.n>=MIN),mx=wm[0],dx=Dd.filter(d=>d.n>=MIN).sort((a,b)=>b.e-a.e)[0];
+const ds=V.map(r=>r.d).sort();const pl={d:T('Ngày','일')+' '+dm(st.pv.d),w:T('Tuần','주')+' '+optL.w(st.pv.w),m:T('Tháng','월')+' '+optL.m(st.pv.m),y:T('Năm','년')+' '+optL.y(st.pv.y)}[st.pm];$('rng').textContent=n?T('Đang xem: ','보기: ')+pl+' · '+dm(ds[0])+' – '+dm(ds[n-1])+' · '+uniq(ds).length+T(' ngày','일'):'';
+const fmt=x=>x.toLocaleString('vi-VN'),bk=(cls,l,v,sb,x)=>`<div class="k ${cls}"><div class="l">${l}</div><b${x?' class="'+x+'"':''}>${v}</b><div class="s">${sb}</div></div>`,none=T('Không có dữ liệu cho lựa chọn này','선택한 조건에 데이터가 없습니다'),need=T('cần ≥'+MIN+' mẫu',MIN+'개 이상 필요');
+$('kp').innerHTML=n?[
+bk('',T('Tổng mẫu','총 샘플 수'),fmt(n),T(M.length+' máy',' 설비 '+M.length+'대')),
+bk('',T('Số lượng OK','OK 수량'),fmt(ok),T('chiếm ','비율 ')+pc(100-avg),'ok'),
+bk('',T('Số lượng NG','NG 수량'),fmt(ng),T('chiếm ','비율 ')+pc(avg),'ng'),
+bk('big',T('Hiệu suất','효율(양품률)'),(100-avg).toFixed(1)+'<small>%</small>',T('OK / Tổng mẫu','OK / 총 샘플'),'ok'),
+bk('big',T('Tỷ lệ lỗi','불량률'),avg.toFixed(1)+'<small>%</small>',T('NG / Tổng mẫu','NG / 총 샘플'),'ng')].join(''):`<div class="k" style="grid-column:1/-1">${none}</div>`;
+$('kp2').innerHTML=n?[
+bk('',T('Máy có lỗi','불량 발생 설비'),M.filter(m=>m.ng).length+'<small>/'+M.length+'</small>',T('máy có ≥1 mẫu NG','NG 1건 이상')),
+bk('',T('Máy lỗi cao nhất','최고 불량 설비'),mx?mx.mc:'–',mx?(st.p?'':mx.pt+' · ')+pc(mx.e)+' ('+mx.ng+'/'+mx.n+')':need,'ng'),
+bk('',T('Ngày lỗi cao nhất','최고 불량 일자'),dx?dm(dx.k):'–',dx?pc(dx.e)+' ('+dx.ng+'/'+dx.n+')':need,'ng')].join(''):'';
+const mv=st.det&&st.mc.length==1;document.body.classList.toggle('ngw',!!(mv&&st.ngm));$('ov').style.display=mv?'none':'';$('mp').style.display=mv?'':'none';$('kp2').style.display=mv?'none':'';
+if(mv){mpage(V,st.mc[0]);updUi();return}
+clrCh('mt');$('mp').innerHTML='';
+/* --- tỷ lệ lỗi theo máy (thanh ngang) --- */
+const Mo=M.slice().sort((a,b)=>a.k[0]==b.k[0]?num2(a.k,b.k):a.k[0]<b.k[0]?-1:1),top=M.find(m=>m.n>=MIN),maxE=Math.max(0.1,...M.map(m=>m.e));
+/* --- sản lượng theo khuôn --- */
+const Kh=agg(V,r=>/\d/.test(r.kh)?r.kh:'').sort((a,b)=>!a.k-!b.k||num(a.k,b.k));
+$('mks').textContent=pl+' · '+T('Dòng không ghi khuôn là “Chưa ghi”','금형 미기재 행은 “미기재”');
+$('tk').innerHTML=`<table><thead><tr><th>${T('Khuôn','금형')}</th><th>${T('Đầu vào','투입')}</th><th>${T('Đạt','양품')}</th><th>${T('Lỗi','불량')}</th><th>${T('Tỷ lệ lỗi','불량률')}</th></tr></thead><tbody>`+Kh.map(o=>`<tr><td class="l">${o.k||T('Chưa ghi','미기재')}</td><td>${fC(o.n)}</td><td>${fC(o.ok)}</td><td>${fC(o.ng)}</td><td class="${o.e>avg?'ng':''}">${pc(o.e)}</td></tr>`).join('')+'</tbody></table>';
+/* --- tỷ lệ NG theo JIG cũ / mới (bỏ qua bộ lọc JIG để luôn so sánh được) --- */
+{const Vj=R.filter(r=>{const j=st.jg;st.jg='';const o=fil(r);st.jg=j;return o}),A=agg(Vj,r=>r.jg),mk={};Vj.forEach(r=>{(mk[r.jg]=mk[r.jg]||new Set()).add(r.k)});
+const row=g=>{const o=A.find(x=>x.k==g),lab=g=='OLD'?T('JIG cũ','구 JIG'):T('JIG mới','신 JIG'),nm=mk[g]?mk[g].size:0;
+return o?`<tr><td class="l"><b>${lab}</b> <span class="sub">(${nm} ${T('máy','설비')})</span></td><td>${fC(o.n)}</td><td>${fC(o.ok)}</td><td>${fC(o.ng)}</td><td class="${o.n>=MIN&&o.e>avg?'ng':''}"><b>${pc(o.e)}</b></td></tr>`:`<tr><td class="l"><b>${lab}</b></td><td colspan="4" class="sub">${T('Chưa có dữ liệu','데이터 없음')}</td></tr>`};
+const a0=A.find(x=>x.k=='OLD'),a1=A.find(x=>x.k=='NEW'),df=a0&&a1?a1.e-a0.e:null;
+$('tj').innerHTML=`<table><thead><tr><th>JIG</th><th>${T('Đầu vào','투입')}</th><th>${T('Đạt','양품')}</th><th>${T('Lỗi','불량')}</th><th>${T('Tỷ lệ lỗi','불량률')}</th></tr></thead><tbody>${row('OLD')}${row('NEW')}</tbody></table>`
++(df!=null?`<div class="sub" style="margin-top:6px">${T('Chênh lệch JIG mới − JIG cũ: ','JIG 신 − 구 차이: ')}<b class="${df>0?'ng':'ok'}">${df>0?'+':''}${df.toFixed(1)} ${T('điểm %','%p')}</b></div>`:'')
++`<div class="sub" style="margin-top:4px">${T('JIG mới: máy có hậu tố T hoặc ghi chú có chữ “JIG”.','신 JIG: 설비명 T 접미사 또는 메모에 “JIG” 포함.')}</div>`}
+/* --- tỷ lệ lỗi theo ngày (đường + TB nét đứt) --- */
+const days=(()=>{const a=[];if(st.pm=='d')a.push(st.pv.d);else if(st.pm=='w'){const y=+st.pv.w.slice(0,4),wk=+st.pv.w.slice(4),j4=new Date(Date.UTC(y,0,4)),mon=j4.getTime()+((wk-1)*7-((j4.getUTCDay()+6)%7))*864e5;for(let q=0;q<7;q++)a.push(new Date(mon+q*864e5).toISOString().slice(0,10))}else if(st.pm=='y'){Dd.forEach(d=>a.push(d.k))}else{const y=+st.pv.m.slice(0,4),mo=+st.pv.m.slice(5)-1,nd=new Date(Date.UTC(y,mo+1,0)).getUTCDate();for(let q=1;q<=nd;q++)a.push(st.pv.m+'-'+String(q).padStart(2,'0'))}return a})();
+const dmp={};Dd.forEach(d=>dmp[d.k]=d);
+$('c3s').textContent=T('Đường nét đứt là tỷ lệ lỗi trung bình kỳ này '+avg.toFixed(1)+'%','점선은 이 기간의 평균 불량률 '+avg.toFixed(1)+'%');
+const ymax=Math.max(10,Math.ceil(Math.max(avg,...Dd.map(d=>d.e),1)*1.15/10)*10),wkd=k=>{const w=new Date(k+'T00:00:00Z').getUTCDay();return w==0||w==6};
+mk('c3',{type:'line',data:{labels:days.map(dm),datasets:[
+{label:T('Tỷ lệ lỗi %','불량률 %'),data:days.map(k=>dmp[k]?+dmp[k].e.toFixed(1):null),borderColor:css('--ng'),backgroundColor:css('--ng'),borderWidth:2,tension:0,spanGaps:true,pointRadius:4,pointBackgroundColor:days.map(k=>dmp[k]&&dmp[k].n<MIN?'#9aa4b2':css('--ng'))},
+{label:'TB',data:days.map(()=>+avg.toFixed(1)),borderColor:css('--mu'),borderDash:[5,4],borderWidth:1.2,pointRadius:0}]},
+options:{maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{if(c.datasetIndex)return 'TB '+avg.toFixed(1)+'%';const d=dmp[days[c.dataIndex]];return d?pc(d.e)+' ('+d.ng+'/'+d.n+')':''}}}},
+scales:{y:{min:0,max:ymax,ticks:{stepSize:ymax/4,callback:v=>Math.round(v)+'%'}},x:{grid:{display:false},ticks:{maxRotation:0,autoSkip:true,color:c=>days[c.index]&&wkd(days[c.index])?css('--ng'):css('--mu')}}}},
+plugins:[{id:'tb',afterDatasetsDraw(c){const y=c.scales.y.getPixelForValue(avg),a=c.chartArea,g=c.ctx;g.save();g.fillStyle=css('--mu');g.font='12px system-ui,sans-serif';g.textAlign='right';g.fillText('TB '+avg.toFixed(1)+'%',a.right,y-6);g.restore()}}]});
+CDATA.c3=()=>({h:[T('Ngày','일자'),T('Mẫu','수량'),'OK','NG',T('Lỗi %','불량률 %')],r:days.filter(k=>dmp[k]).map(k=>{const d=dmp[k];return[dm(k),d.n,d.ok,d.ng,{v:d.e.toFixed(1)+'%',ng:d.n>=MIN&&d.e>avg}]}),note:'TB '+avg.toFixed(1)+'%'});
+const KM={};V.forEach(r=>{(KM[r.k]=KM[r.k]||new Set()).add(r.kh)});const kmS=k=>[...(KM[k]||[])].filter(Boolean).sort(num).join(', ')||T('Chưa ghi','미기재');
+const pb=(v,c)=>`<span class="rb"><i style="width:${Math.min(100,v)}%;background:${c}"></i></span>`;
+$('tm').innerHTML=`<table><thead><tr><th>${T('Máy','설비')}</th><th>JIG</th><th>${T('Mẫu','수량')}</th><th>OK</th><th>NG</th><th class="hs">${T('Hiệu suất','효율')}</th><th>${T('Tỷ lệ lỗi','불량률')}</th><th class="bc"></th></tr></thead><tbody>`+M.map(m=>{const k=m.k,mx2=Math.max(0.1,...M.map(x=>x.e)),tp2=M.find(x=>x.n>=MIN),w2=Math.min(100,100*m.e/(mx2*1.12)),c2=m.n<MIN?'#9aa4b2':m===tp2?css('--ng'):css('--ac');return `<tr class="${m.n<MIN?'lo':''}" data-mk="${m.k}" style="cursor:pointer"><td><b>${m.mc}</b>${st.p?'':' <span class="sub">'+m.pt+'</span>'}</td><td><span class="tag ${jigOf(k)=='NEW'?'new':''}">JIG ${jigOf(k)}</span></td><td>${m.n}</td><td class="ok">${m.ok}</td><td class="${m.ng?'ng':''}">${m.ng}</td><td class="hs">${pc(m.y)}</td><td class="${m.n>=MIN&&m.e>avg?'ng':''}"><b>${pc(m.e)}</b></td><td class="bc"><span class="ht"><i style="width:${w2}%;background:${c2}"></i></span></td></tr>`}).join('')+'</tbody></table>';
+{const ds2=dimSum(V);$('dk').innerHTML=ds2.h||'<div class="sub">'+none+'</div>';const nt=ds2.note||'',ix2=nt.indexOf('Cpk = ');$('dks').textContent=(ix2>=0?nt.slice(0,ix2):nt).trim()+(ds2.ne?' · '+ds2.ne+T(' hạng mục chưa có dữ liệu đo',' 항목 측정 데이터 없음'):'');$('dkc').textContent=ix2>=0?nt.slice(ix2):'';$('dkh').hidden=!nt;fitDk()}
+{const dsm={};V.forEach(r=>{const o=dsm[r.d]||(dsm[r.d]={a:new Set(),b:new Set()});o.a.add(r.md);if(r.hp)o.b.add(r.pd)});const rg=S=>{const a=[...S].sort();return !a.length?'':a.length==1?dm(a[0]):dm(a[0])+'–'+dm(a[a.length-1])};const SUB={};V.forEach(r=>{const g=r.d,o=SUB[g]||(SUB[g]={}),kx=DT=='m'?(r.hp?r.pd:''):r.md,e=o[kx]||(o[kx]={k:kx,n:0,ok:0,ng:0});e.n++;if(r.ok)e.ok++;else e.ng++});
+const SUBL=g=>Object.values(SUB[g]||{}).sort((a,b)=>a.k<b.k?-1:a.k>b.k?1:0).map(x=>({...x,e:100*x.ng/x.n}));
+DAYS_CTX={rw:Dd.slice().reverse().map(d=>{const o=dsm[d.k]||{a:new Set(),b:new Set()};return Object.assign({},d,{c1:rg(o.a),c2:rg(o.b),sub:SUBL(d.k)})}),avg,MIN}}drawDays();
+top3(V);updUi();
+}
+
+const dn=d=>d[0]+(d[1]?' ('+d[1]+')':'');
+const aMin=a=>{let m=Infinity;for(const v of a)if(v<m)m=v;return m},aMax=a=>{let m=-Infinity;for(const v of a)if(v>m)m=v;return m};
+/* ===== Ánh xạ hạng mục Profile -> các điểm đo thô (cột *_Pts) ===== */
+function rawOf(d){const n=(d[0]||'').normalize('NFC');let g=null,a=0,b=0,lab=null,m;
+if(m=n.match(/^Profile ([JLGHEDFK])(\d+)~[A-Z](\d+)/i)){g=m[1].toUpperCase();a=+m[2];b=+m[3];if(g=='K')b=Math.min(b,5)}
+else if(/^Profile W1_W3_W5_W7/i.test(n)){g='W';a=1;b=4;lab=['W1','W3','W5','W7']}
+else if(/^Profile W2_W4_W6_W8/i.test(n)){g='W';a=5;b=8;lab=['W2','W4','W6','W8']}
+else if(m=n.match(/^Profile P(\d+)~P(\d+)/i)){const T2={'8~11':['PG1',1,4],'17~20':['PG1',5,8],'12~15':['PG1',9,12],'22~23':['PG2',1,2],'24~25':['PG2',3,4],'29~30':['PG2',5,6],'27~28':['PG2',7,8],'31~34':['PG2',9,12]}[m[1]+'~'+m[2]];if(T2){g=T2[0];a=T2[1];b=T2[2];lab=[];for(let p=+m[1];p<=+m[2];p++)lab.push('P'+p)}}
+if(!g)return null;const idx=[];for(let i=a;i<=b;i++)idx.push(i);return{g,idx,lab}}
+function top3(V){for(let j=0;j<3;j++)['tr'+j,'ds'+j,'sp'+j].forEach(i=>{if(ch[i]){try{ch[i].destroy()}catch(e){}delete ch[i]}});const m={};V.forEach(r=>{const D=DIMS[r.s];r.v.forEach((x,i)=>{if(x==null)return;const d=D[i],k=r.s+'|'+i,o=m[k]=m[k]||{s:r.s,i,n:0,ng:0};o.n++;if(x<d[2]-1e-9||x>d[3]+1e-9)o.ng++})});
+const L=Object.values(m).filter(o=>o.ng).sort((a,b)=>b.ng-a.ng||b.ng/b.n-a.ng/a.n).slice(0,3);
+$('top3').innerHTML=`<div class="sub" style="margin:0 0 6px"><b>${T('3 kích thước nhiều điểm NG nhất','NG 포인트 최다 치수 TOP 3')}</b> · ${T('theo bộ lọc đang chọn','현재 필터 기준')}</div>`+(L.length?L.map((o,j)=>{const d=DIMS[o.s][o.i];return `<div class="card tp"><div class="th"><span class="rk">#${j+1}</span><h2>${dn(d)}</h2><span class="tag">${SRC[o.s]}</span><span class="ng"><b>${o.ng}</b> ${T('điểm NG','NG 포인트')} / ${o.n} · ${pc(100*o.ng/o.n)}</span><span class="sub">Spec ${d[2]} … ${d[3]}</span><button class="stb" data-st="t${j}" type="button">📊 ${T('Chỉ số','지표')}</button></div><div class="g3"><div><div class="sub" id="trs${j}">${T('Xu hướng theo thời gian','시간별 추이')}</div><div class="cv s"><canvas id="tr${j}"></canvas><button class="cdb" data-cd="tr${j}" type="button" title="${T('Xem dữ liệu tạo nên biểu đồ','차트 원본 데이터 보기')}">📊 ${T('Dữ liệu','데이터')}</button></div></div><div><div class="sub" id="dst${j}"></div><div class="cv s"><canvas id="ds${j}"></canvas><button class="cdb" data-cd="ds${j}" type="button" title="${T('Xem dữ liệu tạo nên biểu đồ','차트 원본 데이터 보기')}">📊 ${T('Dữ liệu','데이터')}</button></div></div><div><div class="sub" id="spt${j}"></div><div class="cv s"><canvas id="sp${j}"></canvas><button class="cdb" data-cd="sp${j}" type="button" title="${T('Xem dữ liệu tạo nên biểu đồ','차트 원본 데이터 보기')}">📊 ${T('Dữ liệu','데이터')}</button></div></div></div></div>`}).join(''):`<div class="card">${T('Không có điểm NG trong lựa chọn này','선택한 조건에 NG 포인트가 없습니다')}</div>`);
+for(let j=L.length;j<3;j++){['tr'+j,'ds'+j,'sp'+j].forEach(i=>{if(ch[i]){ch[i].destroy();delete ch[i]}})}
+L.forEach((o,j)=>later(()=>T3(V,o,j)))}
+function T3(V,o,j){{const pp=()=>V.filter(r=>r.s==o.s&&r.v[o.i]!=null),cs=()=>colsDim(o.s,o.i,pp());CDATA['tr'+j]=()=>dTrend(pp(),[cs().dim]);CDATA['ds'+j]=()=>{const c=cs();return dTrend(pp(),c.raw.length?c.raw:[c.dim])};CDATA['sp'+j]=()=>{const c=cs();return dBox(c.raw.length?c.raw:[c.dim])}}
+STR['t'+j]=()=>statDim(o.s,o.i,V.filter(r=>r.s==o.s&&r.v[o.i]!=null));const d=DIMS[o.s][o.i],lo=d[2],hi=d[3],nom=d[4],pts=V.filter(r=>r.s==o.s&&r.v[o.i]!=null),vals=pts.map(r=>r.v[o.i]);
+const bad=v=>v<lo-1e-9||v>hi+1e-9,dI=[];pts.forEach((r,k)=>{if(!k||r.d!==pts[k-1].d)dI.push(k)});const stp=Math.max(1,Math.ceil(dI.length/10));
+const YR=yRng(vals,lo,hi),y0=YR.y0,y1=YR.y1,pd=YR.pd,hasN=nom!=null&&nom>lo&&nom<hi;
+const ln=(v,c,nm,dash)=>({label:nm,data:[{x:0,y:v},{x:Math.max(1,pts.length-1),y:v}],borderColor:c,borderDash:dash,pointRadius:0,borderWidth:2});
+const NB=nbOf(pts.length),TB=NB>1?bkt(vals,bad,NB):null,TRB=NB>1?[{label:'',data:TB.Lo,borderWidth:0,pointRadius:0,backgroundColor:'transparent',borderColor:'transparent'},{label:'',data:TB.Hi,borderWidth:0,pointRadius:0,fill:'-1',backgroundColor:css('--ac')+'30'},{label:dn(d),data:TB.M,borderColor:css('--ac'),backgroundColor:css('--ac'),borderWidth:1.8,tension:.2,pointRadius:0},{label:'NG',data:TB.B,showLine:false,pointRadius:3,backgroundColor:css('--ng'),borderColor:css('--ng')}]:null;
+mk('tr'+j,{type:'line',data:{datasets:(NB>1?TRB:[{label:dn(d),data:vals.map((v,k)=>({x:k,y:v})),borderColor:css('--ac'),backgroundColor:css('--ac'),borderWidth:1,tension:0,pointBackgroundColor:vals.map(v=>bad(v)?css('--ng'):css('--ac')),pointRadius:vals.map(v=>bad(v)?4:2)}]).concat([ln(hi,css('--ng'),T('Cận trên','상한'),[7,4]),ln(lo,css('--ng'),T('Cận dưới','하한'),[7,4])]).concat(hasN?[ln(nom,css('--ok'),T('Danh nghĩa','공칭'),[])]:[])},
+options:{maintainAspectRatio:false,interaction:{mode:'nearest',intersect:false},scales:{y:{min:y0-pd,max:y1+pd},x:{type:'linear',min:0,max:Math.max(1,pts.length-1),afterBuildTicks:a=>{a.ticks=dI.filter((_,q)=>q%stp==0).map(k=>({value:k}))},ticks:{maxRotation:0,autoSkip:false,callback:v=>pts[v]?dm(pts[v].d):''}}},
+plugins:{legend:{display:false},tooltip:{filter:it=>NB==1||(it.datasetIndex>=2&&it.datasetIndex<=3),callbacks:{title:it=>{const q=it&&it[0]&&it[0].raw,r=q?pts[q.x]:null;return r?dm(r.d)+' · '+mcN(r.k)+(r.ok?' (OK)':' (NG)'):''}}}}}});
+const rw=rawOf(d);let ser=[],SCX=null;
+if(rw)ser=rw.idx.map((ix,n)=>({lab:rw.lab?rw.lab[n]:rw.g+ix,vals:pts.map(r=>r.pt&&r.pt[rw.g]&&r.pt[rw.g][ix-1]!=null?r.pt[rw.g][ix-1]:null)})).filter(q=>q.vals.some(v=>v!=null));
+const xo={type:'linear',min:0,max:Math.max(1,pts.length-1),afterBuildTicks:a=>{a.ticks=dI.filter((_,q)=>q%stp==0).map(k=>({value:k}))},ticks:{maxRotation:0,autoSkip:false,callback:v=>pts[v]?dm(pts[v].d):''}};
+const ttl=it=>{const q=it&&it[0]&&it[0].raw,r=q?pts[q.x]:null;return r?dm(r.d)+' · '+mcN(r.k)+(r.ok?' (OK)':' (NG)'):''};
+if(ser.length){const all=[].concat(...ser.map(q=>q.vals.filter(v=>v!=null))),med=[...all].sort((a,b)=>a-b)[Math.floor(all.length/2)],sz=(d[0].match(/\[(\d+(?:\.\d+)?)\]/)||[])[1],NM={H:-17,E:-15.6,F:-23.9},nm2=NM[rw.g]!=null?NM[rw.g]:(sz!=null?(med<0?-1:1)*+sz:null),bh=hi/2,bl=nm2!=null?[nm2+bh,nm2-bh]:[];
+const YR2=yRng(all,bl.length?bl[1]:lo,bl.length?bl[0]:hi),lo2=YR2.y0,hi2=YR2.y1,pd2=YR2.pd,xm2=Math.max(1,pts.length-1),ln2=(v,c,dash)=>({label:'',data:[{x:0,y:v},{x:xm2,y:v}],borderColor:c,borderDash:dash,pointRadius:0,borderWidth:1.6,order:99}),isB=v=>bl.length&&(v>bl[0]+1e-9||v<bl[1]-1e-9);
+SCX={cats:ser.map(q=>({lab:q.lab,rows:pts,vals:q.vals})),lines:bl.length?[[bl[0],css('--ng'),[6,4]],[bl[1],css('--ng'),[6,4]],[nm2,css('--ok'),[]]]:spL(lo,hi,nom),bad:bl.length?isB:bad};
+$('dst'+j).textContent=T('Giá trị thực từng điểm đo: ','측정 포인트 실측값: ')+ser.map(q=>q.lab).join(' · ')+(bl.length?' · '+T('nét đứt = danh nghĩa ± Max/2','점선 = 공칭 ± Max/2'):'');if(YR2.n)$('dst'+j).textContent+=' · '+cutTx(YR2);
+const SB1=NB>1?ser.map((q,n)=>{const col=PAL[n%PAL.length],b=bkt(q.vals,isB,NB);return{label:q.lab,name:q.lab,data:b.M,borderColor:col,backgroundColor:col,borderWidth:1.4,tension:.2,pointRadius:0}}).concat([{label:'NG',name:'NG',data:[].concat(...ser.map(q=>bkt(q.vals,isB,NB).B)),showLine:false,pointRadius:3,backgroundColor:css('--ng'),borderColor:css('--ng')}]):null;
+mk('ds'+j,{type:'line',data:{datasets:(NB>1?SB1:ser.map((q,n)=>{const col=PAL[n%PAL.length],dat=[],pcl=[],pr=[];q.vals.forEach((v,k)=>{if(v==null)return;dat.push({x:k,y:v});const b=isB(v);pcl.push(b?css('--ng'):col);pr.push(b?4:1.4)});return{label:q.lab,name:q.lab,data:dat,borderColor:col,backgroundColor:col,borderWidth:1.2,tension:0,spanGaps:true,pointBackgroundColor:pcl,pointBorderColor:pcl,pointRadius:pr}})).concat(bl.length?[ln2(bl[0],css('--ng'),[6,4]),ln2(bl[1],css('--ng'),[6,4]),ln2(nm2,css('--ok'),[])]:[])},
+options:{animation:false,maintainAspectRatio:false,interaction:{mode:'x',intersect:false},scales:{y:{min:lo2-pd2,max:hi2+pd2,ticks:{maxTicksLimit:6}},x:xo},plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:10,boxHeight:10,font:{size:11},filter:it=>it.datasetIndex<ser.length}},tooltip:{filter:it=>it.datasetIndex<ser.length,callbacks:{title:ttl,label:c=>c.dataset.name+': '+c.parsed.y}}}}})}
+else{/* chưa có dữ liệu điểm đo thô → vẽ giá trị thực theo từng máy */
+const mcs=uniq(pts.map(r=>r.k)).sort(),mxk=Math.max(1,pts.length-1);
+SCX={cats:mcs.map(k=>({lab:mcN(k),rows:pts,vals:pts.map(r=>r.k==k?r.v[o.i]:null)})),lines:spL(lo,hi,nom),bad};
+$('dst'+j).textContent=T('Giá trị thực theo từng máy (chưa có cột điểm đo thô; nạp lại file CSV/Excel có cột *_Pts để xem từng điểm)','설비별 실측값(원시 포인트 열 없음 — *_Pts 열이 있는 파일을 다시 불러오세요)');
+mk('ds'+j,{type:'line',data:{datasets:(NB>1?mcs.map((k,n)=>{const col=PAL[n%PAL.length],b=bkt(pts.map(r=>r.k==k?r.v[o.i]:null),bad,NB);return{label:mcN(k),name:mcN(k),data:b.M,borderColor:col,backgroundColor:col,borderWidth:1.4,tension:.2,pointRadius:0}}).concat([{label:'NG',name:'NG',data:[].concat(...mcs.map(k=>bkt(pts.map(r=>r.k==k?r.v[o.i]:null),bad,NB).B)),showLine:false,pointRadius:3,backgroundColor:css('--ng'),borderColor:css('--ng')}]):mcs.map((k,n)=>{const col=PAL[n%PAL.length],dat=[];pts.forEach((r,q)=>{if(r.k==k)dat.push({x:q,y:r.v[o.i]})});return{label:mcN(k),name:mcN(k),data:dat,borderColor:col,backgroundColor:col,borderWidth:1,tension:0,pointRadius:dat.map(p=>bad(p.y)?4:1.6),pointBackgroundColor:dat.map(p=>bad(p.y)?css('--ng'):col),pointBorderColor:dat.map(p=>bad(p.y)?css('--ng'):col)}})).concat([hi,lo].map(v=>({label:'',data:[{x:0,y:v},{x:mxk,y:v}],borderColor:css('--ng'),borderDash:[6,4],pointRadius:0,borderWidth:1.6,order:99})))},
+options:{animation:false,maintainAspectRatio:false,interaction:{mode:'x',intersect:false},scales:{y:{min:y0-pd,max:y1+pd},x:xo},plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:10,boxHeight:10,font:{size:11},filter:it=>it.datasetIndex<mcs.length}},tooltip:{filter:it=>it.datasetIndex<mcs.length,callbacks:{title:ttl,label:c=>c.dataset.name+': '+c.parsed.y}}}}})}
+$('trs'+j).textContent=T('Xu hướng theo thời gian','시간별 추이')+(NB>1?' · '+T('đường = trung vị mỗi '+NB+' mẫu, vùng mờ = min–max, chấm đỏ = NG','선 = '+NB+'개 샘플 중앙값, 음영 = min–max, 빨강 = NG'):'');if(YR.n)$('trs'+j).textContent+=' · '+cutTx(YR);if(NB>1)$('dst'+j).textContent+=' · '+T('đường = trung vị mỗi '+NB+' mẫu, chấm đỏ = NG','선 = '+NB+'개 샘플 중앙값, 빨강 = NG');
+{/* Boxplot: trục X = điểm đo (hoặc máy), trục Y = giá trị; vòng tròn = ngoại lai, chấm đỏ = ngoài spec */
+const cats=SCX.cats,ln3=SCX.lines,isBad=SCX.bad,sdv=a=>{if(a.length<2)return 0;const m=a.reduce((x,y)=>x+y,0)/a.length;return Math.sqrt(a.reduce((x,y)=>x+(y-m)**2,0)/(a.length-1))};
+const mean=vals.reduce((a,b)=>a+b,0)/vals.length,sd=sdv(vals);
+const BS=cats.map(c=>{const a=c.vals.filter(v=>v!=null).sort((x,y)=>x-y);if(!a.length)return null;const q1=qtl(a,.25),md=qtl(a,.5),q3=qtl(a,.75),f=1.5*(q3-q1),In=a.filter(v=>v>=q1-f&&v<=q3+f);let sm=0;a.forEach(v=>sm+=v);return{q1,md,q3,wl:In.length?In[0]:q1,wh:In.length?In[In.length-1]:q3,o:a.filter(v=>v<q1-f||v>q3+f),bd:a.filter(isBad),m:sm/a.length,n:a.length,mn:a[0],mx:a[a.length-1]}});
+const YB=yRng([].concat(...BS.filter(Boolean).map(b=>[b.mn,b.mx])),Math.min(...ln3.map(l=>l[0])),Math.max(...ln3.map(l=>l[0]))),sy0=YB.y0,sy1=YB.y1,spd=YB.pd;
+$('spt'+j).textContent=T('Boxplot','Boxplot')+' · '+T('TB','평균')+' '+mean.toFixed(3)+' · σ '+sd.toFixed(3)+' · min '+aMin(vals).toFixed(3)+' · max '+aMax(vals).toFixed(3)+' · '+T('hộp = Q1–Q3, vạch = trung vị, chấm đen = TB, vòng tròn = ngoại lai, chấm đỏ = ngoài spec','박스 = Q1–Q3, 선 = 중앙값, 검정 점 = 평균, 원 = 이상치, 빨강 = 규격 이탈');if(YB.n)$('spt'+j).textContent+=' · '+cutTx(YB);
+mk('sp'+j,{type:'bar',data:{labels:cats.map(c=>c.lab),datasets:[{data:BS.map(b=>b?[b.q1,b.q3]:null),backgroundColor:css('--ac')+'66',borderColor:css('--ac'),borderWidth:1.2,borderSkipped:false,barPercentage:.55}]},
+options:{animation:false,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const b=BS[c.dataIndex];return b?['Q3 '+b.q3.toFixed(4),T('Trung vị ','중앙값 ')+b.md.toFixed(4),'Q1 '+b.q1.toFixed(4),T('TB ','평균 ')+b.m.toFixed(4)+' · n='+b.n,'min…max '+b.mn.toFixed(4)+' … '+b.mx.toFixed(4)+(b.bd.length?' · NG '+b.bd.length:'')+(b.o.length?' · '+b.o.length+T(' ngoại lai',' 이상치'):'')]:''}}}},scales:{y:{min:sy0-spd,max:sy1+spd,ticks:{maxTicksLimit:6}},x:{grid:{display:false},ticks:{maxRotation:0,autoSkip:false,font:{size:11}}}}},
+plugins:[hlPl(ln3),{id:'bx',afterDatasetsDraw(c){const g=c.ctx,y=c.scales.y,m=c.getDatasetMeta(0),P=v=>y.getPixelForValue(v);g.save();{const ca=c.chartArea;g.beginPath();g.rect(ca.left,ca.top,ca.width,ca.height);g.clip()}g.lineWidth=1.3;
+m.data.forEach((e,q)=>{const b=BS[q];if(!b)return;const x=e.x,w=e.width/2;g.strokeStyle=css('--tx');g.beginPath();g.moveTo(x-w,P(b.md));g.lineTo(x+w,P(b.md));g.moveTo(x,P(b.q3));g.lineTo(x,P(b.wh));g.moveTo(x,P(b.q1));g.lineTo(x,P(b.wl));g.moveTo(x-w/2,P(b.wh));g.lineTo(x+w/2,P(b.wh));g.moveTo(x-w/2,P(b.wl));g.lineTo(x+w/2,P(b.wl));g.stroke();
+g.strokeStyle=css('--mu');b.o.forEach(v=>{g.beginPath();g.arc(x,P(v),2.4,0,7);g.stroke()});
+g.fillStyle=css('--ng');b.bd.forEach(v=>{g.beginPath();g.arc(x,P(v),2.2,0,7);g.fill()});
+g.fillStyle=css('--tx');g.beginPath();g.arc(x,P(b.m),2.5,0,7);g.fill()});g.restore()}}]})}
+}
+function pdCard(Vs,s,i){const d=DIMS[s][i],j='m'+s;let n=0,ng=0;Vs.forEach(r=>{const x=r.v[i];if(x==null)return;n++;if(outS(x,d[2],d[3]))ng++});
+return `<div class="sub" style="margin:0 0 6px"><b>${T('Profile D1–D8 · 3 biểu đồ phân tích','Profile D1–D8 · 분석 차트 3개')}</b> · ${T('theo bộ lọc đang chọn','현재 필터 기준')}</div><div class="card tp"><div class="th"><span class="rk">★</span><h2>${dn(d)}</h2><span class="tag">${SRC[s]}</span><span class="${ng?'ng':'sub'}"><b>${ng}</b> ${T('điểm NG','NG 포인트')} / ${n} · ${n?pc(100*ng/n):'–'}</span><span class="sub">Spec ${d[2]} … ${d[3]}</span><button class="stb" data-st="t${j}" type="button">📊 ${T('Chỉ số','지표')}</button></div><div class="g3"><div><div class="sub" id="trs${j}">${T('Xu hướng theo thời gian','시간별 추이')}</div><div class="cv s"><canvas id="tr${j}"></canvas><button class="cdb" data-cd="tr${j}" type="button" title="${T('Xem dữ liệu tạo nên biểu đồ','차트 원본 데이터 보기')}">📊 ${T('Dữ liệu','데이터')}</button></div></div><div><div class="sub" id="dst${j}"></div><div class="cv s"><canvas id="ds${j}"></canvas><button class="cdb" data-cd="ds${j}" type="button" title="${T('Xem dữ liệu tạo nên biểu đồ','차트 원본 데이터 보기')}">📊 ${T('Dữ liệu','데이터')}</button></div></div><div><div class="sub" id="spt${j}"></div><div class="cv s"><canvas id="sp${j}"></canvas><button class="cdb" data-cd="sp${j}" type="button" title="${T('Xem dữ liệu tạo nên biểu đồ','차트 원본 데이터 보기')}">📊 ${T('Dữ liệu','데이터')}</button></div></div></div></div>`}
+function cfgTab(){const ks=uniq(R.map(r=>r.k)).sort((a,b)=>a[0]==b[0]?num(a,b):a[0]<b[0]?-1:1);
+$('cf').innerHTML=`<table><thead><tr><th>${T('Máy','설비')}</th><th>${T('Khuôn','금형')}</th><th>${T('Ghi chú','메모')}</th><th>JIG</th></tr></thead><tbody>`+ks.map(k=>`<tr><td>${k}</td><td><input data-k="${k}" data-f="kh" value="${khOf(k)}"></td><td><input class="n" data-k="${k}" data-f="nt" value="${noteOf(k)}" placeholder="${T('vd: JIG mới','예: 신규 JIG')}"></td><td class="l" id="j_${k.replace(/\W/g,'_')}">JIG ${jigOf(k)}</td></tr>`).join('')+'</tbody></table>'}
+$('cf').onchange=e=>{const t=e.target,k=t.dataset.k;if(!k)return;CFG[k]=CFG[k]||{};CFG[k][t.dataset.f]=t.value.trim();saveCfg();render();cfgTab()};
+$('rs').onclick=()=>{CFG={};saveCfg();render();cfgTab()};
+matchMedia('(prefers-color-scheme:dark)').onchange=render;
+
+/* ===== Cập nhật dữ liệu: thư mục chung (tối đa 4 cấp), file Excel có sheet Auto Data ===== */
+const FS_DEP=4,FS_DAYS=30,FSA=!!window.showDirectoryPicker,round4=x=>Math.round(x*1e4)/1e4;
+const REAR_AUTO=[["Profile J1~J5 [10] 0.3", "", 0, 0.27, 0.135], ["Profile L1~L2 [6] 0.3", "", 0, 0.27, 0.135], ["Profile W1_W3_W5_W7 [247] 0.2", "", 0, 0.165, 0.0825], ["Profile W2_W4_W6_W8 [114] 0.2", "", 0, 0.185, 0.0925], ["Profile G1~G4 [8] 0.3", "", 0, 0.28, 0.14], ["D10.2 [CIR-7]", "", 10.1, 10.275, 10.2], ["D10.2 True Position [CIR-7]", "", 0, 0.175, 0.0875], ["D10.2 [CIR-8]", "", 10.1, 10.25, 10.2], ["D10.2 True Position [CIR-8]", "", 0, 0.145, 0.0725], ["Datum-B- D11", "", 10.9, 11.08, 11], ["D11 Hole [CIR-3]", "", 10.9, 11.08, 11], ["D11 Hole True Position [CIR-3]", "", 0, 0.18, 0.09], ["Datum-C- Slot L 9.6", "", 9.5, 9.68, 9.6], ["Datum-C- Slot W 6.44", "", 6.4, 6.58, 6.44], ["Datum-C- True Position", "", 0, 0.055, 0.0275], ["Profile P8~P11 [37.5] 0.3 U 0.3", "", 0, 0.28, 0.14], ["Profile K1~K6 [6] 0.2", "", 0, 0.18, 0.09], ["Profile P12~P15 [81] 0.3", "", 0, 0.28, 0.14], ["Profile H1~H10 [2.5] 0.4 U 0.3", "", 0, 0.365, 0.1825], ["Datum-A- Flatness", "", 0, 0.09, 0.045], ["Profile E1~E5 [3.9] 0.2", "", 0, 0.185, 0.0925], ["Profile D1~D8 [18.5] 0.3", "", 0, 0.245, 0.1225], ["Datum-D- Flatness", "", 0, 0.15, 0.075], ["Profile P31~P34 [35.4] 0.2 U 0.2", "", 0, 0.165, 0.0825], ["Profile P17~P20 [79] 0.3 U 0.1", "", 0, 0.27, 0.135], ["Profile F1~F5 [4.4] 0.2", "", 0, 0.175, 0.0875], ["Profile P27~P28 [243.9] 0.2", "", 0, 0.175, 0.0875], ["Profile P29~P30 [243.8] 0.2", "", 0, 0.165, 0.0825], ["Profile P22~P23 [110.9] 0.2", "", 0, 0.15, 0.075], ["Profile P24~P25 [110.8] 0.2", "", 0, 0.18, 0.09], ["Distance 4X 361 [W1-W2]", "", 360.7, 361.3, 361], ["Distance 4X 361 [W3-W4]", "", 360.7, 361.3, 361], ["Distance 4X 361 [W5-W6]", "", 360.7, 361.3, 361], ["Distance 4X 361 [W7-W8]", "", 360.7, 361.3, 361], ["Distance 5.4 [M2-M5]", "", 5.2, 5.6, 5.4], ["Distance 5.4 [M4-M6]", "", 5.2, 5.6, 5.4]];
+let LS=0,IVT=null,FSH=null,FSB=0,UP=[],DONE={},SPEC={},MSG=['',''],LOG=[],XL;
+/* ===== V27: thanh thông báo quét + nhớ trạng thái quét giữa các lần mở trang ===== */
+let META={};try{META=JSON.parse(localStorage.getItem('v710meta')||'{}')}catch(e){}
+const saveMeta=()=>{try{localStorage.setItem('v710meta',JSON.stringify(META))}catch(e){}};
+const pad2=n=>String(n).padStart(2,'0'),fDT=ts=>{const d=new Date(ts);return pad2(d.getDate())+'/'+pad2(d.getMonth()+1)+' '+pad2(d.getHours())+':'+pad2(d.getMinutes())+':'+pad2(d.getSeconds())},fTS=t=>t?t.slice(8,10)+'/'+t.slice(5,7)+' '+t.slice(11,16):'–',newestT=()=>{let m='';R.forEach(r=>{if(r.t>m)m=r.t});return m};
+let LSTAT='',LSHORT='',LCLS='',LEXP=1,LCOL=15000,LT=0,LY=0,sbP=0;
+/* Thanh trạng thái quét: tự thu gọn sau 15 giây hoặc khi kéo trang xuống; bấm ▾ / ▴ để xem / ẩn chi tiết */
+function sbShow(cls,html,short,keep){clearTimeout(LT);const pm=/data-sbgo/.test(html);LSTAT=html;LCLS=cls;LSHORT=short||(pm?'⚠ '+T('Cần cấp quyền','권한 필요'):cls=='ok'?'✓':cls=='wn'?'⚠':'⟳');LEXP=1;
+if(!keep&&!pm&&cls)LT=setTimeout(()=>{LEXP=0;lsuUi()},LCOL);lsuUi()}
+$('lsu').onclick=e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.sbgo){LSTAT='';scan(1)}else if(b.dataset.lx){clearTimeout(LT);LEXP=LEXP?0:1;lsuUi()}};
+addEventListener('scroll',()=>{const y=scrollY;if(y>40&&LY<=40&&LEXP&&LSTAT){clearTimeout(LT);LEXP=0;lsuUi()}LY=y},{passive:true});
+function sbProg(i,n,nm){const t=Date.now();if(t-sbP<120&&i<n)return;sbP=t;sbShow('','⟳ '+T('Đang quét','스캔 중')+' <b>'+i+'/'+n+'</b> · '+nm,'⟳ '+i+'/'+n,1)}
+function sbDone(r){const bad=r.err||r.sv===false,last=META.add?fDT(META.add)+(META.added?' (+'+META.added+')':''):'–';
+const a=r.add?T('đọc '+r.fl+' file, thêm <b>'+r.add+'</b> mẫu mới','파일 '+r.fl+'개 읽음, 신규 <b>'+r.add+'</b>건'):T('không có dữ liệu mới','신규 데이터 없음')+(r.same?T(' ('+r.same+' file đã đọc trước đó nên bỏ qua)',' (이미 읽은 파일 '+r.same+'개 제외)'):'');
+const sh=(bad?'⚠ ':'✓ ')+T('Quét xong ','스캔 완료 ')+fDT(LS).slice(6)+(r.add?' · +'+r.add:'')+(r.err?' · '+r.err+T(' lỗi',' 오류'):'');
+sbShow(bad?'wn':'ok',(bad?'⚠':'✓')+' '+T('Quét hoàn tất ','스캔 완료 ')+fDT(LS)+' · '+a+(r.err?' · <span class="ng">'+r.err+T(' file lỗi',' 오류 파일')+'</span>':'')+(r.sv===false?' · <span class="ng">'+T('không lưu được vào trình duyệt','브라우저 저장 실패')+'</span>':'')+' · '+T('Mẫu mới nhất ','최신 샘플 ')+fTS(META.latest)+' · '+T('Dữ liệu mới lúc ','신규 데이터 ')+last,sh)}
+function lsuUi(){const e=$('lsu');if(!e)return;if(LSTAT){const bt=(t,k)=>'<button class="ib" data-lx="1" title="'+t+'">'+k+'</button>';e.innerHTML=LEXP?'<span class="lst '+LCLS+'">'+LSTAT+'</span>'+bt(T('Thu gọn','접기'),'▴'):'<span class="lst '+LCLS+'">'+LSHORT+'</span>'+bt(T('Xem chi tiết','자세히 보기'),'▾');return}e.textContent=META.scan?T('Quét lần cuối ','마지막 스캔 ')+fDT(META.scan)+' · '+T('Mẫu mới nhất ','최신 샘플 ')+fTS(META.latest)+(META.add?' · '+T('Dữ liệu mới lúc ','신규 데이터 ')+fDT(META.add):''):''}
+const DEDUP=new Set(),dk=r=>(r[0]?'R ':'F ')+mcNm(r[3])+'|'+r[7];RAW.forEach(r=>{if(r[7])DEDUP.add(dk(r))});
+const sg=D=>D.map(d=>d[0]+'|'+d[2]+'|'+d[3]).join('~'),SIG={};DIMS.forEach((D,i)=>SIG[sg(D)]=i);
+const setMsg=(vi,ko)=>{MSG=[vi,ko];updUi()},logA=(vi,ko)=>{LOG.unshift([vi,ko]);if(LOG.length>12)LOG.pop()};
+function updUi(){const e=$('fst');if(!e)return;e.textContent=T(MSG[0],MSG[1]);$('flog').innerHTML=LOG.slice(0,8).map(x=>T(x[0],x[1])).join('<br>');
+$('fdt').textContent=T('Dữ liệu hiện có đến ','현재 데이터 기준일: ')+(R.length&&DL[0]?dm(DL[0]):'–')+' · '+R.length.toLocaleString('vi-VN')+T(' mẫu',' 샘플')+(UP.length?' · '+T('đã nạp thêm '+UP.length+' mẫu','추가 업로드 '+UP.length+'건'):'')+((LS||META.scan)?' · '+T('Quét lần cuối ','마지막 스캔 ')+fDT(LS||META.scan):'');$('fnote').textContent=FSA?'':T('Trình duyệt này không hỗ trợ tự quét thư mục — dùng nút “Tải dữ liệu lên”.','이 브라우저는 폴더 자동 스캔을 지원하지 않습니다 — “데이터 업로드”를 사용하세요.');
+$('fscan').style.display=$('fall').style.display=$('fdrop').style.display=FSH?'':'none';lsuUi()}
+const idb=(m,k,v)=>new Promise((ok,no)=>{const q=indexedDB.open('v710r',1);q.onupgradeneeded=()=>q.result.createObjectStore('h');q.onerror=()=>no(q.error);q.onsuccess=()=>{try{const o=q.result.transaction('h',m=='get'?'readonly':'readwrite').objectStore('h'),x=m=='get'?o.get(k):m=='set'?o.put(v,k):o.delete(k);x.onsuccess=()=>ok(x.result);x.onerror=()=>no(x.error)}catch(e){no(e)}}});
+const loadX=()=>XL||(XL=new Promise((ok,no)=>{if(window.XLSX)return ok(XLSX);const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';s.onload=()=>ok(window.XLSX);s.onerror=()=>{XL=0;no(new Error(T('không tải được thư viện đọc Excel','엑셀 라이브러리를 불러올 수 없음')))};document.head.appendChild(s)}));
+/* File máy tự động: …Rear_MÁY_TỰ_ĐỘNG_Máy_39_30_09_.xlsx → số máy 39, ngày sản xuất 30/09; khuôn lấy từ tiêu đề sheet Auto Data (“Khuôn V11”) */
+const AUTOFN=/m[aáàảãạ]y[\s_\-]*(\d{1,3})(?!\d)/i;
+const sd=(s,n)=>{const t=new Date(s+'T00:00:00Z');t.setUTCDate(t.getUTCDate()+n);return t.toISOString().slice(0,10)};
+const persist=async()=>{try{await idb('set','up',{rows:UP,ex:DIMS.map((D,i)=>[i,D,SRC[i]]).filter(x=>x[0]>=BASE)});const k=Object.keys(DONE);if(k.length>3000)k.slice(0,k.length-3000).forEach(x=>delete DONE[x]);await idb('set','done',DONE);return true}catch(e){logA('⚠ Không lưu được dữ liệu vào trình duyệt: '+e.message,'⚠ 브라우저 저장 실패: '+e.message);return false}};
+function afterData(nw){srt();const o=idx();['d','w','m'].forEach(k=>{if(st.pv[k]==o[k])st.pv[k]=LAT[k]});
+if(nw&&nw.length){const ks=new Set(nw.map(dk)),NR=R.filter(r=>ks.has(r.k+'|'+r.t));if(NR.length&&!NR.some(fil)){st.p='';st.ca='';st.jg='';st.kh=[];st.mc=[];const nd=NR.map(r=>r.d).sort().pop();st.pv.d=nd;st.pv.w=wkOf(nd);st.pv.m=nd.slice(0,7);logA('→ Đã chuyển bộ lọc để hiện dữ liệu mới ('+dm(nd)+')','→ 새 데이터가 보이도록 필터를 변경했습니다 ('+dm(nd)+')')}}
+render();cfgTab()}
+const FNR0=/(?:^|[_\s.\-(\[])(day|night|ngay|ngày|dem|đêm)?[-_ ]*V0*(\d{1,2})[\s_-]+([1-8](?:\s*-\s*[1-8])?)(T)?(?=$|[_\s.\-)\]])/i,TESTRE=/(^|[^a-z])test(?![a-z])/i;
+async function parseFile(f,path){const n0=(f.name||'').normalize('NFC');
+if(TESTRE.test(n0)||TESTRE.test((path||'').normalize('NFC')))return{skip:T('tên file có chữ “test” → bỏ qua','파일명에 “test” 포함 → 제외')};
+if(!(n0.match(FNR0)||path.normalize('NFC').match(FNR0)||n0.match(AUTOFN)||path.normalize('NFC').match(AUTOFN)))return{skip:T('thiếu số khuôn hoặc số máy trong tên file → bỏ qua','파일명에 금형/설비 번호 없음 → 제외')};
+const X=await loadX(),ab=await f.arrayBuffer();
+const isCsv=/\.csv$/i.test(f.name||'');let nms,nmA,nmD,W;
+if(isCsv){/* CSV = dữ liệu cho sheet “Auto Data” (cũng đọc được bố cục sheet Data) */
+let tx;try{tx=new TextDecoder('utf-8',{fatal:true}).decode(ab)}catch(e){tx=new TextDecoder('windows-1252').decode(ab)}
+tx=tx.replace(/^\uFEFF/,'');const l1=tx.split(/\r?\n/,1)[0]||'',cn=c=>l1.split(c).length,FS=[['\t',cn('\t')],[';',cn(';')],[',',cn(',')]].sort((a,b)=>b[1]-a[1])[0][0];
+const wb=X.read(tx,{type:'string',raw:true,FS});nms=['Auto Data'];nmA='Auto Data';nmD=null;const ws=wb.Sheets[wb.SheetNames[0]];W={'Auto Data':ws};
+if(!ws||!ws['!ref'])return{skip:T('file CSV trống','CSV 파일이 비어 있음')}}
+else{nms=X.read(ab,{type:'array',bookSheets:true}).SheetNames||[];
+nmA=nms.find(n=>/^\s*auto\s*data\s*$/i.test(n))||nms.find(n=>/auto\s*[_-]?\s*data/i.test(n));nmD=nms.find(n=>/^\s*data\s*$/i.test(n));
+if(!nmA&&!nmD)return{skip:T('không có sheet “Data” hoặc “Auto Data” (file có: '+nms.join(', ')+')','“Data”/“Auto Data” 시트 없음 (시트: '+nms.join(', ')+')')};
+W=X.read(ab,{type:'array',sheets:[nmD,nmA].filter(Boolean)}).Sheets}
+const wrap=ws=>ws&&ws['!ref']?{rg:X.utils.decode_range(ws['!ref']),c:(r,k)=>{const x=ws[X.utils.encode_cell({r,c:k})];return x?x.v:undefined}}:null;
+const A=wrap(nmA&&W[nmA]),D=isCsv?wrap(W[nmA]):wrap(nmD&&W[nmD]);
+if(!A&&!D)return{skip:T('sheet Data / Auto Data trống','Data / Auto Data 시트가 비어 있음')};
+const nu=v=>typeof v=='number'?v:(typeof v=='string'&&v.trim()!==''&&isFinite(+v.trim().replace(',','.'))?+v.trim().replace(',','.'):null);
+const dt=v=>{let y,mo,d,h,mi,s;if(typeof v=='number'){const D=new Date(Math.round((v-25569)*864e5));[y,mo,d,h,mi,s]=[D.getUTCFullYear(),D.getUTCMonth()+1,D.getUTCDate(),D.getUTCHours(),D.getUTCMinutes(),D.getUTCSeconds()]}else{const q=String(v||''),m=q.match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})\D+(\d{1,2}):(\d{2})(?::(\d{2}))?/),n=q.match(/(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{4})\D+(\d{1,2}):(\d{2})(?::(\d{2}))?/);if(m)[y,mo,d,h,mi,s]=[+m[1],+m[2],+m[3],+m[4],+m[5],+(m[6]||0)];else if(n)[y,mo,d,h,mi,s]=[+n[3],+n[2],+n[1],+n[4],+n[5],+(n[6]||0)];else return null}const q=n=>String(n).padStart(2,'0');return[y+'-'+q(mo)+'-'+q(d),q(h)+':'+q(mi)+':'+q(s),h]};
+let tt=[];if(A)for(let r=0;r<=Math.min(2,A.rg.e.r);r++)for(let k=0;k<=Math.min(9,A.rg.e.c);k++){const v=A.c(r,k);if(typeof v=='string'&&v.trim())tt.push(v)}
+const title=tt.join(' ').normalize('NFC').replace(/\s+/g,' '),pp=path.normalize('NFC'),ty=x=>/front/i.test(x)?0:/rear/i.test(x)?1:-1;
+let p=isCsv?ty((f.name||'').normalize('NFC')):-1;if(p<0)p=ty(title);if(p<0)p=ty(pp);if(p<0)p=ty((f.name||'').normalize('NFC'));
+if(p<0){if(A)p=0;else throw new Error(T('không xác định được Front/Rear — hãy thêm “Front” hoặc “Rear” vào tên file','Front/Rear를 판별할 수 없음 — 파일명에 Front 또는 Rear를 넣으세요'))}
+const fnm=(f.name||'').normalize('NFC'),FNR=/(?:^|[_\s.\-(\[])(day|night|ngay|ngày|dem|đêm)?[-_ ]*V0*(\d{1,2})[\s_-]+([1-8](?:\s*-\s*[1-8])?)(T)?(?=$|[_\s.\-)\]])/i,fsr=fnm.match(FNR)?fnm:pp,fx=fsr.match(FNR),fi={};let tls=fx?fsr.slice(fx.index+fx[0].length):'';
+let am=null;if(fx){fi.mold='V'+(+fx[2]);fi.mcf=fx[3].split(/\s*-\s*/)[0]+(fx[4]?'T':'');if(fx[1])fi.ca=/^(night|dem|đêm)$/i.test(fx[1])?1:0}
+else{const a1=fnm.match(AUTOFN),a2=a1?null:pp.match(AUTOFN);am=a1||a2;if(am){fi.mcf=String(+am[1]);const mt=title.match(/Khu.n\s*V?0*(\d{1,2})/i);if(mt)fi.mold='V'+(+mt[1]);tls=(a1?fnm:pp).slice(am.index+am[0].length)}}
+if(fi.ca==null){if(/(?<![a-z])(night|đêm)(?![a-z])/i.test(fnm))fi.ca=1;else if(/(?<![a-z])(day|ngày)(?![a-z])/i.test(fnm))fi.ca=0}
+{const ex=fnm.match(/^(\d{4})-(\d{2})-(\d{2})/),b2=fnm.replace(/^\d{4}-\d{2}-\d{2}/,''),dx=tls.match(/^[-_.\s]*(\d{1,2})[-._](\d{1,2})(?!\d)/)||b2.match(/(?:^|[_\s])(\d{1,2})[-.](\d{1,2})(?=$|[_\s.])/);
+if(dx&&+dx[1]>=1&&+dx[1]<=31&&+dx[2]>=1&&+dx[2]<=12){let y=ex?+ex[1]:new Date(f.lastModified||Date.now()).getFullYear();const cand=Date.UTC(y,+dx[2]-1,+dx[1]),ref=ex?Date.UTC(+ex[1],+ex[2]-1,+ex[3]):(f.lastModified||Date.now());if(cand>ref+864e5*2)y--;fi.pdate=y+'-'+String(+dx[2]).padStart(2,'0')+'-'+String(+dx[1]).padStart(2,'0')}
+if(ex)fi.mdate=ex[1]+'-'+ex[2]+'-'+ex[3];/* Ngày đo = tên thư mục dd.mm chứa file (ca đêm sang ngày hôm sau vẫn nằm trong thư mục ngày bắt đầu ca); ca lấy theo tên file. Không có thư mục ngày → dự phòng: file Night lưu trước 19:00 lùi 1 ngày */{let fdd=null;const q2d=n=>String(n).padStart(2,'0');for(const sg of (path||'').normalize('NFC').split('/').slice(0,-1).reverse()){const m=sg.match(/^\s*(\d{1,2})[.\-_](\d{1,2})\s*$/);if(!m||+m[1]<1||+m[1]>31||+m[2]<1||+m[2]>12)continue;const ref=ex?Date.UTC(+ex[1],+ex[2]-1,+ex[3]):(f.lastModified||Date.now());let y=new Date(ref).getUTCFullYear(),c=Date.UTC(y,+m[2]-1,+m[1]);if(c>ref+864e5*2){y--;c=Date.UTC(y,+m[2]-1,+m[1])}const iso=y+'-'+q2d(m[2])+'-'+q2d(m[1]);if(new Date(c).toISOString().slice(0,10)!==iso||ref-c>864e5*45)continue;fdd=iso;break}
+if(fdd)fi.mdate=fdd;else if(fi.ca===1&&fi.mdate&&f.lastModified&&new Date(f.lastModified).getHours()<19)fi.mdate=sd(fi.mdate,-1)}fi.date=fi.pdate||fi.mdate;const cm=b2.match(/(?:^|[-_.\s(])(m?\d{1,3}c|c\d{1,3}|check[-_ ]?\d{0,3})(?=$|[-_.\s)])/i);if(cm)fi.chk=cm[1].toUpperCase()}
+if(!fi.mcf||(!fi.mold&&!am))return{skip:T('thiếu số khuôn hoặc số máy → bỏ qua','금형/설비 번호 없음 → 제외')};
+const mc=fi.mcf.toUpperCase();
+/* ---- Spec (Max/Min/Nominal) từ sheet Auto Data = nền giữ nguyên; bố cục Front và Rear khác nhau ---- */
+const readSpec=()=>{const{rg,c}=A,lw=(r,k)=>String(c(r,k)==null?'':c(r,k)).trim().toLowerCase();
+let hr=-1,cMax=-1,cMin=-1,cNom=-1,cSL=-1;
+for(let r=0;r<=Math.min(rg.e.r,15)&&hr<0;r++){for(let k=0;k<=Math.min(rg.e.c,12);k++){if(lw(r,k)=='max'&&lw(r,k+1)=='min'||lw(r,k)=='max'&&lw(r,k+2)=='min'){hr=r;cMax=k;cMin=lw(r,k+1)=='min'?k+1:k+2;break}if(lw(r,k)=='min'&&lw(r,k-1)=='max'){hr=r;cMax=k-1;cMin=k;break}}
+if(hr>=0){for(let k=0;k<=Math.min(rg.e.c,12);k++){const q=lw(hr,k);if(q=='nominal')cNom=k;if(/^sl\s*ng$/.test(q))cSL=k}}}
+if(hr<0)throw new Error(T('không tìm thấy hàng tiêu đề có cột Max và Min trong sheet Auto Data','Auto Data 시트에서 Max/Min 헤더를 찾을 수 없음'));
+const cName=Math.max(0,(cNom>=0&&cNom<cMax?cNom:cMax)-1),sc=(cSL>=0?cSL:cMin+1)+1;
+let okR=-1,tmR=-1,bo=0,bt=0;for(let r=Math.max(0,hr-2);r<=Math.min(rg.e.r,hr+4);r++){let a=0,b=0;for(let k=sc;k<=Math.min(rg.e.c,sc+60);k++){const v=c(r,k),q=String(v==null?'':v).trim().toUpperCase();if(q==='OK'||q==='NG')a++;else if(v!=null&&(typeof v=='string'||v>40000)&&dt(v))b++}if(a>bo){bo=a;okR=r}if(b>bt){bt=b;tmR=r}}
+const dims=[],ri=[];let gap=0;for(let r=Math.max(hr,okR,tmR)+1;r<=rg.e.r;r++){const n=c(r,cName);if(n==null||String(n).trim()===''){if(++gap>=6&&dims.length)break;continue}gap=0;const hi=nu(c(r,cMax)),lo=nu(c(r,cMin)),nm0=cNom>=0?nu(c(r,cNom)):null;if(hi!=null&&lo!=null){dims.push([String(n).trim(),'',round4(lo),round4(hi),nm0!=null?nm0:(lo+hi)/2]);ri.push(r)}}
+if(!dims.length)throw new Error(T('không đọc được kích thước (cột Max / Min)','치수를 읽을 수 없음'));
+return{dims,ri,okR,tmR,sc}};
+let dims,lay=null;
+try{if(A){lay=readSpec();dims=lay.dims;SPEC[p]=dims;idb('set','spec',SPEC).catch(()=>{})}}catch(e){if(!(D&&(SPEC[p]||DIMS[p])))throw e;lay=null}
+if(!dims){dims=SPEC[p]||DIMS[p];if(!dims)throw new Error(T('chưa có spec (Max/Min) cho '+(p?'Rear':'Front')+' — hãy nạp 1 lần file có sheet Auto Data','스펙(Max/Min)이 없음 — Auto Data 시트가 있는 파일을 먼저 불러오세요'))}
+if(D&&!lay){const nz=v=>String(v==null?'':v).normalize('NFC').toLowerCase().replace(/\s+/g,' ').trim(),hs=new Set();let hr0=0;for(let r=0;r<=Math.min(D.rg.e.r,8);r++)if(nz(D.c(r,0)).replace(/[\s\/]/g,'')=='okng'){hr0=r;break}
+for(let k=0;k<=D.rg.e.c;k++){const h=nz(D.c(hr0,k));if(h){hs.add(h);hs.add(h.replace(/\s+[\d.]+$/,''))}}
+const cnt=cd=>cd.filter(d=>hs.has(nz(d[0]))).length;let bn=cnt(dims);[SPEC[p],SPEC[1-p],...DIMS,REAR_AUTO].forEach(cd=>{if(!cd)return;const n=cnt(cd);if(n>bn){bn=n;dims=cd}})}
+const key=sg(dims);let src=SIG[key];if(src==null){src=DIMS.push(dims)-1;SIG[key]=src;SRC[src]=(p?'Rear':'Front')+' · Auto'}
+const rows=[];let bad=0;const q2=n=>String(n).padStart(2,'0');
+const ptv=(c,r,M)=>{if(!M||!M.length)return null;const o={};M.forEach(([g,i,k])=>{const v=nu(c(r,k));if(v!=null){const a=o[g]||(o[g]=[]);while(a.length<i-1)a.push(null);a[i-1]=round4(v)}});return o},ptm=(c,hr,rg)=>{const M=[];for(let k=0;k<=rg.e.c;k++){const m2=String(c(hr,k)==null?'':c(hr,k)).trim().match(/^([A-Za-z0-9]+)_Pts\((\d+)\)$/);if(m2)M.push([m2[1].toUpperCase(),+m2[2],k])}return M};
+const push=(o,t,vals,pt)=>{const ca=fi.ca!=null?fi.ca:(t[2]>=7&&t[2]<19?0:1),dN=ca==1&&t[2]<7&&!fi.date?sd(t[0],-1):t[0];rows.push([p,fi.date||dN,ca,mc,o=='OK'?1:0,src,vals,t[0]+' '+t[1],fi.mold||'',pt||null,fi.mdate||fi.date||dN,fi.pdate?1:0,fi.chk||'']) };
+const fb=ix=>{if(!fi.date)return null;const h0=fi.ca==1?20:8;return[fi.date,q2(h0)+':'+q2(Math.floor(ix/60)%60)+':'+q2(ix%60),h0]};
+/* ---- Nguồn chính: sheet Data (mỗi hàng 1 mẫu: A = OK/NG, D = Date/Time, E… = giá trị theo tên cột) ---- */
+if(D){const{rg,c}=D;let hD=-1;for(let r=0;r<=Math.min(rg.e.r,8);r++){if(String(c(r,0)==null?'':c(r,0)).toLowerCase().replace(/[\s\/]/g,'')=='okng'){hD=r;break}}
+if(hD>=0){const nn=v=>String(v==null?'':v).normalize('NFC').toLowerCase().replace(/\s+/g,' ').trim(),hm={};let dc=-1;
+for(let k=1;k<=rg.e.c;k++){const h=nn(c(hD,k));if(!h)continue;if(dc<0&&k<=6&&/date|time/.test(h))dc=k;if(hm[h]==null)hm[h]=k}
+Object.keys(hm).forEach(h=>{const a=h.replace(/\s+[\d.]+$/,'');if(a!==h&&hm[a]==null)hm[a]=hm[h]});
+if(dc<0)dc=3;const cpk2=v=>nn(v).replace(/[\s_\-–—]+/g,''),hmc={};Object.keys(hm).forEach(h=>{const q=cpk2(h);if(hmc[q]==null)hmc[q]=hm[h]});const cols=dims.map(d=>hm[nn(d[0])]!=null?hm[nn(d[0])]:hmc[cpk2(d[0])]);
+const dOk=!cols.every(x=>x==null);if(!dOk&&!isCsv)throw new Error(T('tên cột ở sheet Data không khớp tên kích thước ở sheet Auto Data','Data 시트의 열 이름이 Auto Data 시트의 치수 이름과 일치하지 않음'));
+const PTM=ptm(c,hD,rg);let ix=0;if(dOk)for(let r=hD+1;r<=rg.e.r;r++){const o=String(c(r,0)==null?'':c(r,0)).trim().toUpperCase();if(o!=='OK'&&o!=='NG')continue;let t=dt(c(r,dc));if(!t)t=fb(ix);ix++;if(!t){bad++;continue}
+push(o,t,cols.map(k=>{if(k==null)return null;const v=nu(c(r,k));return v==null?null:round4(v)}),ptv(c,r,PTM))}}}
+/* ---- CSV dự phòng: tự tìm hàng tiêu đề (khớp tên kích thước), cột OK/NG và cột ngày giờ ở bất kỳ vị trí nào ---- */
+if(!rows.length&&isCsv&&D){const{rg,c}=D,nn=v=>String(v==null?'':v).normalize('NFC').toLowerCase().replace(/\s+/g,' ').trim();
+let hr=-1,hm=null,best=0;
+for(let r=0;r<=Math.min(rg.e.r,25);r++){const m={};for(let k=0;k<=rg.e.c;k++){const h=nn(c(r,k));if(h&&m[h]==null)m[h]=k}Object.keys(m).forEach(h=>{const a=h.replace(/\s+[\d.]+$/,'');if(a!==h&&m[a]==null)m[a]=m[h]});const n=dims.filter(d=>m[nn(d[0])]!=null).length;if(n>best){best=n;hr=r;hm=m}}
+if(hr<0){const h0=[];for(let k=0;k<=Math.min(rg.e.c,7);k++)h0.push(nn(c(0,k)));throw new Error(T('không có cột nào trùng tên kích thước (tiêu đề hàng 1: '+h0.join(' | ')+')','치수 이름과 일치하는 열이 없음 (1행: '+h0.join(' | ')+')'))}
+const cols=dims.map(d=>hm[nn(d[0])]),isO=v=>{const q=String(v==null?'':v).trim().toUpperCase();return q==='OK'||q==='NG'||q==='PASS'||q==='FAIL'};
+let oc=-1,ob=0,dcc=-1,db=0;
+for(let k=0;k<=rg.e.c;k++){let a=0,b=0;for(let r=hr+1;r<=Math.min(rg.e.r,hr+40);r++){const v=c(r,k);if(isO(v))a++;else if(v!=null&&String(v).trim()&&dt(v))b++}if(a>ob){ob=a;oc=k}if(b>db){db=b;dcc=k}}
+for(let k=0;k<=rg.e.c;k++){if(/date|time|ngày|giờ|thời|일시|시간/.test(nn(c(hr,k)))){dcc=k;break}}
+const PTM=ptm(c,hr,rg);let ix=0;for(let r=hr+1;r<=rg.e.r;r++){const vals=cols.map(k=>{if(k==null)return null;const v=nu(c(r,k));return v==null?null:round4(v)});if(vals.every(v=>v==null))continue;
+let o='';if(oc>=0){const q=String(c(r,oc)==null?'':c(r,oc)).trim().toUpperCase();if(q==='OK'||q==='PASS')o='OK';else if(q==='NG'||q==='FAIL')o='NG'}
+if(!o)o=vals.some((v,i)=>v!=null&&(v<dims[i][2]-1e-9||v>dims[i][3]+1e-9))?'NG':'OK';
+let t=dcc>=0?dt(c(r,dcc)):null;if(!t)t=fb(ix);ix++;if(!t){bad++;continue}push(o,t,vals,ptv(c,r,PTM))}}
+/* ---- Dự phòng: không có sheet Data → đọc giá trị đã tính sẵn ở sheet Auto Data ---- */
+if(!rows.length&&A&&lay){const{c,rg}=A,{okR,tmR,sc,ri}=lay;
+for(let k=sc;k<=rg.e.c;k++){const o=String(c(okR,k)==null?'':c(okR,k)).trim().toUpperCase();if(o!=='OK'&&o!=='NG')continue;let t=tmR>=0?dt(c(tmR,k)):null;if(!t)t=fb(k-sc);if(!t){bad++;continue}
+push(o,t,ri.map(r=>{const v=nu(c(r,k));return v==null?null:round4(v)}))}}
+if(!rows.length)throw new Error(T('không có mẫu OK/NG hợp lệ'+(bad?' ('+bad+' mẫu không đọc được ngày giờ)':''),'유효한 OK/NG 샘플 없음'));
+return{rows,bad,fi,jig:/jig/i.test(title+' '+pp),k:(p?'R ':'F ')+mc}}
+
+/* Lưu dữ liệu đã nạp vào 1 file HTML để gửi sang máy khác */
+/* ===== Lưu file nhỏ gọn: lượng tử hoá không mất dữ liệu + nén gzip + base64 ===== */
+const SO='<scr'+'ipt',SC='</scr'+'ipt>',ZP='zp',AP='app';
+const qEnc=X=>{const ok=X.every(r=>Array.isArray(r[6])&&r[6].every(x=>x==null||Math.abs(x*1e4-Math.round(x*1e4))<1e-6));if(!ok)return{q:0,RAW:X};
+const acc={},b={};X.forEach(r=>{const a=acc[r[5]]||(acc[r[5]]=[]);r[6].forEach((x,k)=>{if(x!=null){const o=a[k]||(a[k]=[0,0]);o[0]+=Math.round(x*1e4);o[1]++}})});
+Object.keys(acc).forEach(sx=>{b[sx]=Array.from(acc[sx],o=>o?Math.round(o[0]/o[1]):0)});
+return{q:1,b,RAW:X.map(r=>{const bb=b[r[5]]||[],o=r.slice();o[6]=r[6].map((x,k)=>x==null?null:Math.round(x*1e4)-(bb[k]||0));return o})}};
+const qDec=Z=>{if(!Z.q)return Z.RAW;return Z.RAW.map(r=>{const bb=Z.b[r[5]]||[],o=r.slice();o[6]=r[6].map((x,k)=>x==null?null:(x+(bb[k]||0))/1e4);return o})};
+async function zGz(str){const w=new Blob([str]).stream().pipeThrough(new CompressionStream('gzip')),buf=new Uint8Array(await new Response(w).arrayBuffer());let t='';for(let i=0;i<buf.length;i+=32768)t+=String.fromCharCode.apply(null,buf.subarray(i,i+32768));return btoa(t)}
+const ZBOOT=()=>"(async()=>{try{const qDec="+qDec.toString()+";const t=document.getElementById('zp').textContent.trim(),r=await fetch('data:application/octet-stream;base64,'+t),z=JSON.parse(await new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).text());z.RAW=qDec(z);window.__Z=z;const s=document.createElement('script');s.id='appx';s.textContent=document.getElementById('app').textContent;document.body.appendChild(s)}catch(e){document.body.insertAdjacentHTML('afterbegin','<pre style=\"color:#c00;padding:16px;white-space:pre-wrap\">'+String(e)+'</pre>')}})()";
+async function buildSave(){
+if(typeof CompressionStream=='undefined'||typeof DecompressionStream=='undefined')return buildSaveRaw();
+try{let src='';try{const r=await fetch(location.href,{cache:'no-store'});if(!r.ok)throw 0;src=await r.text()}catch(e){src=''}
+const mZ='id="'+ZP+'"',mA='id="'+AP+'"',isZ=x=>x.indexOf(mZ)>=0&&x.indexOf(mA)>=0,isRaw=x=>x.indexOf('const RAW=')>=0;
+if(!src||!(isZ(src)||isRaw(src))){const c=document.documentElement.cloneNode(true);c.querySelectorAll('#appx').forEach(e=>e.remove());c.querySelectorAll('canvas').forEach(e=>{e.removeAttribute('width');e.removeAttribute('height');e.removeAttribute('style')});src='<!DOCTYPE html>\n'+c.outerHTML}
+const b64=await zGz(JSON.stringify({SRC,CFG,DIMS,...qEnc(RAW.concat(UP))}));let out;
+if(isZ(src)){const i=src.indexOf(mZ),g=src.indexOf('>',i)+1,h=src.indexOf(SC,g);out=src.slice(0,g)+b64+src.slice(h)}
+else{const a=src.indexOf('const RAW='),e=src.indexOf('\nconst $=id=>document.getElementById',a);if(a<0||e<0)throw new Error(T('không tìm thấy khối dữ liệu trong file','파일에서 데이터 블록을 찾을 수 없음'));
+const st=src.lastIndexOf(SO+'>',a),ce=src.indexOf(SC,e);if(st<0||ce<0)throw new Error('script');
+let app=src.slice(st+SO.length+1,a)+'const RAW=window.__Z.RAW,DIMS=window.__Z.DIMS;'+src.slice(e,ce);
+const s1="SRC=['Front','Rear','Front · Auto']",c1="let CFG={};try{CFG=JSON.parse(localStorage.getItem('v710cfg')||'{}')}catch(e){}";
+app=app.replace(s1,()=>'SRC=window.__Z.SRC');app=app.replace(c1,()=>"let CFG=window.__Z.CFG||{};try{Object.assign(CFG,JSON.parse(localStorage.getItem('v710cfg')||'{}'))}catch(e){}");
+out=src.slice(0,st)+SO+' id="'+ZP+'" type="application/octet-stream">'+b64+SC+'\n'+SO+' type="text/plain" id="'+AP+'">'+app+SC+'\n'+SO+'>'+ZBOOT()+SC+src.slice(ce+SC.length)}
+return out}catch(x){console.warn('zsave',x);return buildSaveRaw()}}
+
+async function buildSaveRaw(){let src='';
+try{const r=await fetch(location.href,{cache:'no-store'});if(!r.ok)throw 0;src=await r.text()}catch(e){src=''}
+if(!src||src.indexOf('const RAW=')<0){const c=document.documentElement.cloneNode(true);c.querySelectorAll('canvas').forEach(e=>{e.removeAttribute('width');e.removeAttribute('height');e.removeAttribute('style')});src='<!DOCTYPE html>\n'+c.outerHTML}
+const a=src.indexOf('const RAW='),e=src.indexOf('\nconst $=id=>document.getElementById',a);
+if(a<0||e<0)throw new Error(T('không tìm thấy khối dữ liệu trong file','파일에서 데이터 블록을 찾을 수 없음'));
+const J=x=>JSON.stringify(x).replace(/<\/(script)/gi,'<\\/$1').replace(/<!--/g,'<\\!--');
+let out=src.slice(0,a)+'const RAW='+J(RAW.concat(UP))+',DIMS='+J(DIMS)+';'+src.slice(e);
+const s1="SRC=['Front','Rear','Front · Auto']";if(out.indexOf(s1)>=0)out=out.replace(s1,()=>'SRC='+J(SRC));
+const c1="let CFG={};try{CFG=JSON.parse(localStorage.getItem('v710cfg')||'{}')}catch(e){}";if(out.indexOf(c1)>=0)out=out.replace(c1,()=>'let CFG='+J(CFG)+";try{Object.assign(CFG,JSON.parse(localStorage.getItem('v710cfg')||'{}'))}catch(e){}");
+return out}
+async function saveSend(pre){const PF=pre?[pre[0]+' · ',pre[1]+' · ']:['',''];if(!R.length){setMsg('Chưa có dữ liệu để lưu.','저장할 데이터가 없습니다.');return}
+try{setMsg(PF[0]+'Đang tạo file lưu dữ liệu…',PF[1]+'저장 파일 생성 중…');const h=await buildSave(),d=new Date(),p2=n=>String(n).padStart(2,'0'),mx=R.reduce((m,r)=>r.pd>m?r.pd:m,''),nm='V710_AUTO_MACHINE_data_'+(mx?mx.slice(8)+'-'+mx.slice(5,7):'')+'_gui_'+p2(d.getHours())+p2(d.getMinutes())+'.html',f=new File([h],nm,{type:'text/html'});
+const l=document.createElement('a');l.href=URL.createObjectURL(f);l.download=nm;document.body.appendChild(l);l.click();l.remove();setTimeout(()=>URL.revokeObjectURL(l.href),5000);
+const mb=(h.length/1048576).toFixed(1);setMsg(PF[0]+'✓ Đã tải xuống '+nm+' ('+mb+' MB, '+R.length+' mẫu) — gửi file này sang máy khác, mở bằng Chrome/Edge.',PF[1]+'✓ '+nm+' 저장됨('+mb+' MB, 샘플 '+R.length+'개) — 다른 PC로 보내 Chrome/Edge로 여세요.')}catch(x){setMsg('✗ Không lưu được: '+x.message,'✗ 저장 실패: '+x.message)}}
+
+
+async function ingest(items,mode){const RM=new Map(R.map(y=>[y.dk0,y])),UPM=new Map(UP.map(y=>[dk(y),y]));const lim=Date.now()-FS_DAYS*864e5;let add=0,upd=0,skip=0,err=0,ign=0,old=0,fl=0,bad=0,same=0,sinceP=0,NEW=[];
+for(let i=0;i<items.length;i++){const it=items[i];try{const f=await it.get();sbProg(i+1,items.length,f.name);if(mode<1&&f.lastModified<lim){old++;continue}
+const key=it.path+'|'+f.size+'|'+f.lastModified;if(mode<1&&DONE[key]){same++;continue}
+setMsg('Đang đọc '+(i+1)+'/'+items.length+': '+f.name,(i+1)+'/'+items.length+' 읽는 중: '+f.name);
+const r=await parseFile(f,it.path);DONE[key]=1;if(!r||r.skip){ign++;logA('– '+f.name+': '+(r&&r.skip||''),'– '+f.name+': '+(r&&r.skip||''));continue}fl++;bad+=r.bad||0;let a=0;
+r.rows.forEach(x=>{const q=dk(x);if(DEDUP.has(q)){skip++;const e=RM.get(q);if(e&&(e.pd!==x[1]||e.ca!==(x[2]?'Đêm':'Ngày')||(e.ck||'')!==(x[12]||''))){if(!x[9]&&e.pt)x[9]=e.pt;const nr=mkR(x),i=R.indexOf(e);if(i>=0)R[i]=nr;RM.set(q,nr);const u=UPM.get(q),j=u?UP.indexOf(u):-1;if(j>=0)UP[j]=x;else UP.push(x);UPM.set(q,x);upd++;return}if(e){let c=0;if(x[9]&&!e.pt){e.pt=x[9];c=1}if(x[10]&&e.md!==x[10]){e.md=x[10];c=1}if(c){const u=UPM.get(q);if(u){if(x[9])u[9]=e.pt;u[10]=e.md}upd++}}return}DEDUP.add(q);UP.push(x);NEW.push(x);const nr=mkR(x);R.push(nr);RM.set(q,nr);UPM.set(q,x);a++});add+=a;
+if(r.jig&&!(CFG[r.k]&&CFG[r.k].nt)){CFG[r.k]=CFG[r.k]||{};CFG[r.k].nt='JIG';saveCfg()}
+logA('✓ '+f.name+': +'+a+' mẫu · máy '+r.k.slice(2)+(r.fi.mold?' · '+r.fi.mold:'')+(r.fi.date?' · SX '+dm(r.fi.date):'')+(r.fi.mdate?' · đo '+dm(r.fi.mdate):'')+(r.fi.ca!=null?' · '+(r.fi.ca?'Đêm':'Ngày'):''),'✓ '+f.name+': +'+a+'건 · 설비 '+r.k.slice(2));if(++sinceP>=10){sinceP=0;await persist()}}
+catch(e){err++;logA('✗ '+it.path+': '+e.message,'✗ '+it.path+': '+e.message)}}
+if(add||upd)afterData(NEW);const sv=await persist();
+const hm=new Date().toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});
+setMsg(`${hm} · Đã đọc ${fl} file: thêm ${add} mẫu mới`+(skip?`, ${skip} mẫu trùng bỏ qua`:'')+(err?`, ${err} file lỗi`:'')+(ign?`, ${ign} file bị bỏ qua (thiếu khuôn/máy, có “test” hoặc không có sheet)`:'')+(old?`, ${old} file cũ hơn ${FS_DAYS} ngày`:'')+(bad?`, ${bad} mẫu thiếu ngày giờ`:''),
+`${hm} · 파일 ${fl}개 읽음: 신규 ${add}건`+(skip?`, 중복 ${skip}건 제외`:'')+(err?`, 오류 파일 ${err}개`:'')+(ign?`, 제외된 파일 ${ign}개(금형/설비 번호 없음, “test” 포함, 시트 없음)`:'')+(old?`, ${FS_DAYS}일 이전 파일 ${old}개`:''));const res={fl,add,upd,skip,err,ign,old,same,bad,sv};LS=Date.now();META.scan=LS;META.latest=newestT();if(add){META.add=LS;META.added=add}saveMeta();sbDone(res);updUi();if(add||upd)clDirty();return res}
+async function fsList(h,path,dep,out){for await(const[nm,e]of h.entries()){if(e.kind=='file'){if(/\.(xlsx|xlsm|xls|csv)$/i.test(nm)&&!/^~\$/.test(nm))out.push({e,path:path+nm})}else if(dep<FS_DEP)await fsList(e,path+nm+'/',dep+1,out)}return out}
+async function scan(manual,full){if(!FSH||FSB)return;FSB=1;
+try{if(FSH.queryPermission&&await FSH.queryPermission({mode:'read'})!=='granted'&&!(manual&&await FSH.requestPermission({mode:'read'})==='granted')){setMsg('Cần cấp quyền đọc lại thư mục “'+FSH.name+'” — bấm “Quét lại / Kết nối lại”.','폴더 “'+FSH.name+'” 읽기 권한이 필요합니다 — “다시 스캔 / 다시 연결”을 누르세요.');sbShow('wn','<span>⚠ '+T('Cần cấp quyền đọc lại thư mục','폴더 읽기 권한이 필요합니다')+' “'+FSH.name+'” — '+T('dữ liệu đã lưu vẫn hiển thị bình thường, chỉ file mới chưa được quét','저장된 데이터는 정상 표시되며 새 파일만 아직 스캔되지 않았습니다')+'</span><button data-sbgo="1">'+T('Cấp quyền & quét file mới','권한 허용 및 새 파일 스캔')+'</button>');FSB=0;return}
+setMsg('Đang quét thư mục “'+FSH.name+'” (tối đa '+FS_DEP+' cấp)…','폴더 “'+FSH.name+'” 스캔 중(최대 '+FS_DEP+'단계)…');
+sbShow('','<span>⟳ '+T('Đang liệt kê file trong thư mục…','폴더 파일 목록 읽는 중…')+'</span>');const fl=await fsList(FSH,'',0,[]);await ingest(fl.map(x=>({get:()=>x.e.getFile(),path:FSH.name+'/'+x.path})),full?1:0);updUi()}
+catch(e){setMsg('✗ '+e.message,'✗ '+e.message)}FSB=0}
+$('fpick').onclick=async()=>{if(!FSA){$('fd').click();return}try{const h=await showDirectoryPicker({id:'v710',mode:'read'});FSH=h;try{await idb('set','dir',h)}catch(e){}updUi();sched();scan(1,true)}catch(e){if(e.name=='AbortError')return;if(e.name=='SecurityError'||e.name=='TypeError')$('fd').click();else setMsg('✗ '+e.message,'✗ '+e.message)}};
+$('fd').onchange=e=>{const fs=[...e.target.files].filter(f=>/\.(xlsx|xlsm|xls|csv)$/i.test(f.name)&&!/^~\$/.test(f.name)&&(f.webkitRelativePath||f.name).split('/').length-2<=FS_DEP);e.target.value='';ingest(fs.map(f=>({get:()=>Promise.resolve(f),path:f.webkitRelativePath||f.name})),1)};
+$('ffile').onclick=()=>$('ff').click();$('ff').onchange=e=>{const fs=[...e.target.files];e.target.value='';ingest(fs.map(f=>({get:()=>Promise.resolve(f),path:f.name})),2);};
+$('fscan').onclick=()=>scan(1);$('fall').onclick=()=>scan(1,true);
+$('fdrop').onclick=async()=>{FSH=null;sched();try{await idb('del','dir')}catch(e){}setMsg('Đã bỏ kết nối thư mục.','폴더 연결을 해제했습니다.')};
+$('fclr').onclick=async()=>{try{localStorage.removeItem('v710meta')}catch(e){}try{await idb('del','up');await idb('del','done')}catch(e){}location.reload()};
+$('gup').onclick=()=>{upCollapse(false);$('upc').scrollIntoView({behavior:'smooth'})};
+try{$('lk').value=localStorage.getItem('v710lnk')||''}catch(e){}
+$('lk').oninput=()=>{try{localStorage.setItem('v710lnk',$('lk').value.trim())}catch(e){}};
+$('lko').onclick=()=>{const v=$('lk').value.trim();if(/^https?:\/\//i.test(v))window.open(v,'_blank','noopener');else setMsg('Đường dẫn mạng/thư mục máy tính không mở được từ trình duyệt — hãy bấm “Chọn thư mục” và chọn đúng thư mục này.','네트워크/로컬 경로는 브라우저에서 열 수 없습니다 — “폴더 선택”을 눌러 해당 폴더를 선택하세요.')};
+$('lkc').onclick=()=>{try{navigator.clipboard.writeText($('lk').value.trim()).then(()=>setMsg('Đã sao chép đường dẫn.','경로를 복사했습니다.'))}catch(e){}};
+async function initUp(){try{if(!localStorage.getItem('v710rs11')){localStorage.setItem('v710rs11','1');await idb('del','up');await idb('del','done');localStorage.removeItem('v710cfg');CFG={}}}catch(e){}
+try{if(!localStorage.getItem('v710nt3')){localStorage.setItem('v710nt3','1');await idb('del','done')}}catch(e){}
+try{if(!localStorage.getItem('v710nt2')){localStorage.setItem('v710nt2','1');await idb('del','done')}}catch(e){}
+try{if(!localStorage.getItem('v710nt1')){localStorage.setItem('v710nt1','1');await idb('del','done')}}catch(e){}
+try{if(!localStorage.getItem('v710md1')){localStorage.setItem('v710md1','1');await idb('del','done')}}catch(e){}
+try{const u=await idb('get','up');if(u&&u.rows){const mp={};(u.ex||[]).forEach(([i,D,nm])=>{const k=sg(D);let ns=SIG[k];if(ns==null){ns=DIMS.push(D)-1;SIG[k]=ns;SRC[ns]=nm}mp[i]=ns});
+u.rows.forEach(x=>{if(mp[x[5]]!=null)x[5]=mp[x[5]];const q=dk(x);if(DEDUP.has(q))return;DEDUP.add(q);UP.push(x);R.push(mkR(x))})}DONE=(await idb('get','done'))||{};SPEC=(await idb('get','spec'))||{};FSH=(await idb('get','dir'))||null}catch(e){}
+if(UP.length)afterData();else updUi();
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+upInit();sched();if(FSH)scan(0)}
+const IV=()=>{let v=5;try{const q=localStorage.getItem('v710iv');if(q!=null&&!isNaN(+q))v=+q}catch(e){}return v};
+function sched(){if(IVT){clearInterval(IVT);IVT=null}const m=IV();if(FSH&&m>0)IVT=setInterval(()=>{if(!document.hidden)scan(0)},m*6e4)}
+function upCollapse(c){$('upb').style.display=c?'none':'';$('upcc').textContent=c?'▸':'▾';tt();try{localStorage.setItem('v710upc',c?'1':'0')}catch(e){}}
+function upInit(){let c=!!R.length;try{const q=localStorage.getItem('v710upc');if(q!=null)c=q=='1'}catch(e){}upCollapse(c);$('upcc').onclick=()=>upCollapse($('upb').style.display!='none');
+$('fiv').value=String(IV());$('fiv').onchange=()=>{try{localStorage.setItem('v710iv',$('fiv').value)}catch(e){}sched()};
+$('bup').onclick=()=>saveSend();
+$('bscan').onclick=async()=>{const b=$('bscan');if(FSH){b.classList.add('bz');try{await scan(1)}finally{b.classList.remove('bz')}}else if(FSA)$('fpick').click();else $('ffile').click()};
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&FSH&&Date.now()-LS>6e4)scan(0)});
+let PGR=0;document.addEventListener('click',async()=>{if(PGR||!FSH)return;PGR=1;try{if(await FSH.queryPermission({mode:'read'})!=='granted'&&await FSH.requestPermission({mode:'read'})==='granted')scan(1)}catch(e){}},true)}
+
+/* ===== Bảng tổng hợp NG theo hạng mục (kích thước) — kèm Min / Max / TB / σ / Cpk ===== */
+function dimSum(V){const A={};let hits=0,so=0;const pb=(v,c)=>`<span class="rb"><i style="width:${Math.min(100,v)}%;background:${c}"></i></span>`;
+V.forEach(r=>{const D=DIMS[r.s];if(!D)return;let ob=0;D.forEach((d,i)=>{const v=r.v[i];const k=r.p+'|'+d[0]+'|'+d[2]+'|'+d[3],o=A[k]||(A[k]={nm:d[0],lo:d[2],hi:d[3],nom:d[4],p:r.p,n:0,ng:0,up:0,dn:0,mn:Infinity,mx:-Infinity,m:0,q:0});
+if(v==null)return;o.n++;if(v<o.mn)o.mn=v;if(v>o.mx)o.mx=v;const dl=v-o.m;o.m+=dl/o.n;o.q+=dl*(v-o.m);/* Welford: TB & độ lệch chuẩn */
+if(outS(v,d[2],d[3])){o.ng++;hits++;ob=1;if(v>d[3])o.up++;else o.dn++}});if(ob)so++});
+const L=Object.values(A).sort((a,b)=>(a.n==0)-(b.n==0)||b.ng-a.ng||(b.n?b.ng/b.n:0)-(a.n?a.ng/a.n:0)||(a.nm<b.nm?-1:a.nm>b.nm?1:0));
+if(!L.length)return{h:'',note:'',n:0};
+L.forEach(o=>{o.sd=o.n>1?Math.sqrt(o.q/(o.n-1)):null;const hasN=o.nom!=null&&o.nom>o.lo&&o.nom<o.hi;o.dv=o.nom!=null?o.m-o.nom:null;
+/* Cpk: 2 phía; hạng mục 1 phía (danh nghĩa trùng Min hoặc Max, vd độ phẳng) chỉ tính Cpu/Cpl */
+/* Min = 0 (profile, độ phẳng, true position…) là hạng mục 1 phía → chỉ Cpu. File Auto Data không ghi Nominal nên danh nghĩa = (Min+Max)/2 không được coi là 2 phía */
+const zl=Math.abs(o.lo)<1e-12&&o.hi>0&&(o.nom==null||o.nom<=1e-9||Math.abs(o.nom-(o.lo+o.hi)/2)<1e-9);
+if(o.sd>0){const cu=(o.hi-o.m)/(3*o.sd),cl=(o.m-o.lo)/(3*o.sd);o.cpk=zl?cu:hasN||o.nom==null?Math.min(cu,cl):(o.nom<=o.lo+1e-9?cu:o.nom>=o.hi-1e-9?cl:Math.min(cu,cl));o.one=zl||(!hasN&&o.nom!=null)}else o.cpk=null});
+const both=uniq(L.map(o=>o.p)).length>1,ngS=V.filter(r=>!r.ok).length,nz=L.filter(o=>o.ng).length,f3=v=>v==null?'–':v.toFixed(3),sg3=v=>v==null?'–':(v>0?'+':'')+v.toFixed(3),cpc=c=>c==null?'':c<1?'ng':c<1.33?'wnc':'ok';
+const h=`<table><thead><tr><th>#</th><th>${T('Hạng mục','항목')}</th>${both?'<th>'+T('Loại','구분')+'</th>':''}<th>Spec</th><th>${T('Số mẫu đo','측정 수')}</th><th>${T('Trung bình','평균')}</th><th>Cpk</th><th>${T('Mẫu NG','NG 수')}</th><th>${T('Tỷ lệ NG','NG율')}</th></tr></thead><tbody>`+
+L.map((o,q)=>`<tr class="${o.ng?'':'lo'}"${o.n?'':' title="'+T('Chưa có dữ liệu đo (tên cột trong sheet Data không khớp)','측정 데이터 없음(Data 시트 열 이름 불일치)')+'"'}><td>${q+1}</td><td class="l"><b>${o.nm}</b></td>${both?'<td>'+o.p+'</td>':''}<td class="sp">${o.lo} … ${o.hi}</td><td>${o.n}</td><td class="${o.n&&outS(o.m,o.lo,o.hi)?'ng':''}"><b>${f3(o.n?o.m:null)}</b></td><td class="${cpc(o.cpk)}"${o.one?' title="'+T('Hạng mục 1 phía: Cpu = (Max − TB) / 3σ','단측 항목: Cpu = (Max − 평균) / 3σ')+'"':''}>${o.cpk==null?'–':'<b>'+o.cpk.toFixed(2)+'</b>'}</td><td class="${o.ng?'ng':''}">${o.ng}</td><td class="${o.ng?'ng':''}">${o.n?pc(100*o.ng/o.n):'–'}${o.ng?pb(o.ng/o.n*100*3,css('--ng')):''}</td></tr>`).join('')+
+`<tr><td></td><td class="l"><b>${T('Tổng','합계')}</b></td>${both?'<td></td>':''}<td></td><td>${L.reduce((a,o)=>a+o.n,0)}</td><td></td><td></td><td class="ng"><b>${hits}</b></td><td></td></tr></tbody></table>`;
+const note=T(ngS+' mẫu NG (máy báo) / '+V.length+' mẫu · '+so+' mẫu có ≥1 hạng mục ngoài spec · '+nz+'/'+L.length+' hạng mục có NG · '+hits+' lượt ngoài spec. Cpk = min(Max − TB, TB − Min) / 3σ; hạng mục 1 phía (Min = 0) chỉ tính (Max − TB) / 3σ: <1 đỏ, 1–1,33 vàng, ≥1,33 xanh. Tỷ lệ NG = mẫu NG / số mẫu đo của hạng mục.',
+ngS+' NG 샘플(설비 판정) / '+V.length+' 샘플 · 규격 이탈 샘플 '+so+' · NG 항목 '+nz+'/'+L.length+' · 규격 이탈 '+hits+'건. Cpk = min(Max − 평균, 평균 − Min) / 3σ, 단측 항목(Min = 0)은 (Max − 평균) / 3σ만 계산: <1 빨강, 1–1.33 노랑, ≥1.33 초록. NG율 = 항목 NG 수 / 항목 측정 수.');
+return{h,note,n:L.length,ne:L.filter(o=>!o.n).length}}
+
+/* ===== Bảng NG theo hạng mục: cao bằng thẻ "Bảng theo máy", cắt theo dòng, nút mở rộng ===== */
+let DKOPEN=false,DAYALL=false,DAYS_CTX=null;const DEXP=new Set();
+let FIT=0,OPEN={tm:false,dk:false,tk:false,td:false};
+function fitDk(){fitAll()}
+/* Vừa 1 màn hình: 2 thẻ trên + 3 thẻ dưới chia đều chiều cao còn lại; bảng dài được cắt theo dòng + nút mở rộng */
+function fitAll(){if(FIT)return;FIT=1;try{
+const q=x=>document.querySelector(x),ra=q('.g2.ra'),rb=q('.g2.m3');if(!ra||!rb)return;
+const cards=[...ra.children,...rb.children];
+cards.forEach(c=>{c.style.minHeight=''});ra.style.alignItems=rb.style.alignItems='start';ra.classList.remove('dn1','dn2','dn3');
+const B=[['tm','tmx'],['dk','dkx'],['tk','tkx'],['td','tdx']],lab=o=>o?T('Thu gọn ▴','접기 ▴'):T('Mở rộng xem hết ▾','전체 보기 ▾');
+B.forEach(([i])=>{const e=$(i);if(e){e.classList.remove('cl');e.style.maxHeight=''}});
+const wide=window.innerWidth>=1300&&getComputedStyle(ra).gridTemplateColumns.trim().split(/\s+/).length>1;
+let rowH=0,rowA=0,rowB=0,tmCap=false;if(wide){const top=ra.getBoundingClientRect().top+window.scrollY,A=(document.documentElement.clientHeight||window.innerHeight)-top-22;rowH=Math.min(560,Math.max(200,Math.floor((A-10)/2)));rowA=rowH;rowB=rowH;const tcn=$('tm')&&$('tm').closest('.card');if(st.p&&tcn){const RES=380;for(let lv=0;lv<4;lv++){[1,2,3].forEach(k=>ra.classList.toggle('dn'+k,lv==k));if(tcn.offsetHeight<=A-10-RES)break}tmCap=tcn.offsetHeight>A-10-RES;rowA=tmCap?Math.max(240,A-10-RES):Math.max(rowH,tcn.offsetHeight);rowB=Math.max(RES,Math.min(560,A-rowA-10))}}
+B.forEach(([i,bi])=>{const e=$(i),b=$(bi);if(!e||!b)return;
+if(!e.querySelector('table')){b.hidden=true;return}
+if(i=='td'&&!wide)return;
+if(i=='tm'&&st.p&&!tmCap){b.hidden=true;return}
+if(!wide&&i!='dk'){b.hidden=true;return}
+const few=i=='td'&&DAYS_CTX&&DAYS_CTX.rw.length<=7;
+b.hidden=false;if(i!='td'||few)b.textContent=lab(OPEN[i]);
+const card=e.closest('.card');
+let lim=wide?((i=='tm'||i=='dk')?rowA:rowB)-(card.offsetHeight-e.offsetHeight):Math.round(Math.min(window.innerHeight*.6,460));
+lim=Math.max(120,lim);
+if(e.scrollHeight<=lim+2){b.hidden=(i=='td')?few:true;return}
+if(OPEN[i])return;
+const t0=e.getBoundingClientRect().top;let best=0;e.querySelectorAll('tbody tr').forEach(r=>{const bt=r.getBoundingClientRect().bottom-t0;if(bt<=lim)best=bt});
+if(best>=60)lim=Math.ceil(best)+1;e.style.maxHeight=lim+'px';e.classList.add('cl')});
+if(wide){[...ra.children].forEach(c=>c.style.minHeight=rowA+'px');[...rb.children].forEach(c=>c.style.minHeight=rowB+'px');ra.style.alignItems=rb.style.alignItems='stretch'}
+}finally{FIT=0}}
+function drawDays(){const c=DAYS_CTX,td=$('td'),b=$('tdx');if(!c||!td)return;const{rw,avg,MIN}=c,all=DAYALL||rw.length<=7,rows=all?rw:rw.slice(0,7),wd=td.clientWidth||520,nb=all?Math.max(1,Math.min(4,Math.floor((wd+14)/300))):1,per=Math.max(1,Math.ceil(rows.length/nb)),bl=[];for(let q=0;q<rows.length;q+=per)bl.push(rows.slice(q,q+per));
+const th=`<thead><tr><th>${T('Ngày đo','측정일')}</th><th>${T('Ngày SX','생산일')}</th><th>${T('Mẫu','수량')}</th><th>OK</th><th>NG</th><th>${T('Lỗi','불량')}</th></tr></thead>`;
+const LB=(k,m)=>`<button class="lotb" data-lot="${k}"${m?` data-lmd="${m}"`:''} title="${T('Xem chi tiết Lot này','이 Lot 상세 보기')}">→</button>`;
+const rowH=d=>{const sb=d.sub||[],ex=sb.length>1,key=DT+'|'+d.k,op=ex&&DEXP.has(key);
+let h=`<tr class="${d.n<MIN?'lo':''}"><td>${ex?`<span class="dar${op?' on':''}" data-dx="${key}" title="${T('Xem chi tiết từng ngày','일자별 상세')}">${op?'▾':'▸'}</span>`:'<span class="dar0"></span>'}<b>${d.c1}</b></td><td class="pdc">${d.c2||'–'}${DT=='p'?LB(d.k,''):(!ex&&sb.length==1&&sb[0].k?LB(sb[0].k,d.k):'')}</td><td>${d.n}</td><td class="ok">${d.ok}</td><td class="${d.ng?'ng':''}">${d.ng}</td><td class="${d.n>=MIN&&d.e>avg?'ng':''}"><b>${pc(d.e)}</b></td></tr>`;
+if(ex)sb.forEach(x=>{const a=DT=='m'?dm(d.k):dm(x.k),b2=DT=='m'?(x.k?dm(x.k):'–'):dm(d.k);h+=`<tr class="dsr" data-of="${key}"${op?'':' hidden'}><td>↳ ${a}${DT=='p'?LB(d.k,x.k):(x.k?LB(x.k,d.k):'')}</td><td class="pdc">${b2}</td><td>${x.n}</td><td class="ok">${x.ok}</td><td class="${x.ng?'ng':''}">${x.ng}</td><td class="${x.n>=MIN&&x.e>avg?'ng':''}"><b>${pc(x.e)}</b></td></tr>`});return h};
+td.innerHTML='<div class="dtb">'+bl.map(k=>`<table>${th}<tbody>`+k.map(rowH).join('')+'</tbody></table>').join('')+'</div>';
+b.hidden=rw.length<=7;b.textContent=DAYALL?T('Thu gọn (1 tuần) ▴','접기(1주) ▴'):T('Xem hết '+rw.length+' ngày ▾','전체 '+rw.length+'일 보기 ▾');fitAll()}
+{[['dkx','dk'],['tmx','tm'],['tkx','tk']].forEach(([bi,k])=>{const x=$(bi);if(x)x.onclick=()=>{OPEN[k]=!OPEN[k];fitAll()}});const tdE=$('td');if(tdE)tdE.addEventListener('click',e=>{const lb=e.target.closest('[data-lot]');if(lb){openLot(lb.dataset.lot,lb.dataset.lmd||'',lb);return}const a=e.target.closest('[data-dx]');if(!a)return;const k=a.dataset.dx,on=!DEXP.has(k);if(on)DEXP.add(k);else DEXP.delete(k);a.textContent=on?'▾':'▸';a.classList.toggle('on',on);tdE.querySelectorAll('tr.dsr').forEach(r=>{if(r.dataset.of==k)r.hidden=!on});fitAll()});
+const y=$('tdx');if(y)y.onclick=()=>{DAYALL=!DAYALL;OPEN.td=DAYALL;drawDays()};window.addEventListener('resize',()=>{clearTimeout(window._rt);window._rt=setTimeout(()=>{fitAll();drawDays()},120)});window.addEventListener('load',()=>{[100,400,1200].forEach(t=>setTimeout(fitAll,t))});if(window.ResizeObserver){let rq=0;const ro=new ResizeObserver(()=>{cancelAnimationFrame(rq);rq=requestAnimationFrame(fitAll)});['.top','kp','fb'].forEach(x=>{const e=x[0]=='.'?document.querySelector(x):$(x);if(e)ro.observe(e)});ro.observe(document.documentElement)}if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>setTimeout(fitAll,50))}
+
+/* ===== Trang từng máy: mỗi nhóm kích thước = 1 biểu đồ nhiều đường ===== */
+const PAL=['#2a63c9','#e07a1f','#168a52','#8e44ad','#c0392b','#16a2b8','#b8860b','#d6336c','#5c7080','#6aa84f','#7e57c2','#00897b'];
+const MG=[[/^Profile P(?:22~P23|24~P25|27~P28|29~P30)\b/i,'~Profile P22 · P23 · P24 · P25 · P27 · P29-30'],[/^D10\.2 True Position \[CIR-[56]\]/i,'~D10.2 True Position (D6.1 · D6.2)'],[/^(?:Datum-C- D11|D11 Hole \[CIR-4\])$/i,'~Datum-C- D11 + D11 Hole (D8.1 · D9.1)']],mgOf=d=>{const n=(d[0]||'').normalize('NFC').trim(),m=MG.find(x=>x[0].test(n));return m?m[1]:''};
+const grpCode=d=>{const o=mgOf(d);if(o)return o;let c=(d[1]||'').replace(/\s+/g,' ').trim().replace(/\.\d+$/,'');if(!c){const m=(d[0]||'').match(/^(.*?)\s*\[[^\]]+\]$/);if(m&&m[1])c='~'+m[1];else{const z=(d[0]||'').normalize('NFC').match(/^([^\s\[]+).*?\[(\d+(?:\.\d+)?)\]/);if(z)c='~'+z[1]+' ['+z[2]+']'}}return c},grpKey=d=>mgOf(d)?mgOf(d):grpCode(d)?grpCode(d)+'|'+d[2]+'|'+d[3]:'';
+const spTxt=(D,ix)=>{const a=[];ix.forEach(i=>{const t=D[i][2]+' … '+D[i][3];if(!a.includes(t))a.push(t)});return a.join('  |  ')};
+const hlPl=L=>({id:'hl',afterDatasetsDraw(c){const y=c.scales.y,a=c.chartArea,g=c.ctx;L.forEach(([v,col,dash])=>{const py=y.getPixelForValue(v);g.save();g.strokeStyle=col;g.lineWidth=1.5;g.setLineDash(dash);g.beginPath();g.moveTo(a.left,py);g.lineTo(a.right,py);g.stroke();g.restore()})}});
+const spL=(lo,hi,nom)=>[[hi,css('--ng'),[6,4]],[lo,css('--ng'),[6,4]]].concat(nom!=null&&nom>lo&&nom<hi?[[nom,css('--ok'),[]]]:[]);
+const qtl=(a,p)=>{const x=(a.length-1)*p,f=Math.floor(x),c=Math.min(a.length-1,f+1);return a[f]+(a[c]-a[f])*(x-f)};
+const nbOf=n=>n>150?Math.ceil(n/80):1;
+const bkt=(arr,isB,NB)=>{const M=[],Lo=[],Hi=[],B=[];for(let s=0;s<arr.length;s+=NB){let n=0,sm=0,mn=Infinity,mx=-Infinity;const w=[];for(let k=s;k<Math.min(arr.length,s+NB);k++){const v=arr[k];if(v==null)continue;n++;sm+=v;w.push(v);if(v<mn)mn=v;if(v>mx)mx=v;if(isB(v))B.push({x:k,y:v})}if(n){const x=Math.min(arr.length-1,s+Math.floor((NB-1)/2));w.sort((a,b)=>a-b);M.push({x,y:w.length%2?w[(w.length-1)/2]:(w[w.length/2-1]+w[w.length/2])/2});Lo.push({x,y:mn});Hi.push({x,y:mx})}}return{M,Lo,Hi,B}};
+const yRng=(vals,lo,hi)=>{let a=Infinity,b=-Infinity;for(const v of vals){if(v==null)continue;if(v<a)a=v;if(v>b)b=v}if(a===Infinity){a=lo;b=hi}const w=(hi-lo)||Math.abs(hi)||1,y0=Math.max(Math.min(lo,a),lo-1.5*w),y1=Math.min(Math.max(hi,b),hi+1.5*w);let n=0;for(const v of vals)if(v!=null&&(v<y0-1e-9||v>y1+1e-9))n++;return{y0,y1,pd:(y1-y0)*.06||.01,n,vmin:a,vmax:b}};
+const cutTx=r=>T(r.n+' điểm quá xa spec bị cắt khỏi khung (thực: '+r.vmin.toFixed(3)+' … '+r.vmax.toFixed(3)+')',r.n+'개 포인트가 범위 밖으로 잘림 (실측 '+r.vmin.toFixed(3)+' … '+r.vmax.toFixed(3)+')');
+const outS=(v,lo,hi)=>v<lo-1e-9||v>hi+1e-9;
+function trendCh(id,pts,ix,D,lo,hi,nom,sm){const dI=[];pts.forEach((r,q)=>{if(!q||r.d!==pts[q-1].d)dI.push(q)});
+const stp=Math.max(1,Math.ceil(dI.length/(sm?6:9))),xm=Math.max(1,pts.length-1),mu=ix.length>1;
+const SP=[];ix.forEach(i=>{if(!SP.some(x=>x[0]==D[i][2]&&x[1]==D[i][3]))SP.push([D[i][2],D[i][3],D[i][4]])});let mn=Math.min(...SP.map(x=>x[0])),mx=Math.max(...SP.map(x=>x[1]));pts.forEach(r=>ix.forEach(i=>{const v=r.v[i];if(v!=null){if(v<mn)mn=v;if(v>mx)mx=v}}));
+const allv=[];pts.forEach(r=>ix.forEach(i=>{const v=r.v[i];if(v!=null)allv.push(v)}));const YT=yRng(allv,Math.min(...SP.map(x=>x[0])),Math.max(...SP.map(x=>x[1])));mn=YT.y0;mx=YT.y1;const pd=YT.pd,ln=(v,c,dash)=>({label:'',data:[{x:0,y:v},{x:xm,y:v}],borderColor:c,borderDash:dash,pointRadius:0,borderWidth:1.5,order:99});
+const NB=nbOf(pts.length);
+const ds=ix.map((i,n)=>{const col=mu?PAL[n%PAL.length]:css('--ac'),dat=[],pcl=[],pr=[];let nb=0;
+if(NB>1){const b=bkt(pts.map(r=>r.v[i]),v=>outS(v,D[i][2],D[i][3]),NB);return{label:D[i][0]+(b.B.length?' · '+b.B.length+' NG':''),name:D[i][0],data:b.M,borderColor:col,backgroundColor:col,borderWidth:1.5,tension:.2,pointRadius:0,ng:b.B}}
+pts.forEach((r,q)=>{const v=r.v[i];if(v==null)return;dat.push({x:q,y:v});const b=outS(v,D[i][2],D[i][3]);if(b)nb++;pcl.push(b?css('--ng'):col);pr.push(b?(sm?3.5:4):(sm?1.2:1.6))});
+return{label:D[i][0]+(nb?' · '+nb+' NG':''),name:D[i][0],data:dat,borderColor:col,backgroundColor:col,borderWidth:mu?1.3:1,tension:0,spanGaps:true,pointBackgroundColor:pcl,pointBorderColor:pcl,pointRadius:pr}});
+const spec=SP.flatMap((x,k)=>spL(x[0],x[1],SP.length==1?nom:null).map(([v,c,dash])=>ln(v,c,k?[2,3]:dash)));
+mk(id,{type:'line',data:{datasets:ds.concat(NB>1?[{label:'',name:'NG',data:[].concat(...ds.map(q=>q.ng||[])),showLine:false,pointRadius:sm?2.5:3,backgroundColor:css('--ng'),borderColor:css('--ng')}]:[]).concat(spec)},
+options:{animation:false,maintainAspectRatio:false,interaction:mu?{mode:'x',intersect:false}:{mode:'nearest',intersect:false},
+scales:{y:{min:mn-pd,max:mx+pd,ticks:{maxTicksLimit:sm?5:7}},x:{type:'linear',min:0,max:xm,afterBuildTicks:a=>{a.ticks=dI.filter((_,q)=>q%stp==0).map(q=>({value:q}))},ticks:{maxRotation:0,autoSkip:false,callback:v=>pts[v]?dm(pts[v].d):''}}},
+plugins:{title:{display:!!YT.n,text:cutTx(YT),font:{size:11},color:css('--mu')},legend:{display:mu,position:'bottom',labels:{boxWidth:10,boxHeight:10,font:{size:11},filter:it=>it.datasetIndex<ix.length}},
+tooltip:{filter:it=>it.datasetIndex<ix.length,callbacks:{title:it=>{const q=it&&it[0]&&it[0].raw,r=q?pts[q.x]:null;return r?dm(r.d)+' '+(r.t||'').slice(11,16)+' · '+(r.ok?'OK':'NG'):''},label:c=>c.dataset.name+': '+c.parsed.y}}}}})}
+function meanCh(id,pts,ix,D,lo,hi,nom){const lb=ix.map(i=>D[i][0].replace(/^[A-Za-z]+-+/,'')),
+S=ix.map(i=>{const a=pts.map(r=>r.v[i]).filter(v=>v!=null);return{n:a.length,m:a.length?a.reduce((x,y)=>x+y,0)/a.length:null,b:a.filter(v=>outS(v,lo,hi)).length}}),
+ms=S.map(x=>x.m).filter(v=>v!=null),YM=yRng(ms,lo,hi),mn=YM.y0,mx=YM.y1,pd=(mx-mn)*.14||.01,y0=mn-pd,y1=mx+pd;
+mk(id,{type:'bar',data:{labels:lb,datasets:[{data:S.map(x=>x.m),base:y0,backgroundColor:S.map(x=>x.m!=null&&outS(x.m,lo,hi)?css('--ng'):css('--ac')),barPercentage:.7}]},
+options:{animation:false,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>T('TB ','평균 ')+c.parsed.y.toFixed(4),afterLabel:c=>'n='+S[c.dataIndex].n+(S[c.dataIndex].b?' · NG '+S[c.dataIndex].b:'')}}},scales:{y:{min:y0,max:y1,ticks:{maxTicksLimit:6}},x:{grid:{display:false}}}},
+plugins:[hlPl(spL(lo,hi,nom)),{id:'vl',afterDatasetsDraw(c){const g=c.ctx,m=c.getDatasetMeta(0);g.save();g.fillStyle=css('--tx');g.font='11px system-ui,sans-serif';g.textAlign='center';m.data.forEach((e,q)=>{if(S[q].m!=null&&S[q].m<=y1&&S[q].m>=y0)g.fillText(S[q].m.toFixed(3),e.x,e.y-4)});g.restore()}}]})}
+function boxCh(id,pts,ix,D,lo,hi,nom){const lb=ix.map(i=>D[i][0].replace(/^[A-Za-z]+-+/,'')),
+BS=ix.map(i=>{const a=pts.map(r=>r.v[i]).filter(v=>v!=null).sort((x,y)=>x-y);if(!a.length)return null;const q1=qtl(a,.25),md=qtl(a,.5),q3=qtl(a,.75),f=1.5*(q3-q1),o=a.filter(v=>v<q1-f||v>q3+f),In=a.filter(v=>v>=q1-f&&v<=q3+f);
+return{q1,md,q3,wl:In.length?In[0]:q1,wh:In.length?In[In.length-1]:q3,o,m:a.reduce((x,y)=>x+y,0)/a.length,n:a.length}});
+const allb=[];BS.forEach(b=>{if(b)allb.push(b.wl,b.wh,...b.o)});const YX=yRng(allb,lo,hi),mn=YX.y0,mx=YX.y1,pd=YX.pd;
+mk(id,{type:'bar',data:{labels:lb,datasets:[{data:BS.map(b=>b?[b.q1,b.q3]:null),backgroundColor:css('--ac')+'66',borderColor:css('--ac'),borderWidth:1.2,borderSkipped:false,barPercentage:.55}]},
+options:{animation:false,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const b=BS[c.dataIndex];return b?['Q3 '+b.q3.toFixed(4),T('Trung vị ','중앙값 ')+b.md.toFixed(4),'Q1 '+b.q1.toFixed(4),T('TB ','평균 ')+b.m.toFixed(4)+' · n='+b.n,'min…max '+b.wl.toFixed(4)+' … '+b.wh.toFixed(4)+(b.o.length?' · '+b.o.length+T(' ngoại lai',' 이상치'):'')]:''}}}},scales:{y:{min:mn-pd,max:mx+pd,ticks:{maxTicksLimit:6}},x:{grid:{display:false}}}},
+plugins:[hlPl(spL(lo,hi,nom)),{id:'bx',afterDatasetsDraw(c){const g=c.ctx,y=c.scales.y,m=c.getDatasetMeta(0),P=v=>y.getPixelForValue(v);g.save();{const ca=c.chartArea;g.beginPath();g.rect(ca.left,ca.top,ca.width,ca.height);g.clip()}g.lineWidth=1.3;
+m.data.forEach((e,q)=>{const b=BS[q];if(!b)return;const x=e.x,w=e.width/2;g.strokeStyle=css('--tx');g.beginPath();g.moveTo(x-w,P(b.md));g.lineTo(x+w,P(b.md));g.moveTo(x,P(b.q3));g.lineTo(x,P(b.wh));g.moveTo(x,P(b.q1));g.lineTo(x,P(b.wl));g.moveTo(x-w/2,P(b.wh));g.lineTo(x+w/2,P(b.wh));g.moveTo(x-w/2,P(b.wl));g.lineTo(x+w/2,P(b.wl));g.stroke();
+g.fillStyle=css('--tx');g.beginPath();g.arc(x,P(b.m),2.5,0,7);g.fill();g.strokeStyle=css('--ng');b.o.forEach(v=>{g.beginPath();g.arc(x,P(v),2.2,0,7);g.stroke()})});g.restore()}}]})}
+/* Thống kê cây NG: cột = từng cây NG, hàng = hạng mục, ô đỏ = ngoài spec */
+let ZOPEN=false;const zlab=n=>(ZOPEN?'▾ ':'▸ ')+(ZOPEN?T('Thu gọn '+n+' hạng mục không NG','NG 없는 '+n+'개 항목 접기'):T(n+' hạng mục không NG · bấm để mở','NG 없는 '+n+'개 항목 · 눌러서 펼치기'));
+function ngMatrix(V,srcs){
+const fv=v=>v==null?'':String(+(+v).toFixed(3)),tm=t=>{const m=/(\d{4})-(\d\d)-(\d\d)[ T](\d\d):(\d\d)/.exec(t||'');return m?m[2]+'.'+m[3]+' '+m[4]+':'+m[5]:(t||'')};
+let tot=0,pcs=0,body='';
+srcs.forEach(s=>{const D=DIMS[s],Vs=V.filter(r=>r.s==s);
+const C=Vs.filter(r=>r.ok==0||D.some((d,i)=>r.v[i]!=null&&outS(r.v[i],d[2],d[3]))).sort((a,b)=>(a.t>b.t)-(a.t<b.t));
+tot+=Vs.length;pcs+=C.length;
+if(!C.length){body+=`<div class="sub" style="margin-top:8px">${SRC[s]}: ${T('không có cây NG','NG 개체 없음')}</div>`;return}
+const rows=[];D.forEach((d,i)=>{if(!Vs.some(r=>r.v[i]!=null))return;let n=0;C.forEach(r=>{if(r.v[i]!=null&&outS(r.v[i],d[2],d[3]))n++});rows.push({d,i,n})});
+rows.sort((a,b)=>(b.n>0)-(a.n>0)||b.n-a.n||a.i-b.i);
+const mx=Math.max(1,...rows.map(r=>r.n)),nz0=rows.filter(r=>!r.n).length,fz=rows.findIndex(r=>!r.n),zbar=nz0?`<tr class="zb" data-zt="1"><td class="zbt" colspan="4"><span class="zl" data-n="${nz0}">${zlab(nz0)}</span></td><td class="zbf" colspan="${C.length}"></td></tr>`:'';
+const h1=`<tr class="h1"><th colspan="4">OK/NG</th>${C.map(()=>'<th class="ngh">NG</th>').join('')}</tr>`;
+const h2=`<tr class="h2"><th>${T('Hạng mục','항목')}</th><th>Max</th><th>Min</th><th>${T('SL NG','NG 수')}</th>${C.map(r=>`<th class="tc" title="${r.t}">${tm(r.t)}</th>`).join('')}</tr>`;
+const tr=rows.map(({d,i,n},q)=>(q==fz?zbar:'')+`<tr${n?'':' class="zr"'+(ZOPEN?'':' hidden')}><td class="nm" title="${dn(d)}">${dn(d)}</td><td>${fv(d[3])}</td><td>${fv(d[2])}</td><td class="sl"${n?` style="background:rgba(26,157,92,${(.18+.5*n/mx).toFixed(2)})"`:''}>${n||'-'}</td>${C.map(r=>{const v=r.v[i];return `<td${v!=null&&outS(v,d[2],d[3])?' class="ngc"':''}>${fv(v)}</td>`}).join('')}</tr>`).join('');
+body+=(srcs.length>1?`<div class="dts">${SRC[s]}<span class="sub">${C.length} ${T('cây NG','NG 개체')}</span></div>`:'')+`<div class="ngs"><table><thead>${h1}${h2}</thead><tbody>${tr}</tbody></table></div>`});
+return `<div class="card ngm"><div class="mct"><b>${T('Thống kê cây NG','NG 개체 통계')}</b><span class="${pcs?'ng':'sub'}">${pcs}/${tot}</span></div><div class="sub">${T('Mỗi cột là 1 cây NG theo thời gian · ô đỏ = ngoài spec · SL NG = số cây NG của hạng mục · kéo ngang để xem thêm','각 열 = NG 개체(시간순) · 빨강 = 규격 초과 · NG 수 = 항목별 NG 개수 · 가로로 스크롤')}</div>${body}</div>`}
+const STR={},SORT={};
+function statDim(s,i,pts){const d=DIMS[s][i],rw=rawOf(d),rows=[{lab:dn(d),vals:pts.map(r=>r.v[i]).filter(v=>v!=null),lo:d[2],hi:d[3],nom:d[4]}];
+if(rw){const ser=rw.idx.map((ix,n)=>({lab:rw.lab?rw.lab[n]:rw.g+ix,vals:pts.map(r=>r.pt&&r.pt[rw.g]&&r.pt[rw.g][ix-1]!=null?r.pt[rw.g][ix-1]:null).filter(v=>v!=null)})).filter(q=>q.vals.length);
+if(ser.length){const all=[].concat(...ser.map(q=>q.vals)),med=[...all].sort((a,b)=>a-b)[Math.floor(all.length/2)],sz=(d[0].match(/\[(\d+(?:\.\d+)?)\]/)||[])[1],NM={H:-17,E:-15.6,F:-23.9},nm2=NM[rw.g]!=null?NM[rw.g]:(sz!=null?(med<0?-1:1)*+sz:null),bh=d[3]/2;
+ser.forEach(q=>rows.push({lab:q.lab,vals:q.vals,lo:nm2!=null?nm2-bh:d[2],hi:nm2!=null?nm2+bh:d[3],nom:nm2}))}}
+return rows}
+function statRow(q){const a=q.vals,n=a.length;if(!n)return null;const m=a.reduce((x,y)=>x+y,0)/n,sd=n>1?Math.sqrt(a.reduce((x,y)=>x+(y-m)**2,0)/(n-1)):0,lo=q.lo,hi=q.hi,ng=a.filter(v=>outS(v,lo,hi)).length,mn=aMin(a),mx=aMax(a),w=(hi-lo)||1,one=lo<=0&&mn>=0&&hi>0;
+let cpk=null;if(sd>0)cpk=one?(hi-m)/(3*sd):Math.min(hi-m,m-lo)/(3*sd);
+return{lab:String(q.lab),n,ng,pct:100*ng/n,m,sd,mn,mx,cpk,cv:100*sd/w}}
+function statHtml(id){const f=STR[id];if(!f)return'';const R=f().map(statRow).filter(Boolean),S=SORT[id]||{},ck=x=>x==null?1e9:x;
+if(S.k){const k=S.k,d=S.d;R.sort((a,b)=>{const x=k=='cpk'?ck(a[k]):a[k],y=k=='cpk'?ck(b[k]):b[k];return(typeof x=='string'?x.localeCompare(y,undefined,{numeric:true}):x-y)*d||a.lab.localeCompare(b.lab,undefined,{numeric:true})})}
+else R.sort((a,b)=>b.ng-a.ng||ck(a.cpk)-ck(b.cpk)||b.cv-a.cv);
+const C=[['lab',T('Chỉ số','지표')],['n','N'],['ng','NG'],['pct','%NG'],['m',T('TB','평균')],['sd','σ'],['mn','Min'],['mx','Max'],['cpk','Cpk'],['cv',T('Biến động','변동')]],f3=x=>x.toFixed(3),ee=x=>x.replace(/[<>&]/g,'');
+return `<div class="sub" style="margin-bottom:4px">${T('Mặc định: NG nhiều → Cpk thấp → biến động cao lên trước. Bấm tiêu đề cột để sắp xếp.','기본: NG 많은 순 → Cpk 낮은 순 → 변동 큰 순. 열 제목을 눌러 정렬.')}</div><table class="stt"><thead><tr>${C.map(([k,t])=>`<th data-ss="${id}|${k}">${t}${S.k==k?(S.d>0?' ▲':' ▼'):''}</th>`).join('')}</tr></thead><tbody>${R.map(r=>`<tr class="${r.ng?'ngr':(r.cpk!=null&&r.cpk<1.33?'wr':'')}"><td>${ee(r.lab)}</td><td>${r.n}</td><td>${r.ng}</td><td>${r.pct.toFixed(1)}%</td><td>${f3(r.m)}</td><td>${f3(r.sd)}</td><td>${f3(r.mn)}</td><td>${f3(r.mx)}</td><td class="cp">${r.cpk==null?'–':r.cpk.toFixed(2)}</td><td>${r.cv.toFixed(1)}%</td></tr>`).join('')}</tbody></table>`}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-st]');
+if(b){const c=b.closest('.card');if(!c)return;let p=c.querySelector(':scope>.stp');if(!p){p=document.createElement('div');p.className='stp';p.hidden=true;c.appendChild(p)}
+if(p.hidden){closeViews(b);p.innerHTML=statHtml(b.dataset.st);p.hidden=false;b.classList.add('on')}else{p.hidden=true;b.classList.remove('on')}syncOpen(c);if(!p.hidden)fitTbl(p);return}
+const h=e.target.closest('[data-ss]');if(h){const [id,k]=h.dataset.ss.split('|'),S=SORT[id]||(SORT[id]={});if(S.k==k)S.d=-S.d;else{S.k=k;S.d=(k=='lab'||k=='cpk')?1:-1}const p=h.closest('.stp');if(p){p.innerHTML=statHtml(id);fitTbl(p)}}});
+const CDATA={};
+const qtq=(a,p)=>{const b=[...a].sort((x,y)=>x-y),h=(b.length-1)*p,l=Math.floor(h),u=Math.ceil(h);return b[l]+(b[u]-b[l])*(h-l)};
+function colsDim(s,i,pts){const d=DIMS[s][i],rw=rawOf(d),dim={lab:dn(d),get:r=>r.v[i],lo:d[2],hi:d[3],nom:d[4]},raw=[];
+if(rw){const all=[];rw.idx.forEach((ix,n)=>{const get=r=>r.pt&&r.pt[rw.g]&&r.pt[rw.g][ix-1]!=null?r.pt[rw.g][ix-1]:null,vals=pts.map(get).filter(v=>v!=null);if(vals.length){raw.push({lab:rw.lab?rw.lab[n]:rw.g+ix,get,vals});all.push(...vals)}});
+if(raw.length){const med=[...all].sort((a,b)=>a-b)[Math.floor(all.length/2)],sz=(d[0].match(/\[(\d+(?:\.\d+)?)\]/)||[])[1],NM={H:-17,E:-15.6,F:-23.9},nm2=NM[rw.g]!=null?NM[rw.g]:(sz!=null?(med<0?-1:1)*+sz:null),bh=d[3]/2;raw.forEach(c=>{c.lo=nm2!=null?nm2-bh:d[2];c.hi=nm2!=null?nm2+bh:d[3];c.nom=nm2})}}
+dim.vals=pts.map(dim.get).filter(v=>v!=null);return{dim,raw}}
+const f3q=x=>x==null?'–':x.toFixed(3);
+function dTrend(pts,cols){return{h:['#',T('Ngày','일자'),T('Máy','설비'),...cols.map(c=>c.lab),'KQ'],r:pts.map((r,k)=>[k+1,dm(r.d),mcN(r.k),...cols.map(c=>{const v=c.get(r);return v==null?'–':{v:f3q(v),ng:outS(v,c.lo,c.hi)}}),r.ok?'OK':{v:'NG',ng:1}])}}
+function dBox(cols){return{h:[T('Chỉ số','지표'),'N','Min','Q1',T('Trung vị','중앙값'),T('TB','평균'),'Q3','Max','σ'],r:cols.filter(c=>c.vals&&c.vals.length).map(c=>{const a=c.vals,n=a.length,m=a.reduce((x,y)=>x+y,0)/n,sd=n>1?Math.sqrt(a.reduce((x,y)=>x+(y-m)**2,0)/(n-1)):0,mn=aMin(a),mx=aMax(a);return[c.lab,n,{v:f3q(mn),ng:outS(mn,c.lo,c.hi)},f3q(qtq(a,.25)),f3q(qtq(a,.5)),f3q(m),f3q(qtq(a,.75)),{v:f3q(mx),ng:outS(mx,c.lo,c.hi)},f3q(sd)]})}}
+function dMean(cols){return{h:[T('Chỉ số','지표'),'N',T('TB','평균'),T('Danh nghĩa','공칭'),T('Lệch TB − DN','평균−공칭')],r:cols.filter(c=>c.vals&&c.vals.length).map(c=>{const a=c.vals,m=a.reduce((x,y)=>x+y,0)/a.length;return[c.lab,a.length,f3q(m),f3q(c.nom),c.nom==null?'–':{v:(m-c.nom>=0?'+':'')+f3q(m-c.nom),ng:outS(m,c.lo,c.hi)}]})}}
+function cdHtml(id){const f=CDATA[id];if(!f)return'';const o=f(),LIM=3000,R=o.r.slice(0,LIM);
+return (o.note?`<div class="sub">${o.note}</div>`:'')+`<table><thead><tr>${o.h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${R.map(r=>`<tr>${r.map(c=>typeof c=='object'?`<td class="${c.ng?'ng':''}">${c.v}</td>`:`<td>${String(c).replace(/[<>&]/g,'')}</td>`).join('')}</tr>`).join('')}</tbody></table>`+(o.r.length>LIM?`<div class="sub">… ${o.r.length-LIM} ${T('dòng nữa','행 더 있음')}</div>`:'')}
+function fitTbl(p){const tb=p.querySelector('table');if(!tb)return;const n=tb.rows[0]?tb.rows[0].cells.length:0;tb.classList.toggle('tg',n>8);for(const fs of [11.5,11,10.5,10,9.5,9]){tb.style.fontSize=fs+'px';if(tb.scrollWidth<=p.clientWidth+1)break}}
+function syncOpen(c){if(!c)return;const pn=[...c.querySelectorAll('.cdp,.stp:not([hidden])')];
+if(!pn.length)delete c.dataset.open;else{let w=0;pn.forEach(p=>{const tb=p.querySelector('table');if(!tb)return;tb.classList.toggle('tg',!!(tb.rows[0]&&tb.rows[0].cells.length>8));tb.style.fontSize='11px';w=Math.max(w,tb.offsetWidth+18)});
+const g=c.parentElement;if(g&&g.classList.contains('u')){const cs=getComputedStyle(g),N=Math.max(1,cs.gridTemplateColumns.trim().split(/\s+/).length),gap=parseFloat(cs.columnGap)||12,cw=(g.clientWidth-gap*(N-1))/N;c.dataset.open=Math.min(N,Math.max(1,Math.ceil((w+26+gap)/(cw+gap))))}else c.dataset.open=1}
+if(c.closest('#mp'))balMp()}
+function closeViews(a){const y0=a?a.getBoundingClientRect().top:0,cs=new Set();document.querySelectorAll('.cdp').forEach(p=>{cs.add(p.closest('.card'));p.remove()});document.querySelectorAll('.stp:not([hidden])').forEach(p=>{p.hidden=true;cs.add(p.closest('.card'))});document.querySelectorAll('.cdb.on,.stb.on').forEach(b=>b.classList.remove('on'));cs.forEach(c=>syncOpen(c));if(a){const y1=a.getBoundingClientRect().top;if(y1!==y0)window.scrollBy(0,y1-y0)}}
+window.addEventListener('resize',()=>{clearTimeout(window._ft);window._ft=setTimeout(()=>document.querySelectorAll('.cdp,.stp:not([hidden])').forEach(fitTbl),200)});
+document.addEventListener('click',e=>{const cb=e.target.closest('[data-cd]');if(!cb)return;const cv=cb.closest('.cv');if(!cv)return;const card=cv.closest('.card'),id=cb.dataset.cd,ex=document.querySelector('.cdp[data-for="'+id+'"]');
+if(ex){const c2=ex.closest('.card');ex.remove();cb.classList.remove('on');syncOpen(c2);return}
+closeViews(cb);
+const p=document.createElement('div');p.className='cdp';p.dataset.for=id;p.innerHTML=cdHtml(id);const row=cv.parentElement&&cv.parentElement.parentElement;(row&&/\b(g3|g3m)\b/.test(row.className)?row:cv).after(p);cb.classList.add('on');syncOpen(card);fitTbl(p)});
+let LOTPOP=null;
+function lotPopX(){if(LOTPOP){LOTPOP.remove();LOTPOP=null}}
+function goLot(k,md,mk){st.lot={k,md,pm:st.mc.slice()};st.mc=[mk];st.det=1;st.ngm=0;render();scrollTo(0,0)}
+function openLot(k,md,a){const rows=R.filter(r=>fil(r)&&r.pd===k&&(!md||r.md===md)),M={};rows.forEach(r=>{const o=M[r.k]||(M[r.k]={k:r.k,n:0,ng:0});o.n++;if(!r.ok)o.ng++});const L=Object.values(M).sort((x,y)=>num(x.k,y.k));
+lotPopX();if(!L.length)return;if(L.length==1){goLot(k,md,L[0].k);return}
+const b=a.getBoundingClientRect(),d=document.createElement('div');d.className='lotpop';d.innerHTML=`<div class="sub">${T('Lot có nhiều máy — chọn máy để xem','여러 설비 Lot — 설비 선택')}</div>`+L.map(o=>`<button data-lm="${o.k}">${mcN(o.k)} <span class="sub">${o.n} ${T('mẫu','샘플')} · NG ${o.ng}</span></button>`).join('');
+d.style.left=Math.max(4,Math.min(b.left,innerWidth-240))+'px';d.style.top=(b.bottom+4)+'px';d.onclick=e=>{const x=e.target.closest('[data-lm]');if(x){const mk=x.dataset.lm;lotPopX();goLot(k,md,mk)}};document.body.appendChild(d);LOTPOP=d}
+document.addEventListener('click',e=>{if(LOTPOP&&!e.target.closest('.lotpop,[data-lot]'))lotPopX()});
+function lotBanner(V){const L=st.lot,ng=V.filter(r=>!r.ok).length;return `<span class="tag lotg">Lot ${T('SX','생산')} ${dm(L.k)}${L.md?' · '+T('đo','측정')+' '+dm(L.md):''}</span><span class="${ng?'ng':'sub'}"><b>${ng}</b> NG / ${V.length}</span><button class="lotbt${st.ngm?' on':''}" data-ngm="1">${st.ngm?T('← Xem biểu đồ','← 차트 보기'):T('Tổng hợp hàng NG →','NG 종합 →')}</button><button class="lotbt" data-lotx="1" title="${T('Bỏ lọc Lot','Lot 필터 해제')}">✕ Lot</button>`}
+function closeSt(c){const p=c.querySelector(':scope>.stp');if(p)p.hidden=true;const b=c.querySelector('[data-st]');if(b)b.classList.remove('on');syncOpen(c)}
+let _sq=0;window.addEventListener('scroll',()=>{if(_sq)return;_sq=requestAnimationFrame(()=>{_sq=0;document.querySelectorAll('.cdp').forEach(p=>{if(p.getBoundingClientRect().bottom<40){const h=p.offsetHeight+8,c2=p.closest('.card'),b0=c2?c2.getBoundingClientRect().bottom:0;document.querySelectorAll('.cdb[data-cd="'+p.dataset.for+'"]').forEach(b=>b.classList.remove('on'));p.remove();syncOpen(c2);const b1=c2?c2.getBoundingClientRect().bottom:0;window.scrollBy(0,c2?b1-b0:-h)}});document.querySelectorAll('.card[data-open]').forEach(c=>{const p=c.querySelector(':scope>.stp');if(!p||p.hidden)return;if(p.getBoundingClientRect().bottom<40){const b0=c.getBoundingClientRect().bottom;closeSt(c);const b1=c.getBoundingClientRect().bottom;if(b1!==b0)window.scrollBy(0,b1-b0)}})})},{passive:true});
+function balMp(){document.querySelectorAll('#mp .mpg.u').forEach(g=>{const N=Math.max(1,getComputedStyle(g).gridTemplateColumns.trim().split(/\s+/).length);let row=[],pos=0;const fl=()=>{if(!row.length)return;let left=N-pos,i=0;while(left>0){row[i%row.length].s++;left--;i++}row.forEach(x=>{x.c.style.gridColumn='span '+x.s});row=[];pos=0};
+[...g.children].forEach(c=>{c.style.gridColumn='';const w=c.dataset.sp,b0=w=='F'?N:Math.min(+w||1,N),sp=Math.max(b0,Math.min(+c.dataset.open||0,N));if(pos+sp>N)fl();row.push({c,s:sp});pos+=sp;if(pos>=N)fl()});fl()})}
+window.addEventListener('resize',()=>{clearTimeout(window._bt);window._bt=setTimeout(balMp,150)});
+function mpage(V,k){const box=$('mp');clrCh('mt');['tr','ds','sp'].forEach(x=>clrCh(x+'m'));const pt=k[0]=='F'?'Front':'Rear';
+let h=`<div class="card mph"><button data-back="1">${T('← Tổng thể','← 전체 보기')}</button><h2>${pt} ${k.slice(2)}</h2>${st.lot?lotBanner(V):''}<span class="tag">${T('Khuôn','금형')} ${uniq(V.map(r=>r.kh)).filter(Boolean).sort(num).join(', ')||T('Chưa ghi','미기재')}</span><span class="tag ${jigOf(k)=='NEW'?'new':''}">JIG ${jigOf(k)}</span><span class="sub">${st.ngm?T('Thống kê cây NG · theo bộ lọc thời gian / ca đang chọn','NG 개체 통계 · 현재 기간/근무조 필터 기준'):T('Xu hướng theo nhóm kích thước (mỗi nhóm 1 biểu đồ nhiều đường) · theo bộ lọc thời gian / ca đang chọn','치수 그룹별 추이(그룹당 다중 라인 1개 차트) · 현재 기간/근무조 필터 기준')}</span><button data-ngm="1" class="ib ngb${st.ngm?' on':''}" title="${T('Thống kê cây NG — sổ sang phải, trang mở rộng toàn chiều ngang','NG 개체 통계 — 오른쪽으로 펼치기(전체 너비)')}">${st.ngm?'⇤':'⇥'}</button></div>`;
+const srcs=uniq(V.map(r=>r.s)).sort((a,b)=>a-b),jobs=[];
+if(!srcs.length)h+=`<div class="card">${T('Không có dữ liệu cho lựa chọn này','선택한 조건에 데이터가 없습니다')}</div>`;
+const HH=h;h='';
+srcs.forEach(s=>{const Vs=V.filter(r=>r.s==s),D=DIMS[s],G=[],gi={};
+D.forEach((d,i)=>{if(!Vs.some(r=>r.v[i]!=null))return;const kk=grpKey(d)||'#'+i;if(gi[kk]==null){gi[kk]=G.length;G.push({ix:[]})}G[gi[kk]].ix.push(i)});
+const pri=g=>{const d=D[g.ix[0]];return g.ix.length>2&&g.ix.every(i=>/^Z-D\d+$/i.test(D[i][0]))?0:Math.abs(d[4]-4.4)<.01?1:Math.abs(d[4]-3.9)<.01?2:3};
+G.forEach((g,n)=>{g.n=n;g.p=pri(g);const pp=Vs.filter(r=>g.ix.some(i=>r.v[i]!=null));let q=0;g.ix.forEach(i=>pp.forEach(r=>{const v=r.v[i];if(v!=null&&outS(v,D[i][2],D[i][3]))q++}));g.ng=q;let cv=0;g.ix.forEach(i=>{const a=[];pp.forEach(r=>{const v=r.v[i];if(v!=null)a.push(v)});if(a.length>1){const m=a.reduce((x,y)=>x+y,0)/a.length,sd=Math.sqrt(a.reduce((x,y)=>x+(y-m)**2,0)/(a.length-1)),w=(D[i][3]-D[i][2])||1;if(sd/w>cv)cv=sd/w}});g.cv=cv;g.top=(g.p==0||/^Profile D1~D8\b/i.test((D[g.ix[0]][0]||'').normalize('NFC')))?1:0});
+G.sort((a,b)=>(b.top-a.top)||(b.ng>0)-(a.ng>0)||b.ng-a.ng||b.cv-a.cv||a.p-b.p||a.n-b.n);
+const segs=[],put=(c,z)=>{if(!segs.length)segs.push({c:' u',h:''});segs[0].h+=z};let pdx=-1;{const q=G.findIndex(g=>g.ix.length==1&&/^Profile D1~D8\b/i.test((D[g.ix[0]][0]||'').normalize('NFC')));if(q>=0){pdx=G[q].ix[0];G.splice(q,1);jobs.push(()=>T3(Vs,{s,i:pdx},'m'+s))}}let cnt=0;
+G.forEach((g,gj)=>{const ix=g.ix,d0=D[ix[0]],lo=d0[2],hi=d0[3],nom=d0[4],pts=Vs.filter(r=>ix.some(i=>r.v[i]!=null)),id='mt'+s+'_'+gj;
+let ng=0,tot=0;ix.forEach(i=>pts.forEach(r=>{const v=r.v[i];if(v==null)return;tot++;if(outS(v,D[i][2],D[i][3]))ng++}));cnt+=ix.length;
+STR[id]=ix.length>1?()=>ix.map(i=>({lab:D[i][0],vals:pts.map(r=>r.v[i]).filter(v=>v!=null),lo:D[i][2],hi:D[i][3],nom:D[i][4]})):()=>statDim(s,ix[0],pts);{const cc=()=>ix.length>1?ix.map(i=>({lab:D[i][0],get:r=>r.v[i],vals:pts.map(r=>r.v[i]).filter(v=>v!=null),lo:D[i][2],hi:D[i][3],nom:D[i][4]})):(()=>{const c=colsDim(s,ix[0],pts);return [c.dim,...c.raw]})();CDATA[id]=CDATA[id+'c']=()=>dTrend(pts,cc());CDATA[id+'a']=()=>dMean(cc());CDATA[id+'b']=()=>dBox(cc())}
+const mg=ix.length>1,hd=`<div class="mct"><b>${mg?grpCode(d0).replace(/^~/,'')+' · '+D[ix[0]][0]+' … '+D[ix[ix.length-1]][0]:dn(d0)}</b><span class="${ng?'ng':'sub'}">${ng?ng+'/'+tot+' · '+pc(100*ng/tot):'0/'+tot}</span><button class="stb" data-st="${id}" type="button">📊 ${T('Chỉ số','지표')}</button></div><div class="sub">Spec ${spTxt(D,ix)}${mg?' · '+ix.length+T(' đường',' 라인'):''}</div>`;
+if(g.p==0){const ia=id+'a',ib=id+'b',ic=id+'c';
+put(' w',`<div class="card mc fw${ng?' bd':''}" data-sp="F">${hd}<div class="g3m"><div><div class="sub">${T('① Trung bình từng điểm so với danh nghĩa','① 포인트별 평균 vs 공칭')}</div><div class="cv gm"><canvas id="${ia}"></canvas><button class="cdb" data-cd="${ia}" type="button" title="${T('Xem dữ liệu tạo nên biểu đồ','차트 원본 데이터 보기')}">📊 ${T('Dữ liệu','데이터')}</button></div></div><div><div class="sub">${T('② Boxplot độ phân tán','② 박스플롯(산포)')}</div><div class="cv gm"><canvas id="${ib}"></canvas><button class="cdb" data-cd="${ib}" type="button" title="${T('Xem dữ liệu tạo nên biểu đồ','차트 원본 데이터 보기')}">📊 ${T('Dữ liệu','데이터')}</button></div></div><div><div class="sub">${T('③ Xu hướng theo thời gian','③ 시간별 추이')}</div><div class="cv gm"><canvas id="${ic}"></canvas><button class="cdb" data-cd="${ic}" type="button" title="${T('Xem dữ liệu tạo nên biểu đồ','차트 원본 데이터 보기')}">📊 ${T('Dữ liệu','데이터')}</button></div></div></div></div>`);
+jobs.push(()=>meanCh(ia,pts,ix,D,lo,hi,nom),()=>boxCh(ib,pts,ix,D,lo,hi,nom),()=>trendCh(ic,pts,ix,D,lo,hi,nom,0))}
+else if(mg){put(' w',`<div class="card mc${ng?' bd':''}" data-sp="2">${hd}<div class="cv gm"><canvas id="${id}"></canvas><button class="cdb" data-cd="${id}" type="button" title="${T('Xem dữ liệu tạo nên biểu đồ','차트 원본 데이터 보기')}">📊 ${T('Dữ liệu','데이터')}</button></div></div>`);jobs.push(()=>trendCh(id,pts,ix,D,lo,hi,nom,0))}
+else{put('',`<div class="card mc${ng?' bd':''}" data-sp="1">${hd}<div class="cv m"><canvas id="${id}"></canvas><button class="cdb" data-cd="${id}" type="button" title="${T('Xem dữ liệu tạo nên biểu đồ','차트 원본 데이터 보기')}">📊 ${T('Dữ liệu','데이터')}</button></div></div>`);jobs.push(()=>trendCh(id,pts,ix,D,lo,hi,nom,1))}});
+h+=`<div class="dts">${SRC[s]}<span class="sub">${Vs.length} ${T('mẫu','샘플')} · ${cnt+(pdx>=0?1:0)} ${T('điểm kích thước','치수 포인트')} · ${G.length+(pdx>=0?1:0)} ${T('nhóm','그룹')}</span></div>`+(pdx>=0?pdCard(Vs,s,pdx):'')+segs.map(x=>`<div class="mpg${x.c}">${x.h}</div>`).join('')});
+const onlyNg=st.ngm&&srcs.length;box.innerHTML=HH+(onlyNg?ngMatrix(V,srcs):h);if(!onlyNg){balMp();jobs.forEach(f=>later(f))}}
+
+$('mp').onclick=e=>{if(e.target.closest('[data-zt]')){ZOPEN=!ZOPEN;document.querySelectorAll('#mp tr.zr').forEach(x=>{x.hidden=!ZOPEN});document.querySelectorAll('#mp .zl').forEach(x=>{x.textContent=zlab(+x.dataset.n)});return}if(e.target.closest('[data-lotx]')){st.lot=null;render();return}if(e.target.closest('[data-ngm]')){st.ngm=st.ngm?0:1;render();return}if(e.target.closest('[data-back]')){const L=st.lot;st.lot=null;st.mc=L?L.pm:[];st.det=0;render();scrollTo(0,0)}};
+document.addEventListener('click',e=>{const r=e.target.closest('.hr[data-mk],#tm tr[data-mk]');if(!r)return;const k=r.dataset.mk;st.mc=[k];st.det=0;st.p=k[0]=='F'?'Front':'Rear';render();scrollTo(0,0)});
+function tt(){const u=$('upb').style.display=='none',n=$('note').style.display=='none';$('upcc').title=T(u?'Mở rộng':'Thu gọn',u?'펼치기':'접기');$('ncc').title=T(n?'Mở rộng':'Thu gọn',n?'펼치기':'접기')}
+function noteC(c){$('note').style.display=c?'none':'';$('ncc').textContent=c?'▸':'▾';tt();try{localStorage.setItem('v710nc',c?'1':'0')}catch(e){}}
+{let c=1;try{const q=localStorage.getItem('v710nc');if(q!=null)c=+q}catch(e){}$('note').style.display=c?'none':'';$('ncc').textContent=c?'▸':'▾';$('ncc').onclick=()=>noteC($('note').style.display!='none')}
+/* ===== Đồng bộ cloud (GitHub): PC xưởng quét thư mục rồi đẩy theo từng ngày; máy khác chỉ xem ===== */
+const CLK={br:'main',st:'',busy:0,pbusy:0,dirty:0,tm:0,
+tok:()=>{try{return localStorage.getItem('v710a_cl_tok')||''}catch(e){return''}},
+repo:()=>{try{const o=localStorage.getItem('v710a_cl_repo');if(o)return o}catch(e){}if(/\.github\.io$/.test(location.hostname)){const r=location.pathname.split('/')[1];return location.hostname.split('.')[0]+'/'+(r||location.hostname)}return''},
+win:()=>{let v=14;try{const q=localStorage.getItem('v710a_cl_win');if(q!=null&&!isNaN(+q))v=+q}catch(e){}return v},
+sig:()=>{try{return JSON.parse(localStorage.getItem('v710a_cl_sig')||'{}')}catch(e){return{}}},
+saveSig:o=>{try{localStorage.setItem('v710a_cl_sig',JSON.stringify(o))}catch(e){}}};
+const clSay=m=>{CLK.st=m;const e=$('cls');if(e)e.textContent=m};
+const clTm=()=>new Date().toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});
+const clDay=x=>(x[7]||'').slice(0,10)||x[1];
+const clH=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return(h>>>0).toString(36)};
+const clSigOf=X=>{const a=X.map(x=>dk(x)+'|'+x[1]+'|'+x[2]+'|'+(x[10]||'')+'|'+(x[12]||'')+'|'+x[4]).sort();return a.length+'-'+clH(a.join('\n'))};
+const clByDay=()=>{const m={};RAW.concat(UP).forEach(x=>{const d=clDay(x);(m[d]=m[d]||[]).push(x)});return m};
+const clUnz=async buf=>JSON.parse(await new Response(new Blob([buf]).stream().pipeThrough(new DecompressionStream('gzip'))).text());
+const clU8=s=>{const b=new TextEncoder().encode(s);let o='';for(let i=0;i<b.length;i+=0x8000)o+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(o)};
+const clB64=b=>{let o='';for(let i=0;i<b.length;i+=0x8000)o+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(o)};
+async function clPack(X){const ix=[],mp={},Y=X.map(x=>{const o=x.slice(),s=o[5];if(mp[s]==null){mp[s]=ix.length;ix.push(s)}o[5]=mp[s];return o});
+return zGz(JSON.stringify({ver:1,dims:ix.map(s=>[SRC[s],DIMS[s]]),...qEnc(Y)}))}
+function clDecode(Z){const X=qDec(Z),lm=(Z.dims||[]).map(([nm,D])=>{const k=sg(D);let ns=SIG[k];if(ns==null){ns=DIMS.push(D)-1;SIG[k]=ns;SRC[ns]=nm}return ns});X.forEach(x=>{x[5]=lm[x[5]]});return X}
+function clMergeRows(X,remoteWins){const RM=new Map(R.map(y=>[y.dk0,y])),UPM=new Map(UP.map(y=>[dk(y),y]));let add=0,upd=0;const NEW=[];
+X.forEach(x=>{const q=dk(x),e=RM.get(q);
+if(!e){DEDUP.add(q);UP.push(x);NEW.push(x);const nr=mkR(x);R.push(nr);RM.set(q,nr);UPM.set(q,x);add++;return}
+if(remoteWins&&(e.pd!==x[1]||e.ca!==(x[2]?'Đêm':'Ngày')||(e.ck||'')!==(x[12]||'')||e.md!==(x[10]||x[1]))){if(!x[9]&&e.pt)x[9]=e.pt;const nr=mkR(x),i=R.indexOf(e);if(i>=0)R[i]=nr;RM.set(q,nr);const u=UPM.get(q),j=u?UP.indexOf(u):-1;if(j>=0)UP[j]=x;else UP.push(x);UPM.set(q,x);upd++}});
+return{add,upd,NEW}}
+async function clPull(manual,first){const RP=CLK.repo();if(!RP){clSay(T('Chưa xác định kho cloud (mở link GitHub Pages hoặc nhập owner/repo)','클라우드 저장소 미지정(GitHub Pages 링크로 열거나 owner/repo 입력)'));return}
+if(typeof DecompressionStream=='undefined'){clSay(T('Trình duyệt không hỗ trợ giải nén — dùng Chrome/Edge mới','압축 해제 미지원 — 최신 Chrome/Edge 사용'));return}
+if(CLK.pbusy)return;CLK.pbusy=1;
+try{const b='https://raw.githubusercontent.com/'+RP+'/'+CLK.br+'/',r=await fetch(b+'index.json?t='+Date.now(),{cache:'no-store'});
+if(r.status==404){clSay(T('Cloud: chưa có dữ liệu','Cloud: 데이터 없음'));CLK.pbusy=0;return}if(!r.ok)throw new Error('HTTP '+r.status);
+const J=await r.json();if(J.ver!==1){clSay(T('Cloud: sai phiên bản dữ liệu','Cloud: 데이터 버전 불일치'));CLK.pbusy=0;return}
+const days=Object.keys(J.days||{}).sort().reverse(),w=CLK.win(),want=w>0?days.slice(0,w):days,LP=CLK.sig();let add=0,upd=0,got=0;const NEW=[];
+for(const d of want){const m=J.days[d];if(LP[d]===m.sig)continue;
+clSay(T('Cloud: đang tải ','Cloud: 불러오는 중 ')+d+' ('+(got+1)+')…');
+const rr=await fetch(b+'data/'+d+'.json.gz?t='+m.sig,{cache:'no-store'});if(!rr.ok)continue;
+const X=clDecode(await clUnz(new Uint8Array(await rr.arrayBuffer()))),o=clMergeRows(X,!CLK.tok());add+=o.add;upd+=o.upd;NEW.push(...o.NEW);got++;
+if(clSigOf(clByDay()[d]||[])===m.sig)LP[d]=m.sig}
+CLK.saveSig(LP);
+if(add||upd){await persist();afterData(first?NEW:null)}else if(manual)render();
+clSay(T('Cloud: đã đồng bộ ','Cloud: 동기화 완료 ')+clTm()+(got?' · '+got+T(' ngày',' 일'):'')+(add?' · +'+add+T(' mẫu',' 건'):'')+(upd?' · '+upd+T(' mẫu sửa',' 건 수정'):'')+' · '+T('hiển thị ','표시 ')+(w>0?w+T(' ngày gần nhất',' 일'):T('tất cả','전체')))}
+catch(e){clSay(T('Cloud: không tải được (','Cloud: 불러오기 실패 (')+e.message+')')}CLK.pbusy=0}
+async function ghGet(RP,tk,path){const h={Authorization:'Bearer '+tk,Accept:'application/vnd.github+json'},u='https://api.github.com/repos/'+RP+'/contents/'+path+'?ref='+CLK.br,r=await fetch(u,{headers:h,cache:'no-store'});
+if(r.status==404)return{sha:null,buf:null};if(!r.ok)throw new Error('GitHub '+r.status+(r.status==401||r.status==403?' (token sai/thiếu quyền)':''));
+const m=await r.json();let buf;if(m.content&&m.encoding=='base64')buf=Uint8Array.from(atob(m.content.replace(/\n/g,'')),c=>c.charCodeAt(0));
+else{const r2=await fetch(u,{headers:{...h,Accept:'application/vnd.github.raw+json'},cache:'no-store'});buf=new Uint8Array(await r2.arrayBuffer())}return{sha:m.sha,buf}}
+const ghPut=(RP,tk,path,b64,sha,msg)=>{const body={message:msg,content:b64,branch:CLK.br};if(sha)body.sha=sha;return fetch('https://api.github.com/repos/'+RP+'/contents/'+path,{method:'PUT',headers:{Authorization:'Bearer '+tk,Accept:'application/vnd.github+json'},body:JSON.stringify(body)})};
+async function clPush(manual){const RP=CLK.repo(),tk=CLK.tok();if(!RP||!tk){clSay(T('Chưa nhập kho/token','저장소/토큰 미입력'));return}
+if(typeof CompressionStream=='undefined'){clSay(T('Trình duyệt không hỗ trợ nén','압축 미지원'));return}
+if(CLK.busy){CLK.dirty=1;return}CLK.busy=1;
+try{const LP=CLK.sig(),by=clByDay(),todo=Object.keys(by).sort().filter(d=>clSigOf(by[d])!==LP[d]);
+if(!todo.length){clSay(T('Cloud đã mới nhất, không có dữ liệu mới để đẩy · ','Cloud 최신 — 보낼 새 데이터 없음 · ')+clTm());CLK.busy=0;return}
+const done={};let n=0;
+for(const d of todo){n++;clSay(T('Đang đẩy cloud ','Cloud 전송 중 ')+d+' ('+n+'/'+todo.length+')…');let ok=0;
+for(let t=0;t<3&&!ok;t++){const rem=await ghGet(RP,tk,'data/'+d+'.json.gz');let X=by[d];const mine=clSigOf(X);let same=false;
+if(rem.buf){const rx=clDecode(await clUnz(rem.buf)),seen=new Map(X.map(x=>[dk(x),x]));rx.forEach(x=>{const q=dk(x);if(!seen.has(q))seen.set(q,x)});X=[...seen.values()];same=clSigOf(rx)===clSigOf(X)}
+const sig=clSigOf(X);let sha=rem.sha;
+if(!same){const r=await ghPut(RP,tk,'data/'+d+'.json.gz',await clPack(X),sha,'sync '+d+' '+new Date().toISOString());if(r.status==409||r.status==422)continue;if(!r.ok)throw new Error('GitHub '+r.status+(r.status==401||r.status==403?' (token sai/thiếu quyền)':''))}
+done[d]={n:X.length,sig};if(sig===mine)LP[d]=sig;ok=1}
+if(!ok)throw new Error(T('xung đột, thử lại sau','충돌, 나중에 재시도'))}
+for(let t=0;t<3;t++){const rem=await ghGet(RP,tk,'index.json');let J={ver:1,days:{}};if(rem.buf){try{J=JSON.parse(new TextDecoder().decode(rem.buf))}catch(e){}if(!J.days)J.days={};J.ver=1}
+Object.assign(J.days,done);J.at=Date.now();const r=await ghPut(RP,tk,'index.json',clU8(JSON.stringify(J)),rem.sha,'index '+new Date().toISOString());
+if(r.status==409||r.status==422)continue;if(!r.ok)throw new Error('GitHub '+r.status);CLK.saveSig(LP);clSay(T('Đã đẩy lên cloud ','Cloud 전송 완료 ')+clTm()+' · '+todo.length+T(' ngày',' 일')+' · '+Object.values(done).reduce((a,o)=>a+o.n,0)+T(' mẫu',' 건'));CLK.busy=0;return}
+throw new Error(T('xung đột index, thử lại sau','index 충돌'))}
+catch(e){clSay(T('Đẩy cloud lỗi: ','Cloud 전송 오류: ')+e.message)}CLK.busy=0;if(CLK.dirty){CLK.dirty=0;setTimeout(clPush,2000)}}
+function clDirty(){if(!CLK.tok()||!CLK.repo())return;try{if(localStorage.getItem('v710a_cl_auto')==='0')return}catch(e){}clearTimeout(CLK.tm);CLK.tm=setTimeout(clPush,3000)}
+function clUi(){let d=$('clw');if(!d){d=document.createElement('details');d.id='clw';d.style.marginTop='8px';$('upb').appendChild(d)}const o=d.open;
+d.innerHTML=`<summary>${T('Đồng bộ cloud (xem online)','클라우드 동기화(온라인 보기)')}</summary><div class="sub" id="cls" style="margin:4px 0"></div>
+<div class="ur"><span class="sub">${T('Tải dữ liệu của','불러올 기간')}</span><select id="clw2">${[[7,T('7 ngày gần nhất','최근 7일')],[14,T('14 ngày gần nhất','최근 14일')],[30,T('30 ngày gần nhất','최근 30일')],[90,T('90 ngày gần nhất','최근 90일')],[0,T('Tất cả','전체')]].map(([v,t])=>`<option value="${v}"${CLK.win()==v?' selected':''}>${t}</option>`).join('')}</select><button id="clp">${T('Tải dữ liệu cloud ngay','지금 클라우드 불러오기')}</button></div>
+<div class="sub" style="margin:6px 0 2px"><b>${T('Chỉ PC xưởng cần nhập phần dưới','작업장 PC만 아래 입력')}</b> ${T('(máy chỉ xem thì bỏ qua). Thư mục quét chọn ở mục trên.','(보기 전용 PC는 건너뜀). 스캔 폴더는 위에서 선택.')}</div>
+<div class="ur"><label>${T('Kho GitHub','GitHub 저장소')} <input type="text" id="clr" style="min-width:200px;flex:none"></label><label>Token <input type="password" id="clt" size="26" placeholder="github_pat_..."></label><button id="cls2">${T('Lưu','저장')}</button><button id="clh">${T('Đẩy lên cloud ngay','지금 클라우드로 보내기')}</button></div>`;
+d.open=o;$('clr').value=CLK.repo();$('clt').value=CLK.tok()?'••••••••':'';
+$('clw2').onchange=()=>{try{localStorage.setItem('v710a_cl_win',$('clw2').value)}catch(e){}clPull(true)};
+$('clp').onclick=()=>clPull(true);$('clh').onclick=()=>clPush(true);
+$('cls2').onclick=()=>{const r=$('clr').value.trim(),t=$('clt').value.trim();try{if(r)localStorage.setItem('v710a_cl_repo',r);if(t&&!/^•+$/.test(t))localStorage.setItem('v710a_cl_tok',t)}catch(e){}$('clt').value=CLK.tok()?'••••••••':'';clSay(T('Đã lưu cấu hình','설정 저장됨'));clPull(true)};
+clSay(CLK.st||(CLK.repo()?T('Kho: ','저장소: ')+CLK.repo():T('Chưa xác định kho (mở link GitHub Pages hoặc nhập owner/repo)','저장소 미지정')))}
+function clStart(){clUi();if(CLK.repo())clPull(false,true).then(()=>{if(CLK.tok())clDirty()});setInterval(()=>{if(!document.hidden)clPull()},300000);document.addEventListener('visibilitychange',()=>{if(!document.hidden&&CLK.repo())clPull()})}
+
+applyLang();render();cfgTab();initUp().then(clStart,clStart);
+</script></body></html>
